@@ -1,0 +1,31 @@
+\documentclass[11pt]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{mystyle}
+
+
+
+\begin{document}
+
+  \author{Gregory J. Petropoulos}
+  \title{}
+  \date{}
+
+  \frontmatter
+  \tableofcontents
+  \include{preface}
+
+  \mainmatter
+  \include{chapter_1/chapter_1}
+  \include{chapter_2chapter_2}
+
+  \backmatter
+  \include{glossary}
+  \include{notat}
+  \bibliographystyle{amsalpha} %The style you want to use for references.
+  %\bibliography{mr,refs} %The files containing all the articles and books you ever referenced.
+  \printindex
+
+\end{document}

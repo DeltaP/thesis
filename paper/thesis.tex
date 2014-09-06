@@ -5,27 +5,31 @@
 \usepackage{graphicx}
 \usepackage{mystyle}
 
-
-
 \begin{document}
 
   \author{Gregory J. Petropoulos}
-  \title{}
-  \date{}
+  \title{Temporary Title}
+  \date{\today}
 
   \frontmatter
+  \maketitle
   \tableofcontents
   \include{preface}
 
   \mainmatter
   \include{chapter_1/chapter_1}
-  \include{chapter_2chapter_2}
+  \include{chapter_2/chapter_2}
+  \include{chapter_3/chapter_3}
+  \include{chapter_4/chapter_4}
+  \include{chapter_5/chapter_5}
+  \include{chapter_6/chapter_6}
+  \include{chapter_7/chapter_7}
 
   \backmatter
   \include{glossary}
   \include{notat}
-  \bibliographystyle{amsalpha} %The style you want to use for references.
-  %\bibliography{mr,refs} %The files containing all the articles and books you ever referenced.
+  \bibliographystyle{amsalpha}
+  %\bibliography{mr,refs}
   \printindex
 
 \end{document}

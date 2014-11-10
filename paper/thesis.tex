@@ -3,11 +3,43 @@
 \usepackage{amsmath}
 \usepackage{amssymb}		% to get all AMS symbols
 \usepackage{graphicx}		% to insert figures
+\usepackage{cancel}
 \usepackage{mystyle}
+
+% Laziness shortcuts
+\newcommand{\al}{\ensuremath{\alpha} }
+\newcommand{\be}{\ensuremath{\beta} }
+\newcommand{\ga}{\ensuremath{\gamma} }
+\newcommand{\De}{\ensuremath{\Delta} }
+\newcommand{\lsim}{\ensuremath{\lesssim} }
+\newcommand{\vev}[1]{\ensuremath{\left\langle #1 \right\rangle} }
+\newcommand{\X}{\ensuremath{\!\times\!} }
+\newcommand{\Sb}{\ensuremath{\cancel{S^4}} }
+\newcommand{\MSbar}{\ensuremath{\overline{\textrm{MS}}} }
+\newcommand{\refcite}[1]{Ref.~\cite{#1}}
+\newcommand{\fig}[1]{Fig.~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\cnum}[1]{chapter_#1}
+\newcommand{\cO}{\ensuremath{\mathcal O} }
+\newcommand{\cN}{\ensuremath{\mathcal N} }
+\newcommand{\cC}{\ensuremath{\mathcal C} }
+\newcommand{\gGF}{\ensuremath{g_{\rm GF}^2} }
+\newcommand{\gc}{\ensuremath{g_c^2} }
+\newcommand{\de}{\ensuremath{\delta} }
+\newcommand{\eq}[1]{eq.~\ref{#1}}
+\newcommand{\gtGF}{\ensuremath{\widetilde g_{\rm GF}^2} }
+\newcommand{\gtopt}{\ensuremath{\widetilde g_{\rm opt}^2} }
+\newcommand{\topt}{\ensuremath{\tau_{\rm opt}} }
+\newcommand{\gtc}{\ensuremath{\widetilde g_c^2} }
+\newcommand{\gstar}{\ensuremath{g_{\star}^2} }
+
+%\newcommand{\MSbar}{\ensuremath{\overline{\mbox{MS}}} }
+% ------------------------------------------------------------------
+
 
 %%%%%%%%%%%%   All the preamble material:   %%%%%%%%%%%%
 
-\title{This is the Name of my Thesis}
+\title{Studies with Improved Renormalization Group Techniques}
 
 \author{Gregory James}{Petropoulos}
 
@@ -23,8 +55,10 @@
 \advisor{Prof.}				%  #1 {title}
 	{Anna Hasenfratz}			%  #2 {name}
 
-\reader{Prof.~Thomas DeGrande}		%  2nd person to sign thesis
-\readerThree{Prof.~Ethan Neil}		%  3rd person to sign thesis
+\reader{Prof.~Thomas DeGrande}		        %  2nd person to sign thesis
+\readerThree{Prof.~Ethan Neil}		        %  3rd person to sign thesis
+\readerFour{Prof.~Senarath de Alwis}		  %  4th person to sign thesis
+\readerFive{Prof.~Thomas A. Manteuffel}		%  5th person to sign thesis
 
 \abstract{  \OnePageChapter	% because it is very short
 
@@ -60,7 +94,7 @@
   \include{chapter_4/chapter_4}
   \include{chapter_5/chapter_5}
   \include{chapter_6/chapter_6}
-  \include{chapter_7/chapter_7}
+  %\include{chapter_7/chapter_7}
 
 %%%%%%%%%   then the Bibliography, if any   %%%%%%%%%
   \bibliographystyle{plain}	% or "siam", or "alpha", etc.
@@ -68,8 +102,8 @@
   \bibliography{refs}		% Bib database in "refs.bib"
 
 %%%%%%%%%   then the Appendices, if any   %%%%%%%%%
-  \appendix
-  \input appendix/appendixA.tex
-  \input appendix/appendixB.tex
+  %\appendix
+  %\input appendix/appendixA.tex
+  %\input appendix/appendixB.tex
 
 \end{document}

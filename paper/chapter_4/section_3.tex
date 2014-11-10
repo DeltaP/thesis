@@ -1,0 +1,25 @@
+% 5.3
+% Monte Carlo Renormaliztion Group
+
+\subsection{Blocking}
+In a lattice simulation the quantities stored in the computer are the link variables.
+The link variable $U_{n,\mu}$ encodes the gauge field at sight $n$ in all four $\hat{\mu}$ directions.
+A MCRG blocking step is a transformation that takes two links $U_{n,\mu}$ and $U_{n+\hat{\mu},\mu}$ and creates one link with twice the lattice spacing of the initial two links.
+\begin{figure}[h]
+  \centering
+  \includegraphics[height=3in]{\cnum{4}/fig/block2.png}
+  \caption{}
+  \label{fig:block2}
+\end{figure}
+The blocked lattice will have a factor of $2^N$ less links than the original lattice.
+In four dimensions this means that an observable such as a Wilson loop will have a factor of 16 less statistics on the blocked lattice compared to the original lattice.
+Fortunately, on an $N$ dimensional hyper cubic lattice there are $2^N$ unique ways to perform this blocking.
+Therefore in four dimensions there are 16 unique blocking configurations.
+We can preserve statistics in our calculation by performing all of the unique blockings and averaging all of the observalbes from those blockings together.
+Additionally we store the blocked links on a lattice of the original cardinality using offsets as shown in \ref{fig:block2}.
+
+The blocked links have a lattice spacking of twice the original lattice, $a' = 2a$ such that the physical size of the box has not been changed.
+
+
+
+

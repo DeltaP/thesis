@@ -61,17 +61,15 @@
 \readerFive{Prof.~Thomas A. Manteuffel}		%  5th person to sign thesis
 
 \abstract{  \OnePageChapter	% because it is very short
-
+  \include{abstract}
 	}
 
 \dedication[Dedication]{	% NEVER use \OnePageChapter here.
-	To all of the fluffy kitties.
+  \include{dedication}
 	}
 
 \acknowledgements{	\OnePageChapter	% *MUST* BE ONLY ONE PAGE!
-	Here's where you acknowledge folks who helped.
-	But keep it short, i.e., no more than one page,
-	as required by the Grad School Specifications.
+  \include{acknowledgements}
 	}
 
 \ToCisShort	% use this only for 1-page Table of Contents
@@ -99,7 +97,8 @@
 %%%%%%%%%   then the Bibliography, if any   %%%%%%%%%
   \bibliographystyle{plain}	% or "siam", or "alpha", etc.
   \nocite{*}		% list all refs in database, cited or not
-  \bibliography{refs}		% Bib database in "refs.bib"
+  %\bibliography{refs}		% Bib database in "refs.bib"
+  \bibliography{ds_ref}		% Bib database in "refs.bib"
 
 %%%%%%%%%   then the Appendices, if any   %%%%%%%%%
   %\appendix

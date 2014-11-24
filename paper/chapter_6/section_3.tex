@@ -1,0 +1,18 @@
+% 6.3
+% Wilson Flow Optimized MCRG
+
+\begin{figure}[th]
+  \centering
+  \includegraphics[height=3 in]{\cnum{6}/fig/wilson_flow_opt.png}
+  \caption{The Wilson flow (blue) moves systems on a surface of constant lattice scale $a$ (normal to the orange renormalized trajectory) in the infinite-dimensional coupling space.  Wilson-flow-optimized MCRG tunes the flow time to bring the system close to the renormalized trajectory (yellow star), so that MCRG blocking (green) quickly reaches the renormalized trajectory.}
+  \label{fig:wflow_opt}
+\end{figure}
+
+The Wilson flow is a continuous smearing transformation~\cite{Narayanan:2006rf} that removes UV fluctuations without changing the lattice scale, as shown in \fig{fig:wflow_opt}.
+In perturbation theory it is related to the \MSbar running coupling~\cite{Luscher:2010iy}, and can be used to compute a renormalized step-scaling function~\cite{Fodor:2012td, Fodor:2012qh}.
+
+In this work we use the Wilson flow to optimize MCRG two-lattice matching with a fixed RG blocking transformation (renormalization scheme).
+The Wilson flow continuously moves the system on a surface of constant lattice scale in the infinite-dimensional space of lattice-action couplings.
+We tune the flow time to bring the system as close as possible to the renormalized trajectory.
+After running the optimal amount of Wilson flow on the unblocked lattices, we then carry out the MCRG two-lattice matching.
+Because the renormalization scheme is fixed, we obtain a bare step-scaling function that corresponds to a unique discrete \be function.

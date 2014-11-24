@@ -1,0 +1,54 @@
+% 5.4
+% 12 Flavor Results
+
+\begin{figure}[btp]
+  \centering
+  \includegraphics[width=0.75\linewidth]{\cnum{5}/fig/wflow}
+  \caption{\label{fig:gradient_flow}The $N_f = 12$ running coupling $\gc(L)$ versus the bare coupling $\be_F$ on several volumes, for $c = 0.2$.  Crossings between results from different volumes predict the finite volume IRFP coupling $\gstar(L)$ in this scheme.}
+\end{figure}
+
+We use the same lattice action with $N_f = 12$ as with $N_f = 4$ and consider six different volumes: $12^4$, $16^4$, $18^4$, $24^4$, $32^4$ and $36^4$.
+This range of volumes allows us to carry out step scaling analyses with scale changes $s = 4 / 3$, $3 / 2$ and 2.
+As for $N_f = 4$ we performed simulations in the $m = 0$ chiral limit with anti-periodic BCs in all four directions.
+Depending on the volume and bare coupling $\be_F$ we accumulated 300--1000 measurements of the gradient flow coupling \gc for $0 \leq c \leq 0.5$, with 10 MDTU separating subsequent measurements.
+Here we will consider only $c = 0.2$.
+Full details of our ensembles and measurements, studies of their auto-correlations, and additional analyses for $c = 0.25$ and 0.3 will appear in \refcite{Cheng:2014}.
+The choice of $c = 0.2$ minimizes the statistical errors, and we find the IRFP in this scheme to be at a weaker coupling than for larger $c$, which is numerically easier to reach.
+The typical trade-off for these smaller statistical errors would be larger cut-off effects, but as discussed in previous sections these cut-off effects can be reduced by our non-perturbative improvement.
+
+Figure~\ref{fig:gradient_flow} shows the running coupling $\gc(L)$ as the function of the bare gauge coupling $\be_F$ for different volumes.
+The interpolating curves are from fits similar to those in \refcite{Tekin:2010mm}.
+The curves from different volumes cross in the range $6.0 \leq \be_F \leq 6.5$.
+The crossing from lattices with linear size $L$ and $sL$ defines the finite-volume IRFP coupling $\gstar(L; s)$:
+\begin{equation}
+  \gc(L) = \gc(sL) \implies \gstar(L; s) = \gc(L).
+\end{equation}
+If the IRFP exists in the continuum limit then the extrapolation
+\begin{equation}
+  \lim_{(a / L)^2 \to 0} \gstar(L; s) \equiv \gstar
+\end{equation}
+has to be finite and independent of $s$.\footnote{We thank D.~N\'ogr\'adi for useful discussions of the continuum limit.}
+Figure~\ref{fig:Nf12} illustrates the continuum extrapolation of $\gstar(L)$ with scale change $s = 2$ for various choices of the $t$-shift parameter $\tau_0$.
+The red triangles correspond to no shift, $\tau_0 = 0$.
+Their $(a / L)^2 \to 0$ continuum extrapolation has a negative slope, and the leading lattice cut-off effects are removed with a positive $t$-shift, $\topt \approx 0.04$.
+A joint linear extrapolation of the $\tau_0 = 0$, 0.02, 0.04 and 0.06 results, constrained to have the same continuum limit at $(a / L)^2 = 0$, predicts $\gstar = 6.21(25)$.
+However, these results all come from the same measurements, and are therefore quite correlated.
+While it is an important consistency check that the continuum limit does not change with $\topt$, just as for $N_f = 4$, the uncertainty in the continuum-extrapolated \gstar from this joint fit is not reliable.
+
+Instead, we should consider only the results with the near-optimal $\topt \approx 0.04$.
+As we show in \fig{fig:Nf12_all}, $\topt \approx 0.04$ is also near-optimal for scale changes $s = 3 / 2$ and $4 / 3$.
+None of these results have any observable $\cO(a^2)$ effect, making the extrapolation to the continuum very stable.
+Each scale change predicts a continuum IRFP for $N_f = 12$.
+The three sets of results in \fig{fig:Nf12_all} come from matching different volumes, making a joint fit legitimate.
+This continuum extrapolation predicts that the IR fixed point is located at renormalized coupling $\gstar = 6.18(20)$ in the $c = 0.2$ scheme.
+
+\begin{figure}[btp]
+  \centering
+  \includegraphics[width=0.75\linewidth]{\cnum{5}/fig/fit_s2_c02}
+  \caption{\label{fig:Nf12}Continuum extrapolations of the 12-flavor finite volume IRFP $\gstar(L)$, with several different $t$-shift coefficients $\tau_0$ for fixed scale change $s = 2$.  The dotted lines are a joint linear fit constrained to have the same $(a / L)^2 = 0$ intercept, which gives $\gstar = 6.21(25)$.}
+\end{figure}
+\begin{figure}[btp]
+  \centering
+  \includegraphics[width=0.75\linewidth]{\cnum{5}/fig/fit_c02_tau004}
+  \caption{\label{fig:Nf12_all}Continuum extrapolations of the 12-flavor finite volume IRFP $\gstar(L)$, with several different scale changes for the near-optimal improvement coefficient $\topt \approx 0.04$.  The $s = 4 / 3$ and $3 / 2$ data points are horizontally displaced for greater clarity.  The dashed lines are a joint linear fit constrained to have the same $(a / L)^2 = 0$ intercept, which gives $\gstar = 6.18(20)$.}
+\end{figure}

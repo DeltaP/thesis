@@ -1,16 +1,33 @@
 % 5.1
-% MCRG Results
+% Chapter 5 Introduction
 
-The renormalization group has been used to study the SU(3) $N_f = 12$ system already [cite anna].
-These results show that the theory is clearly conformal.
-The action used in these simulations is ...
-As part of a greater effort to study this system further we changed our action to reach stronger coupling.
-In this section I will present our results using MCRG with the changed action.
+Asymptotically-free SU($N$) gauge theories coupled to $N_f$ massless fundamental fermions are conformal in the infrared if $N_f$ is sufficiently large, $N_f \geq N_f^{(c)}$.
+Their renormalization group (RG) \be functions possess a non-trivial infrared fixed point (IRFP) where the gauge coupling is an irrelevant operator.
+Although this IRFP can be studied perturbatively for large $N_f$ near the value at which asymptotic freedom is lost~\cite{Caswell:1974gg, Banks:1981nn}, as $N_f$ decreases the fixed point becomes strongly coupled.
+Systems around $N_f \approx N_f^{(c)}$ are particularly interesting strongly-coupled quantum field theories, with non-perturbative conformal or near-conformal dynamics.
+Their most exciting phenomenological application is the possibility of a light composite Higgs boson from dynamical electroweak symmetry breaking~\cite{Fodor:2012ty, Matsuzaki:2012xx, Appelquist:2013sia, Fodor:2014pqa, Aoki:2014oha}.
+Due to the strongly-coupled nature of these systems, lattice gauge theory calculations are a crucial non-perturbative tool with which to investigate them from first principles.
+Many lattice studies of potentially IR-conformal theories have been carried out in recent years (cf.~the recent reviews~\cite{Neil:2012cb, Giedt:2012it} and references therein).
+While direct analysis of the RG \be function may appear an obvious way to determine whether or not a given system flows to a conformal fixed point in the infrared, in practice this is a difficult question to address with lattice techniques.
+In particular, extrapolation to the infinite-volume continuum limit is an essential part of such calculations.
 
-\subsection{The Simulation}
-To achieve stronger coupling we use a different lattice action.  
-This action has [details about action]
+In the case of SU(3) gauge theory with $N_f = 12$ fundamental fermions, several lattice groups have investigated the step scaling function, the discretized form of the \be function.
+To date, these studies either did not reach a definite conclusion~\cite{Hasenfratz:2010fi, Lin:2012iw} or may be criticized for not properly taking the infinite-volume continuum limit~\cite{Appelquist:2007hu, Appelquist:2009ty, Hasenfratz:2010fi, Hasenfratz:2011xn, Itou:2012qn, Petropoulos:2013gaa}.
+At the same time, complementary numerical investigations have been carried out, considering for example the spectrum, or bulk and finite-temperature phase transitions~\cite{Deuzeman:2009mh, Fodor:2011tu, Appelquist:2011dp, DeGrand:2011cu, Cheng:2011ic, Cheng:2013eu, Fodor:2012uw, Fodor:2012et, Aoki:2012eq, Aoki:2013zsa, Jin:2012dw}.
+The different groups performing these studies have not yet reached consensus regarding the infrared behavior of the 12-flavor system.
 
+Our own $N_f = 12$ results favor the existence of a conformal IRFP, which we observe in Monte Carlo RG studies~\cite{Hasenfratz:2011xn, Petropoulos:2013gaa}.
+Our zero- and finite-temperature studies of the lattice phase diagram show a bulk transition consistent with conformal dynamics~\cite{Schaich:2012fr, Hasenfratz:2013uha}.
+From the Dirac eigenvalue spectrum~\cite{Cheng:2013eu}, and from finite-size scaling of mesonic observables~\cite{Cheng:2013xha}, we obtain consistent predictions for a relatively small fermion mass anomalous dimension: $\ga_m^{\star} = 0.32(3)$ and 0.235(15), respectively.
+While this conclusion, if correct, would render the 12-flavor system unsuitable for composite Higgs phenomenology, we consider $N_f = 12$ to remain an important case to study.
+Considerable time and effort has already been invested to obtain high-quality lattice data for the 12-flavor system.
+Until different methods of analyzing and interpreting these data can be reconciled -- or the causes of any remaining disagreements can be clarified -- it will not be clear which approaches are most reliable and most efficient to use in other contexts.
 
-
-
+The recent development of new running coupling schemes based on the gradient flow~\cite{Luscher:2009eq, Luscher:2010iy, Fodor:2012td, Fodor:2012qh, Fritzsch:2013je} provides a promising opportunity to make progress.
+In this work we investigate step scaling using the gradient flow running coupling.\footnote{We are aware of two other ongoing investigations of the $N_f = 12$ gradient flow step scaling function, by the authors of \refcite{Fodor:2012td} and \refcite{Lin:2012iw}.}
+We begin by introducing a non-perturbative improvement to this technique, which increases our control over the continuum extrapolation by reducing the leading-order cut-off effects.
+While this improvement is phenomenological in the sense that we have not derived it systematically through a full improvement program, it is generally applicable to any lattice gauge theory of interest and can remove all $\cO(a^2)$ cut-off effects.
+We illustrate it first for 4-flavor SU(3) gauge theory, a system where the running coupling has previously been studied with both Wilson~\cite{Tekin:2010mm} and staggered~\cite{PerezRubio:2010ke, Fodor:2012td, Fodor:2012qh} fermions.
+We then turn to $N_f = 12$, where we show that the infinite-volume continuum limit is well defined and predicts an IRFP.
+In both the 4- and 12-flavor systems, our improvement can remove all observable $\cO(a^2)$ effects, despite the dramatically different IR dynamics.
+We conclude with some comments on other systems where improved gradient flow step scaling may profitably be applied.

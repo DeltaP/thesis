@@ -1,2 +1,31 @@
-%4.1
-%Running Coupling
+% 4.1
+% Introduction
+
+In recent years, many groups have initiated lattice investigations of strongly-coupled gauge--fermion systems beyond QCD.
+While the ultimate goal of these efforts is to explore potential new physics beyond the standard model, an essential step is to improve our theoretical understanding of the basic properties of these non-perturbative systems.
+Here we study the renormalization group properties of SU(3) gauge theories with $N_f = 8$ and 12 nearly-massless fermions in the fundamental representation, through the Monte Carlo Renormalization Group (MCRG) two-lattice matching technique.
+This is one of several complementary analyses we are currently carrying out, two more of which (investigating Dirac eigenmode scaling and finite-temperature transitions) are discussed in other contributions to these proceedings~\cite{Hasenfratz:2012fp, Schaich:2012fr}.
+Recent references on SU(3) gauge theories with $N_f = 8$ and 12 include~\cite{Fodor:2012uw, Fodor:2012et, Aoki:2012eq, Deuzeman:2012ee, Lin:2012iw}; earlier works are reviewed in \refcite{Giedt:2012LAT}.
+
+In Refs.~\cite{Hasenfratz:2011xn, Hasenfratz:2011np}, one of us studied MCRG two-lattice matching for the 12-flavor system with nHYP-smeared staggered actions very similar to those we use here.
+Our gauge action includes both fundamental and adjoint plaquette terms, with coefficients related by $\be_A = -0.25\be_F$.
+The negative adjoint plaquette term lets us avoid a well-known spurious ultraviolet fixed point caused by lattice artifacts, and implies $\be_F = 12 / g^2$ at the perturbative level.
+In our fermion action, we use nHYP smearing with parameters $(0.5, 0.5, 0.4)$, instead of the $(0.75, 0.6, 0.3)$ used by Refs.~\cite{Hasenfratz:2011xn, Hasenfratz:2011np}.
+By changing the nHYP-smearing parameters in this way, we can access stronger couplings without encountering numerical problems.
+At such strong couplings, for both $N_f = 8$ and $N_f = 12$ we observe a lattice phase in which the single-site shift symmetry (``$S^4$'') of the staggered action is spontaneously broken (``$\Sb$'')~\cite{Cheng:2011ic, Schaich:2012fr}.\footnote{\refcite{Deuzeman:2012ee} recently interpreted the \Sb lattice phase in terms of relevant next-to-nearest neighbor interactions.}
+In this work we only investigate couplings weak enough to avoid the \Sb lattice phase.
+
+In the next section, we review how the MCRG two-lattice matching technique determines the step-scaling function $s_b$ in the bare parameter space.
+Although working entirely with bare parameters would be disadvantageous if our aim were to produce renormalized phenomenological predictions for comparison with experiment, our current explorations of the phase structures of the 8- and 12-flavor systems benefit from this fully non-perturbative RG approach, especially for relatively strong couplings.
+In \secref{sec:MCRGresults} we present our results from the traditional MCRG two-lattice matching technique.
+While our 8-flavor $s_b$ is significantly different from zero, for $N_f = 12$ we observe $s_b \lsim 0$ for $\be_F < 8$, indicating an infrared fixed point (IRFP).
+
+We emphasize that while the existence of an IRFP is physical (scheme-independent), the coupling at which it is located depends on the choice of renormalization scheme.
+A limitation of traditional MCRG two-lattice matching is the need to optimize the RG blocking transformation separately for each lattice coupling $\be_F$.
+As we explain below, this optimization forces us to probe a different renormalization scheme for each $\be_F$, so that the bare step-scaling function we obtain is a composite of many different discrete \be functions.
+
+To address this issue, in \secref{sec:WMCRG} we propose a new, improved procedure that predicts a bare step-scaling function corresponding to a unique \be function.
+This improved procedure applies the Wilson flow~\cite{Narayanan:2006rf, Luscher:2010iy} to the lattice system before performing the RG blocking transformation.
+Because the Wilson flow moves the system in the infinite-dimensional space of lattice-action terms without changing the lattice scale, we can use it to approach the renormalized trajectory corresponding to a fixed RG blocking transformation.
+By optimizing the flow time $t_f$ at each coupling, all with the same renormalization scheme, we can carry out the two-lattice matching without a need for further optimization.
+We present some promising but preliminary results of this approach in \secref{sec:WMCRGresults}.

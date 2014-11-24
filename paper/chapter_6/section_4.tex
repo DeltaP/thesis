@@ -1,0 +1,49 @@
+% 6.4
+% 12 Flavor Results
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[height=3 in]{\cnum{6}/fig/12flav_6-12-24_3lm}
+  \caption{The bare step-scaling function $s_b$ predicted by three-lattice matching with $6^4$, $12^4$ and $24^4$ lattices blocked down to $3^4$, comparing three different renormalization schemes.  The error bars come from the standard deviation of predictions using the different observables discussed in \protect\secref{sec:mcrg}.}
+  \label{fig:24to3}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[height=3 in]{\cnum{6}/fig/12flav_8-16-32_44_as_3lm}
+  \caption{As in \protect\fig{fig:24to3}, the bare step-scaling function $s_b$ for three different renormalization schemes from three-lattice matching, now using $8^4$, $16^4$ and $32^4$ lattices blocked down to $4^4$.}
+  \label{fig:32to4}
+\end{figure}
+
+Our WMCRG results for the 12-flavor system are obtained on gauge configurations generated with exactly massless fermions.
+Our lattice action uses nHYP-smeared staggered fermions as described in \refcite{Cheng:2011ic}, and to run with $m = 0$ we employ anti-periodic boundary conditions in all four directions.
+All of our analyses are carried out at couplings weak enough to avoid the unusual strong-coupling ``$\Sb$'' phase discussed by Refs.~\cite{Cheng:2011ic, Hasenfratz:2013uha}.
+
+We perform three-lattice matching with volumes $6^4$--$12^4$--$24^4$ and $8^4$--$16^4$--$32^4$.
+Three-lattice matching is based on two sequential two-lattice matching steps, to minimize finite-volume effects~\cite{Hasenfratz:2011xn}.
+Both two-lattice matching steps are carried out on the same final volume $V_f$.
+We denote the number of blocking steps on the largest volume by $n_b$, and tune the length of the initial Wilson flow by requiring that the last two blocking steps predict the same step-scaling function.
+Using the $8^4$--$16^4$--$32^4$ data we determine the bare step-scaling function for $n_b = 3$ and $V_f = 4^4$ as well as $n_b = 4$ and $V_f = 2^4$, while the $6^4$--$12^4$--$24^4$ data set is blocked to a final volume $V_f = 3^4$ ($n_b = 3$).
+This allows us to explore the effects of both the final volume and the number of blocking steps.
+We investigate three renormalization schemes by changing the HYP smearing parameters in our blocking transformation~\cite{Petropoulos:2012mg}: scheme~1 uses smearing parameters (0.6, 0.2, 0.2), scheme~2 uses (0.6, 0.3, 0.2) and scheme~3 uses (0.65, 0.3, 0.2).
+
+Figs.~\ref{fig:24to3}, \ref{fig:32to4} and \ref{fig:scheme1} present representative results for 12 flavors.
+All of the bare step-scaling functions clearly show $s_b = 0$, signalling an infrared fixed point, for every $n_b$, $V_f$ and renormalization scheme.
+Appropriately for an IR-conformal system, the location of the fixed point is scheme dependent.
+We observe that the fixed point moves to stronger coupling as the HYP smearing parameters in the RG blocking transformation increase.
+
+When we block our $8^4$, $16^4$ and $32^4$ lattices down to a final volume $V_f = 2^4$ (corresponding to $n_b = 4$), the observables become very noisy, making matching more difficult.
+The problem grows worse as the HYP smearing parameters increase, and our current statistics do not allow reliable three-lattice matching for $V_f = 2^4$ in schemes~2 and 3.
+To resolve this issue, we are accumulating more statistics in existing $32^4$ runs, and generating additional $32^4$ ensembles at more values of the gauge coupling $\be_F$.
+These additional data will also improve our results for scheme~1, which we show in \fig{fig:scheme1}.
+Different volumes and $n_b$ do not produce identical results in scheme~1, suggesting that the corresponding systematic effects are still non-negligible.
+We can estimate finite-volume effects by comparing $n_b = 3$ with $V_f = 3^4$ and $V_f = 4^4$.
+Systematic effects due to $n_b$ can be estimated from $n_b = 4$ and $V_f = 2^4$, but this is difficult due to the noise in the $2^4$ data.
+Even treating the spread in the results shown in \fig{fig:scheme1} as a systematic uncertainty, we still obtain a clear zero in the bare step-scaling function, indicating an IR fixed point.
+
+\begin{figure}[th]
+  \centering
+  \includegraphics[height=3 in]{\cnum{6}/fig/12flav_8-16-32_3lm_22}
+  \caption{The bare step-scaling function $s_b$ for scheme~1, comparing three-lattice matching using different volumes: $6^4$, $12^4$ and $24^4$ lattices blocked down to $3^4$ (black $\times$s) as well as $8^4$, $16^4$ and $32^4$ lattices blocked down to $4^4$ (blue bursts) and $2^4$ (red crosses).}
+  \label{fig:scheme1}
+\end{figure}

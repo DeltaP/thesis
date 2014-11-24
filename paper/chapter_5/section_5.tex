@@ -1,0 +1,20 @@
+% 5.5
+% Summary
+
+We have considered step scaling based on the gradient flow renormalized coupling, introducing a non-perturbative $\cO(a^2)$ improvement that removes, or at least greatly reduces, leading-order cut-off effects.
+This phenomenological improvement increases our control over the extrapolation to the infinite-volume continuum limit, as we demonstrated first for the case of SU(3) gauge theory with $N_f = 4$ massless staggered fermions.
+Turning to $N_f = 12$, we found that the continuum limit was well defined and predicted an infrared fixed point even without improvement.
+Applying our proposed improvement reinforced this conclusion by removing all observable $\cO(a^2)$ effects.
+For the finite-volume gradient flow renormalization scheme defined by $c = 0.2$, we find the continuum conformal fixed point to be located at $\gstar = 6.18(20)$.
+
+The 12-flavor system has been under investigation for some time, and other groups have studied its step scaling function~\cite{Lin:2012iw, Appelquist:2007hu, Appelquist:2009ty, Itou:2012qn}.
+However, this work is the first to observe an IRFP in the infinite-volume continuum limit.
+There are likely several factors contributing to this progress.
+While we did not invest more computer time than other groups, we have employed a well-designed lattice action.
+The adjoint plaquette term in our gauge action moves us farther away from a well-known spurious fixed point, while nHYP smearing allows us to simulate at relatively strong couplings.
+The gradient flow coupling itself appears to be a significant improvement over other schemes,\footnote{C.-J.~D.~Lin has told us about dramatic improvements in auto-correlations when using the gradient flow coupling compared to the twisted Polyakov loop coupling of \refcite{Lin:2012iw}.} and our non-perturbative improvement also contributes to obtaining more reliable continuum extrapolations.
+
+Our non-perturbative improvement is general and easy to use in other systems.
+It does not rely on the lattice action or fermion discretization, though we suspect that the improvement may not be effective if there are $\cO(a)$ artifacts, e.g.\ for unimproved Wilson fermions.
+Since $\cO(a)$-improved lattice actions are standard, this does not appear to be a practical limitation.
+We look forward to seeing our proposal applied both to QCD and to other conformal or near-conformal systems.

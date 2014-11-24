@@ -1,0 +1,48 @@
+% 5.3
+% 4 Flavor Test
+
+\begin{figure}[btp]
+  \centering
+  \includegraphics[width=0.75\linewidth]{\cnum{5}/fig/dg_nf4_c025_22}
+  \caption{\label{fig:Nf4} Continuum extrapolations of the discrete $\be_{\rm lat}$ function of the $N_f = 4$ system at $\gtc(L) = 2.2$ with several different values of the $t$-shift coefficient $\tau_0$.  The dotted lines are independent linear fits at each $\tau_0$, which predict a consistent continuum value.}
+\end{figure}
+\begin{figure}[btp]
+  \centering
+  \includegraphics[width=0.75\linewidth]{\cnum{5}/fig/dg_nf4_c025_many}
+  \caption{\label{fig:Nf4_many} Continuum extrapolations of the discrete $\be_{\rm lat}$ function of the $N_f = 4$ system for several different $\gtc(L)$ values.  For $\gtc(L) = 1.8$, 2.2 and 2.6 $\tau_0 = -0.02$ is near-optimal, while the larger couplings $\gtc(L) = 3.0$ and 3.4 require $\tau_0 = -0.01$ to remove most $\cO(a^2)$ effects.  The colored points at $(a / L)^2 = 0$ are the continuum extrapolated results, while the black crosses at $(a / L)^2 = 0$ show the corresponding two-loop perturbative predictions.}
+\end{figure}
+
+We illustrate the $t$-shift improvement with the $N_f = 4$ SU(3) system.
+This theory was recently studied by refs.~\cite{Fodor:2012td, Fodor:2012qh} using gradient flow step scaling with staggered fermions.
+The 4-flavor SF running coupling was previously considered in \refcite{Tekin:2010mm} using $\cO(a)$-improved Wilson fermions, and in \refcite{PerezRubio:2010ke} using staggered fermions.
+In our calculations we use nHYP-smeared~\cite{Hasenfratz:2001hp, Hasenfratz:2007rf} staggered fermions and a gauge action that includes an adjoint plaquette term in order to move farther away from a well-known spurious fixed point in the adjoint--fundamental plaquette plane~\cite{Cheng:2011ic}.
+As in \refcite{Fodor:2012td} we impose anti-periodic BCs in all four directions, which allows us to carry out computations with exactly vanishing fermion mass, $m = 0$.
+For the discrete \be function we consider the scale change $s = 3 / 2$ and compare lattice volumes $12^4 \to 18^4$, $16^4 \to 24^4$ and $20^4 \to 30^4$.
+We accumulated 500--600 measurements of the gradient flow coupling, with each measurement separated by 10 molecular dynamics time units (MDTU), at 7--8 values of the bare gauge coupling on each volume.
+We consider the $c = 0.25$ scheme, as opposed to $c = 0.3$ used in \refcite{Fodor:2012td}, because smaller $c$ gives better statistics at the expense of larger lattice artifacts.
+As discussed above, we aim to reduce these lattice artifacts through the non-perturbative improvement we have introduced.
+We follow the fitting procedure described in \refcite{Tekin:2010mm}.
+
+Full details of this study will be presented in \refcite{Cheng:2014}.
+Here we provide a representative illustration of the $t$-shift optimization.
+Figure~\ref{fig:Nf4} shows the dependence of the discrete \be function on $(a / L)^2$ when $\gtc(L) = 2.2$ with several values of the $t$-shift parameter $\tau_0$.
+The red triangles correspond to no improvement, $\tau_0 = 0$.
+The data are consistent with linear dependence on $a^2$ and extrapolate to 0.262(17), about $2\sigma$ below the two-loop perturbative value of 0.301.
+The slope of the extrapolation is already rather small, $b = 11(3)$.
+By adding a small shift this slope can be increased or decreased.
+With $\tau_0 = -0.02$ no $\cO(a^2)$ effects can be observed -- the corresponding slope is $b = 1.5(3.1)$ -- and we identify this value as near the optimal $\topt$.
+The data at different $\tau_0$ extrapolate to the same continuum value, even when the slope $b$ is larger than that for $\tau_0 = 0$.
+This is consistent with the expectation that the $t$-shift changes the $\cO(a^2)$ behavior of the system but does not affect the continuum limit.
+Since our action produces relatively small $\cO(a^2)$ corrections even without improvement, the $t$-shift optimization has little effect on the continuum extrapolation, though the consistency between different values of $\tau_0$ is reassuring.
+
+It is interesting that the cut-off effects in our unimproved results, characterized by the slope $b$ of the red triangles in \fig{fig:Nf4}, are more than three times smaller than those shown in fig.~4 of \refcite{Fodor:2012td}.
+This difference grows to about a factor of four when we consider the larger $c = 0.3$ used in that study, suggesting that the $t$-shift optimization could have a more pronounced effect with the action used in \refcite{Fodor:2012td}.
+The cause of the reduced lattice artifacts with our action is not obvious.
+Both our action and that used by \refcite{Fodor:2012td} are based on smeared staggered fermions, though we use different smearing schemes.
+The different smearing might have an effect, as might the inclusion of the adjoint plaquette term in our gauge action.
+This question is worth investigating in the future.
+
+In principle \topt could be different at different \gc couplings but in practice we found little variation.
+Figure~\ref{fig:Nf4_many} shows near-optimal continuum extrapolations of the discrete \be function at several values of $\gtc(L)$.
+At each $\gtc(L)$ the continuum extrapolated result is consistent within $\sim$$2\sigma$ with the two-loop perturbative prediction, denoted by a black cross in \fig{fig:Nf4_many}.
+Comparable consistency with perturbation theory was found in previous studies~\cite{Tekin:2010mm, PerezRubio:2010ke, Fodor:2012td, Fodor:2012qh}.

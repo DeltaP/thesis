@@ -1,25 +1,53 @@
-% 5.3
-% Monte Carlo Renormaliztion Group
+% 4.3
+% 8 and 12 Flavor Results
 
-\subsection{Blocking}
-In a lattice simulation the quantities stored in the computer are the link variables.
-The link variable $U_{n,\mu}$ encodes the gauge field at sight $n$ in all four $\hat{\mu}$ directions.
-A MCRG blocking step is a transformation that takes two links $U_{n,\mu}$ and $U_{n+\hat{\mu},\mu}$ and creates one link with twice the lattice spacing of the initial two links.
-\begin{figure}[h]
+\subsection{8 Flavors}
+
+\subsection{12 Flavors}
+
+\subsection{The Case of the Wandering Fixed Point}
+
+
+As in Refs.~\cite{Hasenfratz:2011xn, Hasenfratz:2011np}, we use RG blocking transformations that include two sequential HYP smearings with parameters $(\al, 0.2, 0.2)$, and optimize \al as shown in the left panel of \fig{fig:opt}.
+Qualitatively, this optimization finds the renormalization scheme for which the renormalized trajectory passes as close as possible to the lattice system with coupling $\be_F$.
+Without optimization, residual flows in irrelevant directions can distort the results: this is the reason $\De\be_F$ changes with \al in \fig{fig:opt}, and also explains why increasing the number of blocking steps reduces this $\al$-dependence.
+
+The downside of optimizing the RG blocking transformation in this manner is that we have to use a different renormalization scheme for each $\be_F$.
+As a result, the bare step-scaling function we obtain is a composite of many different discrete \be functions.
+
+\begin{figure}[htpb]
   \centering
-  \includegraphics[height=3in]{\cnum{4}/fig/block2.png}
-  \caption{}
-  \label{fig:block2}
+  \includegraphics[width=0.45\linewidth]{\cnum{4}/fig/plots/optimization.pdf}\hfill
+  \includegraphics[width=0.45\linewidth]{\cnum{4}/fig/plots/t_optimization.pdf}
+  \caption{Examples of two-lattice matching optimization for 12-flavor systems.  Left: Optimization of the HYP-smearing parameter \al in the RG blocking transformation, for $\be_F = 5.0$.  Right: Optimization of the Wilson flow time $t_f$ with fixed $\al = 0.5$, for $\be_F = 4.5$.  In both cases, the uncertainties on the data points are dominated by averaging over the different observables as described in the text.}
+  \label{fig:opt}
 \end{figure}
-The blocked lattice will have a factor of $2^N$ less links than the original lattice.
-In four dimensions this means that an observable such as a Wilson loop will have a factor of 16 less statistics on the blocked lattice compared to the original lattice.
-Fortunately, on an $N$ dimensional hyper cubic lattice there are $2^N$ unique ways to perform this blocking.
-Therefore in four dimensions there are 16 unique blocking configurations.
-We can preserve statistics in our calculation by performing all of the unique blockings and averaging all of the observalbes from those blockings together.
-Additionally we store the blocked links on a lattice of the original cardinality using offsets as shown in \ref{fig:block2}.
 
-The blocked links have a lattice spacking of twice the original lattice, $a' = 2a$ such that the physical size of the box has not been changed.
+\subsection{\label{sec:MCRGresults}Traditional MCRG} % Draft complete
+Our results for the bare step-scaling function $s_b$ from traditional MCRG two-lattice matching are shown in \fig{fig:MCRG}.
+On the largest $24^3\X48$ lattices that we use in this current study, we work with fermion masses $m = 0.0025$ to stay near the $m = 0$ critical surface.
+Under RG blocking with scale factor $s$, the fermion mass changes as $s^{1 + \ga_m}$ where $\ga_m$ is the mass anomalous dimension.
+Therefore we use $m = 0.01$ on $12^3\X24$ and $m = 0.02$ on $6^3\X12$ lattices.
+We have explicitly checked that these masses are small enough to introduce only negligible finite-mass effects, by generating lattices with $m = 0$ for some points and obtaining indistinguishable results.
 
+While our 8-flavor results for $s_b$ are significantly different from zero for all couplings we can explore, for $N_f = 12$ we find $s_b \lsim 0$ for $\be_F < 8$, indicating an IRFP.
+Recall that our optimization of the RG blocking transformation means that we use a different renormalization scheme for each coupling $\be_F$, so these bare step scaling functions are composites of several different discrete \be functions.
+For example, with $N_f = 12$ at $5 \leq \be_F \leq 6$, our optimization selects renormalization schemes with the fixed point near $\be_F$, so that $s_b$ is roughly consistent with zero over an extended range.
+Both our $N_f = 8$ and 12 simulations encounter the \Sb lattice phase at strong coupling, where we cannot perform matching.
+As in Refs.~\cite{Hasenfratz:2011xn, Hasenfratz:2011np}, we do not explore weak enough couplings to recover the two-loop perturbative predictions $s_b \approx 0.6$ (0.3) for $N_f = 8$ (12).
 
+As mentioned above, the error bars shown in \fig{fig:MCRG} are dominated by the spread in results from matching four-, six- and eight-link loops.
+Each of these observables can predict a different optimal $\al$, and for fixed \al each can predict a different $\De\be_F$.
+Preliminary results presented at the conference determined uncertainties from the full spread of optimal \al predicted by the different observables.
+Here, instead, we average $\De\be_F$ for the different observables at fixed $\al$, and use these combined data to optimize \al and find the associated uncertainties.
 
+\begin{figure}[htpb]
+  \includegraphics[width=0.45\linewidth]{\cnum{4}/fig/plots/8flavor.pdf}\hfill
+  \includegraphics[width=0.45\linewidth]{\cnum{4}/fig/plots/12flavor.pdf}
+  \caption{Results for the bare step-scaling function $s_b$ from traditional MCRG two-lattice matching with $24^3\X48$, $12^3\X24$ and $6^3\X12$ lattice volumes, for $N_f = 8$ (left) and $N_f = 12$ (right).  The blue dashed lines are perturbative predictions for asymptotically weak coupling.}
+  \label{fig:MCRG}
+\end{figure}
+We have proposed a new, improved MCRG two-lattice matching procedure that uses the Wilson flow to eliminate the need for optimization of the RG blocking transformation.
+Both traditional MCRG and Wilson-flowed MCRG produce bare step scaling functions $s_b$ that indicate an infrared fixed point for SU(3) gauge theory with $N_f = 12$ fundamental fermions, while $s_b$ for $N_f = 8$ is significantly different from zero in the accessible range of lattice couplings.
+The results obtained by combining the Wilson flow with two-lattice matching correspond to a unique \be function, unlike $s_b$ from traditional MCRG, which is a composite of many different discrete \be functions.
 

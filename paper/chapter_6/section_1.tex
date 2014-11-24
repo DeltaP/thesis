@@ -1,16 +1,23 @@
-% 5.1
-% MCRG Results
+% 6.1
+% Introduction
 
-The renormalization group has been used to study the SU(3) $N_f = 12$ system already [cite anna].
-These results show that the theory is clearly conformal.
-The action used in these simulations is ...
-As part of a greater effort to study this system further we changed our action to reach stronger coupling.
-In this section I will present our results using MCRG with the changed action.
+For the past several years many lattice groups have been involved in studying strongly-coupled near-conformal gauge--fermion systems.
+Some of these models may be candidates for new physics beyond the standard model, while others are simply interesting non-perturbative quantum field theories.
+Because the dynamics of these lattice systems are unfamiliar, it is important to study them with several complementary techniques.
+Not only does this allow consistency checks, it can also provide information about the most efficient and reliable methods to investigate near-conformal lattice theories.
 
-\subsection{The Simulation}
-To achieve stronger coupling we use a different lattice action.  
-This action has [details about action]
+Monte Carlo Renormalization Group (MCRG) two-lattice matching is one of several analysis tools that we are using to investigate SU(3) gauge theories with many massless fermion flavors.
+This technique predicts the step-scaling function $s_b$ in the bare parameter space.
+In a previous work~\cite{Petropoulos:2012mg} we proposed an improved MCRG method that exploits the Wilson flow to obtain a bare step-scaling function that corresponds to a unique discrete \be function.
+We briefly review our Wilson-flow-optimized MCRG (WMCRG) procedure in Sections~\ref{sec:mcrg}--\ref{sec:wmcrg}.
+It is important to note that we are investigating a potential infrared fixed point (IRFP) where the coupling is irrelevant: its running slows and eventually stops.
+This is challenging to distinguish from a near-conformal system where the gauge coupling runs slowly but does not flow to an IRFP.
+The observation of a backward flow that survives extrapolation to the infinite-volume limit could provide a clean signal.
+In \secref{sec:results} we report WMCRG results for SU(3) gauge theory with $N_f = 12$ flavors of massless fermions in the fundamental representation.
 
-
-
-
+This 12-flavor model has been studied by many groups, including Refs.~\cite{Appelquist:2009ty, Deuzeman:2009mh, Fodor:2011tu, Appelquist:2011dp, Hasenfratz:2011xn, DeGrand:2011cu, Cheng:2011ic, Jin:2012dw, Lin:2012iw, Aoki:2012eq, Fodor:2012uw, Fodor:2012et, Itou:2012qn, Cheng:2013eu, Aoki:2013pca, Hasenfratz:2013uha, Hasenfratz:2013eka, Cheng:2013bca}.
+Using new ensembles of 12-flavor gauge configurations generated with exactly massless fermions, our improved WMCRG technique predicts a conformal IRFP where the step-scaling function vanishes.
+As with every method, it is essential to study the systematic effects.
+For WMCRG the most important systematic effects are due to the finite volume and limited number of blocking steps.
+While we are not able to carry out a rigorous infinite-volume extrapolation, the observed zero of the bare step-scaling function is present for all investigated lattice volumes and renormalization schemes, and agrees with the earlier MCRG results of \refcite{Hasenfratz:2011xn}.
+The results of our complementary $N_f = 12$ investigations of finite-temperature phase transitions~\cite{Schaich:2012fr, Hasenfratz:2013uha}, the Dirac eigenmode number~\cite{Cheng:2013eu, Cheng:2013bca}, and finite-size scaling~\cite{Hasenfratz:2013eka} are also consistent with the existence of an infrared fixed point and IR conformality.

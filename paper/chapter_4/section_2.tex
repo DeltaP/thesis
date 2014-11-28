@@ -1,6 +1,8 @@
 % 4.2
 % Method
 
+In this section I will discuss the basic procedure for MCRG.
+
 \subsection{Blocking}
 In a lattice simulation the quantities stored in the computer are the link variables.
 The link variable $U_{n,\mu}$ encodes the gauge field at sight $n$ in all four $\hat{\mu}$ directions.
@@ -19,11 +21,17 @@ We can preserve statistics in our calculation by performing all of the unique bl
 Additionally we store the blocked links on a lattice of the original cardinality using offsets as shown in \ref{fig:block2}.
 
 The blocked links have a lattice spacking of twice the original lattice, $a' = 2a$ such that the physical size of the box has not been changed.
-
+This effectively integrates out the ultraviolet degrees of freedom.
+As we integrate out the UV we move towards the renormalized trajectory.
+In our blocking step we also apply a nHYP smearing step.
+The smearing step chooses the renormalized trajectory that we will flow to under sucessive blockings.
+If we start with an infitinte volume it would the choice of nHYP parameters would be of little consequence because we could block our system an infitinte number of times until we reach the renormalized trajectory.
+Unfortunatley in the real world we are not afforded that luxury.
+It is necessary to choose a smearing that gaurantees you reach the renormalized trajectory, more on this in the next section.
 
 \subsection{Two-lattice matching procedures and the need for optimization} % Draft complete
 Two-lattice matching is most easily described in the context of confining systems, where it locates pairs of couplings $(\be_F, \be_F')$ for which lattice correlation lengths obey $\xi(\be_F) = 2\xi(\be_F')$.
-We proceed by repeatedly applying RG blocking transformations (with scale factor $s = 2$) to lattices of volume $24^3\X48$, $12^3\X24$ and $6^3\X12$.\footnote{We are currently generating larger lattices up to $32^3\X64$, which will permit additional consistency checks.}
+We proceed by repeatedly applying RG blocking transformations (with scale factor $s = 2$) to lattices of volume $24^3\X48$, $12^3\X24$ and $6^3\X12$.
 Under RG blocking on the $m = 0$ critical surface, the system flows toward the renormalized trajectory in irrelevant directions, and along it in the relevant direction.
 By blocking the larger lattices (with $\be_F$) $n_b$ times and the smaller lattices (with $\be_F'$) only $n_b - 1$ times, we obtain blocked systems with the same lattice volume.
 If these blocked systems have both flowed to the same point on the renormalized trajectory, then we can conclude that $\xi(\be_F) = 2\xi(\be_F')$ on the unblocked systems, as desired.
@@ -31,6 +39,7 @@ If these blocked systems have both flowed to the same point on the renormalized 
 We determine whether the blocked systems have flowed to the same point on the renormalized trajectory by matching several short-range gauge observables: the plaquette, all three six-link loops, and two planar eight-link loops.
 For a given $\be_F$, each observable may predict a different $\De\be_F \equiv \be_F - \be_F'$.
 The spread in these results is a systematic error that dominates our uncertainties.
+In principal more observables can be added, our choices are limited by the final volume of the blocked lattice.
 
 In an IR-conformal system, the gauge coupling that is relevant at the perturbative gaussian FP becomes irrelevant at the IRFP.
 The renormalized trajectory connects these two fixed points.
@@ -43,13 +52,10 @@ In all published studies that report an IRFP, backward flow has only been observ
 
 Since we can block our lattices only a few times, we must optimize the two-lattice matching by requiring that consecutive RG blocking steps yield the same $\De\be_F$.
 We identify the optimized $\De\be_F$ with the bare step-scaling function $s_b$.
-In the following subsections, we describe two different ways to perform this optimization.
+In the following subsection, I describe how we perform this optimization.
 The traditional technique optimizes the RG blocking transformation (renormalization scheme).
-The new method we propose in \secref{sec:WMCRG} instead applies the Wilson flow to the lattice system prior to RG blocking, and optimizes the flow time $t_f$.
+The new method we propose in \secref{ch:WMCRG} instead applies the Wilson flow to the lattice system prior to RG blocking, and optimizes the flow time $t_f$.
 
-%First, we note that finite-volume effects are minimized by carrying out the optimization on blocked lattices of the same volume, which was reported by \refcite{Hasenfratz:2011xn}.
-%That is, we should compare $\De\be_F$ from matching $12^3\X24$ blocked to $3^3\X6$ vs.\ $6^3\X12$ blocked to $3^3\X6$ with that from matching $24^3\X48$ blocked to $3^3\X6$ vs.\ $12^3\X24$ blocked to $3^3\X6$.
+We note that finite-volume effects are minimized by carrying out the optimization on blocked lattices of the same volume, which was reported by \refcite{Hasenfratz:2011xn}.
+That is, we should compare $\De\be_F$ from matching $12^3\X24$ blocked to $3^3\X6$ vs.\ $6^3\X12$ blocked to $3^3\X6$ with that from matching $24^3\X48$ blocked to $3^3\X6$ vs.\ $12^3\X24$ blocked to $3^3\X6$.
 %However, the error introduced by matching $24^3\X48$ blocked to $6^3\X12$ vs.\ $12^3\X24$ blocked to $3^3\X6$ instead of generating $6^3\X12$ lattices is not severe, and our preliminary results in \secref{sec:WMCRGresults} will omit the finite-volume correction.
-% ------------------------------------------------------------------
-
-

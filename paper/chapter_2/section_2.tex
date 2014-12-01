@@ -1,14 +1,54 @@
 % 2.2
 % Higgs Mechanism
 
-In the standard model the $W^{\pm}$ and Z bosons are massive but the photon is massless.
+In the standard model the $W^{\pm}$ and $Z$ bosons are massive but the photon is massless.
 Since gauge invariance dictates that a mass term is forbidden in the Lagrangian this seems to pose a problem.
 Disaster is averted because $SU(2)_WxU(1)_Y$ is spontaneously broken to $U(1)_{EM}$.
 In the standard model this is accomplished by adding a complex scalar doublet field to the theory.
 The field is named the Higgs field after one of its discoverers.
-The Higgs field is charged under electroweak interactions.
-Through the electroweak breaking the Higgs field aquires a VEV which allows the W and Z to gain a mass.
-Additionally the Higgs field allows the fermions in the standard model to acquire a mass by coupling to the Higgs field via Yukawa couplings.
+The following discussion shows how electroweak symmetry breaking is facilitated by the Higgs \cite{ds 52, 53, peskin}.
+
+Lets introduce a complex elementary scalar doublet $\Phi=\left(\begin{matrix}\phi^+\\\phi_0\end{matrix}\right)$ that transforms in the (1,2,$\frac{1}{2}$) representation of $SU(3)_c\times SU(2)_L\times U(1)_Y$.
+We allow all terms in the Lagrangian that have mass dimension $\leq 4$, thus ignoring irrelevant operators,
+\begin{equation}
+  \Lagr_H=(D_\mu\Phi)^\dagger(D^\mu\Phi)+\mu^2\Phi^\dagger\Phi-|\lambda|(\Phi^\dagger\Phi)^2,
+\end{equation}
+with covariant derivative
+\begin{equation}
+  D_\mu\Phi=(\partial_\mu-igA^a_\mu\tau^a-\frac{ig'}{2}B_\mu)\Phi.
+\end{equation}
+$A^a_\mu$ and $B_\mu$ are the $SU(2)$ and $U(1)$ gauge bosons respectively.
+The coupling constant $g$ belongs to $SU(2)$ and the coupling constant $g'$ belongs to $U(1)$.
+Finally $\tau^a$ are the generators of $SU(2)$ and are related to the Pauli matrices
+\begin{equation}
+  \tau^a=\frac{1}{2}\sigma^a.
+\end{equation}
+
+We can now identify the potential $V(\Phi)$ as
+\begin{equation}
+  V(\Phi)=-\mu^2\Phi^\dagger\Phi+|\lambda|(\Phi^\dagger\Phi)^2,
+\end{equation}
+this potential is shown in figure \ref{fig:higgspot}.
+As long as $\mu^2$ is positive the potential has a spontaneously broken symmetry.
+Gauge invariance allows us to choose the vacuum state to correspond to the vacuum expectation value
+\begin{equation}
+  \left<\Phi\right>_0=\frac{\nu}{\sqrt{2}}\left(\begin{matrix}0 \\ \nu\end{matrix}\right),
+\end{equation}
+where $\nu=\sqrt{\frac{\mu^2}{|\lambda|}}$.
+Moreover, $\nu$ is related to the Fermi constant, $G_F$, by
+\begin{equation}
+  \nu=\frac{1}{\sqrt{\sqrt{2}G_F}}\approx 246 \mbox{ GeV}.
+\end{equation}
+
+A complete gauge transformation in this theory is
+\begin{equation}
+  \Phi\rightarrow e^{i\alpha^a(x)\tau^a}e^{i\beta(x)/2}\Phi.
+\end{equation}
+Through a clever choice of $\alpha^1=\alpha^2=0$ and $\alpha^3=\beta$ we see that $\left<\Phi\right>$ is invariant.
+Therefore the theory still contains an unbroken U(1) symmetry which we identify with electromagnetism.
+
+
+
 
 
 The Higgs Boson, a particle excitations of the Higgs field, was recently discovered at the Large Hadron Collider (LHC).

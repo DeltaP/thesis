@@ -2,60 +2,223 @@
 % Method
 
 In this section I will discuss the basic procedure for MCRG.
+MCRG is a real space renormalization group technique that can be used to study the critical properties of statistical systems.
+The idea was first proposed by Kadanoff however it wasn't until Wilson's work that it became a well defined quantitative technique.
+The process of MCRG can be broken into two primary steps:
+\begin{enumerate}
+  \item Blocking
+  \item Matching
+\end{enumerate}
+Blocking integrates out the UV fluctuations, exposing the IR dynamics.
+Matching allows us to match pairs of couplings in such a way that we can measure the bare step scaling function.
+The steps scaling function is the discrete analog of the beta function in the continuum.
+In general it is possible to recover the beta function from the step scaling function.
+However, for our purposes this is not important.
+Our goal is to determine whether or not a particular theory is conformal in the IR.
+As long as strong enough couplings are studied the IRFP will be visible in both the bare step scaling function and the renormalized beta function.
+
+In the Wilsonian picture, couplings are characterized by their engineering dimension.
+In a four dimensional theory, a coupling is relevant if its engineering dimension is less than four.
+The coupling is marginal if its engineering dimension is equal to four and irrelevant if the engineering dimension is greater than four.
+The RG flow of the system is governed by fixed points and the renormalized trajectory.
+Additionally fixed points can be attractive or repulsive.
+A repulsive fixed point will push the RG flow along relevant directions.
+This flow characterizes the renormalized trajectory.
+Flow in irrelevant directions will always be directed towards the renormalized trajectory.
+Finally flow along the renormalized trajectory will always flow into attractive fixed points.
+In theories with multiple fixed points, the renormalized trajectory connects the fixed points in coupling space.
+Flow from an arbitrary point in coupling space will always be towards the renormalized trajectory in irrelevant or marginal directions and along the renormalized trajectory in relevant directions.
+Generally the flow should be fastest in irrelevant directions.
 
 \subsection{Blocking}
-In a lattice simulation the quantities stored in the computer are the link variables.
+The first step in MCRG is to block the lattice.
+Blocking requires that the theory is defined on a regular lattice that has a discrete scaling symmetry.
+Discrete scaling symmetry, shown in \ref{fig:blocking} simply means that you can divide the sites of the lattice into regular blocks that tile the entire lattice and then replace those blocks with a single site.
+The new site can be located at a sight from the original lattice or anywhere in the block.
+The value at this site is typically computed as some function of the sites in the blocking group.
+If we perform this replacement the same way to every block in the original lattice and the lattice formed by the block variables is identical after scaling the lattice spacing $a\rightarrow a'\equiv sa$ to the original lattice then the system has discrete scaling symmetry.
+Here $s$ is a scale factor which relates the original lattice to the blocked lattice.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[height=3in]{\cnum{4}/fig/blocking.png}
+  \caption{}
+  \label{fig:blocking}
+\end{figure}
+
+The blocked lattice will have fewer sites than the original lattice.
+If the block variable has $p$ sites from the original lattice and $d$ dimensions then the relationship between the number of sites lost, the scale factor and the lattice dimension is $p=s^d$.
+Naturally the blocking process can be repeated in a recursive manner until blocking is no longer possible.
+As an example consider a $32^2$ square lattice that is being blocked by a factor $s=2$.
+Such a lattice can be blocked 4 times: $32^2 \rightarrow 16^2 \rightarrow 8^2 \rightarrow 4^2 \rightarrow 2^2$.
+Performing another blocking would result in a single point which doesn't have the same dimensionality as our initial $2-D$ lattice.
+It is clear that some starting volumes are more flexible than others.
+An $14^2$ lattice can only be blocked once, $14^2 \rightarrow 7^2$, $7^2$ can not be blocked with a scale factor of 2.
+
+In a lattice simulation the quantities we are interested in are the link variables.
 The link variable $U_{n,\mu}$ encodes the gauge field at sight $n$ in all four $\hat{\mu}$ directions.
 A MCRG blocking step is a transformation that takes two links $U_{n,\mu}$ and $U_{n+\hat{\mu},\mu}$ and creates one link with twice the lattice spacing of the initial two links.
+
 \begin{figure}[h]
   \centering
   \includegraphics[height=3in]{\cnum{4}/fig/block2.png}
   \caption{}
   \label{fig:block2}
 \end{figure}
-The blocked lattice will have a factor of $2^N$ less links than the original lattice.
+
+Employing a square blocking scheme as described above means the blocked lattice will have a factor of $2^N$ less links than the original lattice.
 In four dimensions this means that an observable such as a Wilson loop will have a factor of 16 less statistics on the blocked lattice compared to the original lattice.
 Fortunately, on an $N$ dimensional hyper cubic lattice there are $2^N$ unique ways to perform this blocking.
 Therefore in four dimensions there are 16 unique blocking configurations.
-We can preserve statistics in our calculation by performing all of the unique blockings and averaging all of the observalbes from those blockings together.
+We can preserve statistics in our calculation by performing all of the unique blocking transformations and averaging all of the observables from those blocking transformations together.
 Additionally we store the blocked links on a lattice of the original cardinality using offsets as shown in \ref{fig:block2}.
+This allows us to efficiently store a lattice blocked down to any allowable level and has the added benefit that only minor adjustments need to be made to calculate blocked observables.
 
-The blocked links have a lattice spacking of twice the original lattice, $a' = 2a$ such that the physical size of the box has not been changed.
-This effectively integrates out the ultraviolet degrees of freedom.
-As we integrate out the UV we move towards the renormalized trajectory.
-In our blocking step we also apply a nHYP smearing step.
-The smearing step chooses the renormalized trajectory that we will flow to under sucessive blockings.
-If we start with an infitinte volume it would the choice of nHYP parameters would be of little consequence because we could block our system an infitinte number of times until we reach the renormalized trajectory.
-Unfortunatley in the real world we are not afforded that luxury.
-It is necessary to choose a smearing that gaurantees you reach the renormalized trajectory, more on this in the next section.
+Lets consider how blocking will effect a lattice model with $d$ dimensions and action $S(K_i)$.
+Here $K_i$ are the set of all possible couplings in the action.
+In lattice simulations only a small number of these couplings are actually tuned.
+The system is characterized by one or more length scales i.e. the correlation length $\xi$.
+After blocking, the links have a lattice spacing scaled by $s$, $a' = sa$ such that the physical size of the box has not been changed.
+This removes the UV fluctuations below the length scale $sa$.
+Because the UV modes have been integrated out the blocked lattice is described by a new action $S'$ with a new set of couplings $K_i^{n_b}$ where $n_b$ is the number of blocking steps.
+As long as $s$ is smaller than the lattice correlation length the infrared properties of the system are unaffected.
+Successive blocking steps will define a flow in coupling space:
+\begin{equation}
+  K_i^{(0)}\rightarrow K_i^{(1)}\rightarrow K_i^{(2)} \rightarrow ... \rightarrow K_i^{{(n_b})},
+\end{equation}
+where $K_i^0$ denotes the couplings on the unblocked lattice.
+
+Although the physical correlation length is unchanged the lattice correlation length after $n_b$ blocking steps is scaled by
+\begin{equation}
+  \label{eqn:xi}
+  \xi^{n_b}=s^{-n}\xi^{(0)}.
+\end{equation}
+Critical fixed points exist when $\xi = \inf$ and trivial fixed points exist when $\xi = 0$.
+The scaling behavior at critical fixed points are well understood theoretically.
+Here the linearized RG transformation predicts the scaling operators and the corresponding scaling dimension.
+
+Figure \ref{fig:Kflow} visualizes the renormalization group flow that I have described for a system with one fixed point and only one relevant coupling at the fixed point, $K_0$.
+All other couplings are irrelevant and are collapsed onto the y-axis.
+The critical surface is shown in the figure is depicted at at $K_0=0$.
+A simulation point in parameter space, $p$, is chosen.
+The flow lines approach the fixed point in the irrelevant directions and flow away from the fixed point in the relevant direction.
+After some number of RG steps the irrelevant operators have died out and the system is flowing along the renormalized trajectory.
+The renormalized trajectory is uniquely determined by the RG transformation.
+
+
+Finally, in our blocking step we also apply a nHYP smearing step.
+By changing the parameters in the smearing step we can control the renormalized trajectory that we will flow to under successive blocking steps.
+If we start with an infinite volume the choice of nHYP parameters would be of little consequence because we could block our system an infinite number of times until we reach the renormalized trajectory.
+Unfortunately in the real world we are not afforded that luxury.
+It is necessary to choose a smearing that guarantees you reach the renormalized trajectory, more on this in the next section.
 
 \subsection{Two-lattice matching procedures and the need for optimization} % Draft complete
-Two-lattice matching is most easily described in the context of confining systems, where it locates pairs of couplings $(\be_F, \be_F')$ for which lattice correlation lengths obey $\xi(\be_F) = 2\xi(\be_F')$.
-We proceed by repeatedly applying RG blocking transformations (with scale factor $s = 2$) to lattices of volume $24^3\X48$, $12^3\X24$ and $6^3\X12$.
-Under RG blocking on the $m = 0$ critical surface, the system flows toward the renormalized trajectory in irrelevant directions, and along it in the relevant direction.
-By blocking the larger lattices (with $\be_F$) $n_b$ times and the smaller lattices (with $\be_F'$) only $n_b - 1$ times, we obtain blocked systems with the same lattice volume.
-If these blocked systems have both flowed to the same point on the renormalized trajectory, then we can conclude that $\xi(\be_F) = 2\xi(\be_F')$ on the unblocked systems, as desired.
+The goal of two lattice matching is to determine a series of lattice couplings, $\beta_0,\beta_1,...\beta_n,...$, with lattice spacings that differ by a factor of $s$ between consecutive points.
+That is $a(\beta_n)=a(\beta_{n-1})/s$.
+The scale change $s$ is the same scale change from the blocking discussion above.
+The process is similar to the Schr\"odinger functional method \cite{}.
+The primary difference is that MCRG is defined through bare couplings while the Schr\"odinger functional is defined through renormalized couplings.
+I denote the bare step scaling function as 
+\begin{equation}
+  s_b(\beta_n,s)=\beta_n-\beta_{n-1}.
+\end{equation}
 
-We determine whether the blocked systems have flowed to the same point on the renormalized trajectory by matching several short-range gauge observables: the plaquette, all three six-link loops, and two planar eight-link loops.
-For a given $\be_F$, each observable may predict a different $\De\be_F \equiv \be_F - \be_F'$.
-The spread in these results is a systematic error that dominates our uncertainties.
-In principal more observables can be added, our choices are limited by the final volume of the blocked lattice.
+The renormalized running coupling of theories governed by a Gaussian fixed point can be recovered with a bit of extra work.
+In weak coupling near the fixed point a renormalized coupling can be calculated.
+This coupling can be compared to a continuum regularization scheme.
+At stronger coupling a physical quantity or other quantity such as the Sommer parameter or the Wilson Flow is used to determine the lattice scale.
+Since the primary focus of this thesis is to determine the existence or lack thereof of an infrared fixed point in strong coupling I don't attempt to follow such a procedure.
+In the future finding the corresponding renormalized beta function may be of interested.
 
-In an IR-conformal system, the gauge coupling that is relevant at the perturbative gaussian FP becomes irrelevant at the IRFP.
-The renormalized trajectory connects these two fixed points.
-When RG flows approach this renormalized trajectory, the two-lattice matching can be performed and interpreted the same way as in confining systems.
-In this region the gauge coupling flows to stronger couplings, $\De\be_F > 0$ corresponding to a negative RG \be function.
-The situation is less clear at stronger couplings where we might na\"ively expect backward flow.
-If there is no ultraviolet FP in this region to drive the RG flow along a renormalized trajectory, the two-lattice matching might become meaningless.
-This issue affects every method that attempts to determine the flow of the gauge coupling in IR-conformal systems at strong coupling.
-In all published studies that report an IRFP, backward flow has only been observed in a very limited range of couplings in the immediate vicinity of the IRFP (cf.~\refcite{Giedt:2012LAT}).
+Figure \ref{fig:Kflow2lm} demonstrates how two lattice matching is performed.
+In the figure we start with two points in coupling space $p_1$ and $p_2$.
+Under successive RG transformations they flow along the lines indicated.
+If we can identify two sets of couplings that flow to the same point on the renormalized trajectory after the same number of blocking steps we know that the correlation lengths are identical.
+From equation \ref{eqn:xi} we know that if two sets of couplings flow to the same point on the renormalized trajectory, but one set of couplings required one less blocking step that the lattice correlation length differers from a factor of $s$.
+Thus we have accomplished our goal.
+We have identified two points in coupling space $p_1$ and $p_2$ with corresponding $\xi_2=\xi/s$ after $n$ and $(n-1)$ blocking steps.
 
-Since we can block our lattices only a few times, we must optimize the two-lattice matching by requiring that consecutive RG blocking steps yield the same $\De\be_F$.
-We identify the optimized $\De\be_F$ with the bare step-scaling function $s_b$.
-In the following subsection, I describe how we perform this optimization.
-The traditional technique optimizes the RG blocking transformation (renormalization scheme).
-The new method we propose in \secref{ch:WMCRG} instead applies the Wilson flow to the lattice system prior to RG blocking, and optimizes the flow time $t_f$.
+Demonstrating that the couplings are equal is equivalent to showing that the actions are identical, $S(p_1^{(n_b)})=S(p_2^{(n_{b-1})})$.
+Calculating the blocked action is extremely challenging.
+We are saved because we don't need to know the exact form of the actions to demonstrate that they are equivalent.
+Instead we can show that expectation values of every operator measured on $p_1^{(n_b)}$ and $p_2^{(n_{b-1})}$ are identical.
+Generating configuration ensembles of blocked lattices with Boltzman weights is trivial, we simply need to take an existing ensemble of configurations and then block them \cite{Swendsen:1979}.
 
-We note that finite-volume effects are minimized by carrying out the optimization on blocked lattices of the same volume, which was reported by \refcite{Hasenfratz:2011xn}.
-That is, we should compare $\De\be_F$ from matching $12^3\X24$ blocked to $3^3\X6$ vs.\ $6^3\X12$ blocked to $3^3\X6$ with that from matching $24^3\X48$ blocked to $3^3\X6$ vs.\ $12^3\X24$ blocked to $3^3\X6$.
-%However, the error introduced by matching $24^3\X48$ blocked to $6^3\X12$ vs.\ $12^3\X24$ blocked to $3^3\X6$ instead of generating $6^3\X12$ lattices is not severe, and our preliminary results in \secref{sec:WMCRGresults} will omit the finite-volume correction.
+Putting everything together we can prescribe the following procedure for two lattice matching \cite{Hasenfratz:2009}:
+\begin{enumerate}
+  \item Generate a configuration ensemble of size $L^d$ with action $S(p_1)$. Block each configuration $n_b$ times and measure a set of expectation values on the resulting $(L/s^{n_b})^d$ set.
+  \item Generate several configurations of size $(L/s)^d$ with action $S(p_2)$, where each $p_2$ is a trial coupling. Block each configuration $(n_b-1)$ times and measure the same expectation values on the resulting $(L/s^{n_b})^d$ set. Compare the results with that obtained in step 1 and tune the coupling $p_2$ such that the expectation values agree. 
+\end{enumerate}
+
+This method is powerful for several reasons.
+Since we compare measurements on the same lattice size, the finite volume corrections are small.
+Working on lattices larger than the correlation length of the system is not required.
+MCRG works in both the confined and deconfined phases.
+Since the matching is accomplished from measurements of local operators, their computation is cheap and the statistical errors are small.
+Finally because the flow lines are unique it is sufficient to match only one operator.
+The other operators should give the same prediction.
+If we fail to reach the renormalized trajectory it will be evident in that the other operators do not match.
+Therefore we can use the spread in the matching values of the different operators as a measure a systematic error in our matching.
+
+The discussion so far has focused on fixed points with one relevant operator.
+If the fixed point has two relevant operators the matching process is identical only now it is necessary to tune two operators to find pairs of points in coupling space.
+While this is possible it is much easier to fix one of the relevant couplings to its fixed point value.
+By effectively removing one of the relevant couplings we can proceed as with the matching of the remaining coupling.
+
+There is one final hurdle to overcome.
+On a finite volume we only have a finite number of blocking steps.
+If we are unlucky we might choose a block transformation, and therefore a renormalized trajectory, that is so far away from the bare parameters in couplings space.
+Accordingly after we have performed the maximum number of blocking steps the system may not reach the renormalized trajectory.
+This is a problem because matching requires both blocked ensembles to have reached the renormalized trajectory.
+
+One solution is to use a bigger volume.
+Using a bigger volume means that we can perform more blocking steps, eventually we will arrive at the renormalized trajectory.
+This solution is clearly flawed.
+Lets assume that the largest volume you have is $32^4$ and you can not reach the renormalized trajectory in four blocking steps.
+To achieve one more blocking step you need to jump to $64^4$ lattices, if that is not enough then on to $128^4$ lattices.
+We are now considering lattices that are larger than those used for large professional calculations!
+The computational cost of configuration generation scales roughly as $V^{5/4}$, in our doubling scenario generating larger volumes will require at least $2^{5/4}$ more computational power.
+
+Clearly we need another solution.
+As I mentioned above we apply an nHYP smearing step during our block transformation.
+This serves a crucial role, nHYP smearing has 3 parameters.
+Since the different block transformations correspond to different renormalized trajectories, tuning the nHYP parameters allows us to control the renormalized trajectory that we flow to.
+We use the first parameter of the nHYP smearing as an optimization parameter and fix the second and third.
+We identify the optimal blocking accordingly:
+\begin{enumerate}
+  \item Consistent matching between the different opera- tors: along the RT all expectation values should agree on the matched configuration sets. Any deviation is a measure that the RT has not been reached.
+  \item Consecutive blocking steps should give the same matching coupling.
+\end{enumerate}
+
+\subsection{Chirally Broken Theories}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[height=3in]{\cnum{4}/fig/block2.png}
+  \caption{}
+  \label{fig:block2}
+\end{figure}
+
+In a confining chiral broken theory, such as QCD, the RG flow will away from the repulsive UV fixed point into the IR.
+If the fermions are massless the only relevant operator is the gauge coupling $\beta$.
+This is the $\beta$ that we set in the action of our lattice simulation.
+Therefore the renormalized trajectory will flow along the $\beta$ axis in coupling space from infinity to zero.
+RG flows will flow to the renormalized trajectory and then along it as shown in \ref{fig:}
+
+\subsection{Confining Theories}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[height=3in]{\cnum{4}/fig/block2.png}
+  \caption{}
+  \label{fig:block2}
+\end{figure}
+
+
+In a conformal system with massless fermions, the RG flow from points on the weak coupling side of the IRFP will also flow towards the renormalized trajectory in irrelevant directions.
+However unlike the QCD case the flow along the renormalized trajectory will terminate at the IRFP.
+At the IRFP $\beta$ also becomes an irrelevant operator.
+Had we started from the strong coupling side of the IRFP we would observe something completely new.
+The flow would move towards the renormalized trajectory in the irrelevant directions but it would flow into the IRFP.
+The flow into the IRFP from the strong coupling is `backwards' from the flow in a chiral broken theory.
+The behavior of a conformal theory is shown in figure \ref{fig:}.

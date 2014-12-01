@@ -1,12 +1,55 @@
 % 1.1
 % Motivation
 
-Strongly coupled quantum field theories play a vial part in our current understanding of the universe.
-Quantum Chromodynamics (QCD) is responsible for 95\% of the mass that is a consequence of the standard model.
+The standard model (SM) was recently completed with the discovery of the Higgs particle at the Large Hadron Collider (LHC) in Geneva.
+While the standard model doesn't predict any new fundamental particles we know that it is not the complete description of nature.
+It was hoped by many that the LHC would discover new particles in addition to the Higgs particle.
+Since these particles would not be part of the standard model they would necessitate new physics.
+Many beyond standard model (bsm) theories exist that predicted new particles and confirmation of one or more of these theories would usher in a new age of discovery at the energy frontier. 
+This however has not come to pass, the Higgs arrived unaccompanied.
 
-Additionally, new strong dynamics can serve as a means to extend the standard model (SM).
-A number of researchers are currently working to explore new strong dynamics.
-From a lattice perspective this means looking for theories that are strongly coupled but behave differently form QCD.
-One systematic systematic approach is to take the QCD Lagrangian, SU(3) $N_f$ = 2 (or 2+1, 2+1+1, etc), and change the number of flavors, $N_f$.
+The Higgs particle in the standard model is an excitation of the Higgs field which itself is responsible for electroweak symmetry breaking (EWSB).
+EWSB explains how the $W^{\pm}$ and $Z$ bosons acquire a mass that would otherwise be forbidden by electroweak unification.
+Additionally in the EWSB process the Higgs develops a vacuum expectation value (VEV).
+The standard model fermions couple to the VEV and allow them to acquire mass without violating local gauge invariance.
 
-It is known that 
+The Higgs field in the standard model is a scalar field.
+This leads to the hierarchy problem (also equivalent to the naturalness or fine tuning problem) as the Higgs mass will be dependant on the UV cutoff of the theory.
+If the standard model is the complete story and there is no new physics just above the electroweak scale then we expect the Higgs mass to be at the same order as the cutoff.
+The fact the Higgs mass is 126 GeV requires fine tuning in the electroweak sector to cancel the UV divergences.
+
+There have been many solutions proposed as an alternative to the Standard Model that don't require fine tuning.
+Super Symmetry (SUSY) is one such proposal that achieves cancellations by introducing a new symmetry between bosonic and fermionic fields.
+Since the bosons and fermions enter loop calculations with opposite signs there is no need for fine tuning.
+Currently SUSY is constrained by the Higgs mass and the fact we haven't seen any of the super partners of the standard model particles.
+Additionally most versions of SUSY that have not been ruled out replace the standard model hierarchy problem with a new  `little' hierarchy problem where fine tuning is still required but it is not as severe as it is in the standard model.
+
+Another natural possibility is that EWSB is the result of new strong dynamics at the TeV scale.
+Under this prescription EWSB happens much like spontaneous chiral symmetry breaking in quantum chromodynamics (QCD).
+QCD is the only strongly coupled sector of the standard model and is responsible for the strong nuclear force.
+Theories of EWSB that rely on strong dynamics are generally called Technicolor models.
+Technicolor is also highly constrained by the Higgs mass, the top quark mass, and precision electroweak measurements that show the flavor changing neutral currents are highly suppressed.
+
+It is natural to draw insights from the parallels of Technicolor and QCD or directly from perturbation theory, however such insights are not the full story.
+The strongly coupled nature of these theories demands that they are studied through fully nonperturbative means.
+Therefore, lattice gauge theory is the only controlled way to study these theories.
+Lattice QCD, the study of QCD on the lattice, has been extremely successfully in understanding QCD.
+In lattice gauge theory we discretized euclidean space time into a regular grid of sites connected by links.
+The Lagrangian describing the theory is also discretized in such a way that in the continuum limit the original theory is recovered.
+The continuum limit is the limit that the lattice is taken to be infinitely large and the sites are infinitesimally close together.
+
+The ultimate goal of efforts in this field is to find a theory can explain electroweak symmetry breaking, as it is observed in nature, through new strong dynamics.
+Finding such a theory is highly non trivial and a great deal of theoretical and computational effort has gone into looking for such a theory.
+The lattice community has set out to do this in a controlled way.
+Map out the space of all possible theories and see what we find.
+To date a lot of the focus of the lattice community has been on locating the conformal window and developing techniques to distinguish conformal from chiraly broken theories.
+
+This thesis has two primary objectives.
+The first goal is a physics goal:  map out the behavior of $SU(3)$ gauge theories with $N_f$ fermions in the fundamental representation.
+For technical reasons we choose to study theories with 4, 8, 12, and 16 flavors.
+4 and 16 flavor theories are already well understood so the focus of our work is on 8 and 12 flavor systems.
+
+My second objective is to develop tools that make the first goal possible.
+Towards this end I introduce improvements to lattice step scaling calculation techniques.
+I explore how these techniques are different and how to implement them in a calculation.
+Finally these techniques are applicable to any lattice calculation and therefore will be of use to any lattice practitioner.

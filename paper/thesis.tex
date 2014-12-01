@@ -6,6 +6,8 @@
 \usepackage{cancel}
 \usepackage{mystyle}
 \usepackage{slashed}
+\usepackage{feynmp-auto}
+\unitlength = 1mm
 
 % Laziness shortcuts
 \newcommand{\al}{\ensuremath{\alpha} }
@@ -71,7 +73,11 @@
 	}
 
 \acknowledgements{	\OnePageChapter	% *MUST* BE ONLY ONE PAGE!
-  \include{acknowledgements}
+This thisis was supported by an award from the Department of Energy (DOE) Office of Science Graduate Fellowship Program (DOE SCGF).
+The DOE SCGF Program was made possible in part by the American Recovery and Reinvestment Act of 2009.
+The DOE SCGF program is administered by the Oak Ridge Institute for Science and Education for the DOE.
+ORISE is managed by Oak Ridge Associated Universities (ORAU) under DOE contract number DE- AC05-06OR23100. 
+All opinions expressed in this presentation are the author's and do not necessarily reflect the policies and views of DOE, ORAU, or ORISE.
 	}
 
 %\ToCisShort	% use this only for 1-page Table of Contents
@@ -103,8 +109,8 @@
   \bibliography{ds_ref}		% Bib database in "refs.bib"
 
 %%%%%%%%%   then the Appendices, if any   %%%%%%%%%
-  %\appendix
-  %\input appendix/appendixA.tex
+  \appendix
+  \input appendix/abbreviations.tex
   %\input appendix/appendixB.tex
 
 \end{document}

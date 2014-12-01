@@ -1,0 +1,40 @@
+% 1.3
+% Notation and Conventions
+
+Unless otherwise noted these are the standard conventions used in this thesis.
+I use standard particle theory units of $\hbar=c=1$.
+The four vector is given by Greek indices
+\begin{equation}
+  x^\mu=\left(\begin{matrix} x_0 \\ x_1 \\ x_2 \\ x_3\end{matrix}\right),
+\end{equation}
+where $x_0$ is the temporal component $t$ and the remaining three components are the spatial components of $\vec x$.
+For the metric I use the west coast convention for the metric
+\begin{equation}
+  \eta_{\mu\nu} = \left(\begin{matrix}1& 0 & 0 & 0 \\
+                                      0&-1 & 0 & 0 \\
+                                      0& 0 &-1 & 0 \\
+                                      0& 0 & 0 &-1\end{matrix}\right).
+\end{equation}
+Standard Einstein summation notation applies to contract indices.
+
+I work in the chiral representation for the Dirac spin matrices $\gamma^\mu$
+\begin{equation}
+  \gamma^0=\left(\begin{matrix}0 & I \\ I & 0\end{matrix}\right),\quad\gamma^i=\left(\begin{matrix}0 & \sigma^i \\ -\sigma^i & 0 \end{matrix}\right),
+\end{equation}
+where $I$ is the $2\times 2$ identity matrix and $\sigma^i$ are the Pauli matrices:
+\begin{equation}
+  I=\left(\begin{matrix}1 & 0 \\ 0 & 1\end{matrix}\right),\quad\sigma^1=\left(\begin{matrix}0 & 1 \\ 1 & 0\end{matrix}\right),\quad\sigma^2=\left(\begin{matrix}0 & -i \\ i & 0\end{matrix}\right),\quad\sigma^3=\left(\begin{matrix}1 & 0 \\ 0 & -1\end{matrix}\right).
+\end{equation}
+
+I use the standard `slash' notation to contract four vectors with $\gamma^\mu$:
+\begin{equation}
+  \slashed{p} \equiv p_\mu\gamma^\mu.
+\end{equation}
+The momentum operator I use the notation
+\begin{equation}
+  p^\mu = i\partial^\mu,
+\end{equation}
+where
+\begin{equation}
+ \partial^\mu = \left(\frac{\partial}{\partial x^0}, -\nabla\right)=\left(\frac{\partial}{\partial x^0},\frac{\partial}{\partial x^1},\frac{\partial}{\partial x^2},\frac{\partial}{\partial x^3}\right).
+\end{equation}

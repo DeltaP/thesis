@@ -1,25 +1,136 @@
 % 2.1
 % The Standard Model
 
-Our current understanding of the universe postulates that there are four fundamental forces in nature: gravity, electromagnetism, the strong nuclear force, and the weak nuclear force.
+In our current understanding of the universe there are four fundamental forces in nature: gravity, electromagnetism, the strong nuclear force, and the weak nuclear force.
 The latter three forces are understood in terms of quantum field theories which form the Standard Model (SM).
-The Standard Model is a $SU(3)_cxSU(2)_WxU(1)_Y$ gauge theory.
+The Standard Model is a $SU(3)_c\times SU(2)_W\times U(1)_Y$ gauge theory.
 
-The $SU(3)_c$ component of the theory explains the strong nuclear force, also called quantum crhomodynamics (QCD).
-This force consists of spin 1/2 quarks possessing `color' charge interract by exchanging gluons.
-It is important to note that this color charge has nothing to do with visible colors and is analagous to electric charge.
-Unlike electric charge which can be expressed by only one number, color charge is expressed by three numberes.
-The gulons are also charged under SU(3) which leads to a much richer class of fundamental interractions.
+The $SU(3)_c$ component of the theory explains the strong nuclear force, also called quantum chromodynamics (QCD).
+QCD is a $SU(3)$ Yang Mills theory with fermions in the fundamental representation.
+This force explains how spin 1/2 quarks possessing `color' charge interact by exchanging gluons.
+It is important to note that this color charge has nothing to do with visible colors and is analogous to electric charge.
+Unlike electric charge which can be expressed by only one number, color charge is expressed by three numbers commonly labeled R, G, B, for red, green, and blue respectively.
+The Lagrangian for QCD is
+\begin{equation}
+\label{eq:qcd}
+  \Lagr = \frac{1}{4g^2}F^a_{\mu\nu}F^{\mu\nu,a}+\sigma_j \bar{\psi_j}(i\gamma^\mu D_\mu+m_j)q_j,
+\end{equation}
+where
+\begin{equation}
+  G^a_{\mu\nu}=
+\end{equation},
+and
+\begin{equation}
+  D_u=
+\end{equation}.
+$A^\mu$ are the gluon fields, $\psi_j$ is the jth quark flavor.
+$\mu$ and $\nu$ are the usual spacetime indices while a,b and c are color indices.
+
+The Lagrangian allows the three vertices shown in figure \ref{fig:qcdvert}.
+The first vertex couples a fermion to a gluon and is analogous to diagrams in QED that couple an electron to the photon.
+The other two vertices have no analogue in QED, these are the three and four gluon vertices.
+The gluon vertices consequence of the gluons having a charge anti-charge moment.
+A repercussion of the gluons being charged is that the color field is anti-screened.
+
+\begin{figure}
+  \centering
+  \begin{fmffile}{DistributionScattering}
+    \begin{fmfgraph*}(40,25)
+      % Define two vertices on the left, but only `i2' will be actually used.
+      \fmfleft{i1,i2}
+      % The same on the right.
+      \fmfright{o1,o2}
+      % Define the vertex for the blob.
+      \fmfbottom{b}
+      \fmf{fermion}{i2,v1}
+      \fmf{fermion}{v1,o2}
+      \fmf{gluon}{v1,b} 
+      % Labels on vertices.
+      \fmflabel{q}{i2} \fmflabel{q}{o2}
+    \end{fmfgraph*}
+    \begin{fmfgraph*}(40,25)
+      % Define two vertices on the left, but only `i2' will be actually used.
+      \fmfleft{i1,i2}
+      % The same on the right.
+      \fmfright{o1,o2}
+      % Define the vertex for the blob.
+      \fmfbottom{b}
+      \fmf{gluon}{i2,v1}
+      \fmf{gluon}{v1,o2}
+      \fmf{gluon}{v1,b} 
+      % Labels on vertices.
+      \fmflabel{g}{i2} \fmflabel{g}{o2}
+    \end{fmfgraph*}
+    \begin{fmfgraph*}(40,25)
+      % Define two vertices on the left, but only `i2' will be actually used.
+      \fmfleft{i1,i2}
+      % The same on the right.
+      \fmfright{o1,o2}
+      % Define the vertex for the blob.
+      \fmfbottom{b}
+      \fmf{gluon}{i2,v1}
+      \fmf{gluon}{v1,o2}
+      \fmf{gluon}{i1,v1} 
+      \fmf{gluon}{v1,o1} 
+      % Labels on vertices.
+      \fmflabel{g}{i2} \fmflabel{g}{o2} \fmflabel{g}{i1} \fmflabel{g}{o1}
+    \end{fmfgraph*}
+  \end{fmffile}
+  \label{fig:qcdvert}
+  \caption{here}
+\end{figure}
+
+QCD exhibits two interesting properties: confinement and asymptotic freedom.
+Confinement means that the force between two quarks does not diminish as they are pulled apart.
+In fact if you try to pull two quarks apart eventually there will be enough energy in the field to produce a new quark anti quark pair.
+As a result we never observe free quarks in nature, they only exist in colorless bound states called hadrons.
+Hadrons come in two varieties $q\bar{q}$ pairs called mesons and $qqq$ triplets called baryons.
+Despite the fact that confinement is easy to demonstrate on the lattice, there is an outstanding Millennium Prize for an analytic proof.
+Asymptotic freedom reflects that at very large momentum transfers the quarks and gluons interract weakly.
+This is described by the $\beta$ function and is elaborated on in section \ref{sec:sec:conformalwindow}.
+
 The strong nuclear force is responsible for the proton, composed of two up and one down quark, and neutron, composed of two down and one up quark.
 Additionally, the strong nuclear force binds these particles together to form atomic nuclei.
 Most of the understood mass in the universe is a result of the strong nuclear force.
+In QCD the up and down quarks have masses on the order of an MeV while the proton has a mass of 938GeV.
+Almost all of the proton mass results from its own binding energy.
 
-The remaining $SU(2)_WxU(1)_Y$ part of the standard model is the electroweak force.
-This is the quantum field theory that explains the quantum theory of electrodynamics and how particles decay via the weak process .
-An essential feature of the electroweak theory is that $SU(2)_WxU(1)_Y$ spontaneously breaks down to $U(1)_{EM}$ see section \ref{sec:higgs_mech} for further details.
-$U(1)_EM$ is the effective theory of quantum electrodynamics in which spin 1/2 fermionic matter charged with electric charge interracts by exchanging photos.
-Unlike in QCD photons are not charged under U(1) and therefore don't interract at tree level.
+The remaining $SU(2)_W\times U(1)_Y$ part of the standard model is the electroweak force.
+This is the quantum field theory that explains the quantum theory of electrodynamics and how particles decay via the weak process.
+An essential feature of the electroweak theory is that $SU(2)_W\times U(1)_Y$ spontaneously breaks down to $U(1)_{EM}$ see section \ref{sec:higgs_mech} for further details.
+This breaking gives the $W^\pm$ and $Z$ bosons their mass and also accounts for SM fermion masses.
+$U(1)_EM$ is the theory of quantum electrodynamics in which spin 1/2 fermionic matter charged with electric charge interact by exchanging photos.
+Unlike in QCD photons are not charged under U(1) and therefore don't interact at tree level.
 This yields a much simpler theory than QCD and can be understood perturbatively.
+
+The Lagrangian for QED is similar to \ref{eq:qcd} however the field strength tensor $F^a_{\mu\nu}$ is replaced by $F_{\mu\nu}$, dropping the color indices.
+The simpler Abelian U(1) symmetry also means that the field strength tensor is defined as
+\begin{equation}
+  F_{\mu\nu}=\partial_\mu A_\nu - \partial_\nu A_\mu
+\end{equation}
+Where $A^\mu$ is the four potential defined as $A^\mu \equiv (\phi, \vec{A})$.
+Only one vertex is allowed that couples a fermion to a photon.
+
+\begin{figure}
+  \centering
+  \begin{fmffile}{DistributionScattering}
+    \begin{fmfgraph*}(40,25)
+      % Define two vertices on the left, but only `i2' will be actually used.
+      \fmfleft{i1,i2}
+      % The same on the right.
+      \fmfright{o1,o2}
+      % Define the vertex for the blob.
+      \fmfbottom{b}
+      \fmf{fermion}{i2,v1}
+      \fmf{fermion}{v1,o2}
+      \fmf{photon}{v1,b} 
+      % Labels on vertices.
+      \fmflabel{e}{i2} \fmflabel{e}{o2}
+    \end{fmfgraph*}
+  \end{fmffile}
+  \label{fig:qedvert}
+  \caption{here}
+\end{figure}
 
 In both the QCD and Electroweak sector matter is divided into three generations of matter.
 The first generation of matter is the most familiar.
@@ -27,7 +138,7 @@ It consists of the up quark down quark, electron, and electron neutrino.
 All of the matter that we experience in our daily lives is made of this generation of matter.
 The other two generations of matter are essentially heavier replicas of the first generation.
 These heavier generations rapidly decay via the weak nuclear force to the first generation of matter and therefore are only detected in high energy events such as cosmic rays or particle physics experiments.
-The second consists of the strange quark, charm quark, muon, and muon neutrino.
+The second generation consists of the strange quark, charm quark, muon, and muon neutrino.
 Finally the third consists of the top quark, bottom quark, tau, and tau neutrino.
 The properties of all the standard model particles is summarized in table \ref{table:sm}.
 

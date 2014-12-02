@@ -42,7 +42,7 @@ Here $s$ is a scale factor which relates the original lattice to the blocked lat
 \begin{figure}[h]
   \centering
   \includegraphics[height=3in]{\cnum{4}/fig/blocking.png}
-  \caption{}
+  \caption{The original 6x6 lattice on the left possesses a discrete scaling symmetry of $s=2$ and $s=3$.  The shaded orange square is a $s=2$ block variable. The resulting orange $3\times 3$ blocked lattice in the bottom right formed by replacing each block variable with a single site in the upper left corner of the block. The cyan shaded region shows a $b=3$ block variable.  Performing a block transformation that replaces each block with a point in the upper left of the block produces the $2\times 2$ blocked lattice shown in the upper right.}
   \label{fig:blocking}
 \end{figure}
 
@@ -62,7 +62,7 @@ A MCRG blocking step is a transformation that takes two links $U_{n,\mu}$ and $U
 \begin{figure}[h]
   \centering
   \includegraphics[height=3in]{\cnum{4}/fig/block2.png}
-  \caption{}
+  \caption{This figure shows how links are blocked on the lattice.  Two adjacent links in the same direction are block transformed to form one link of twice the lattice spacing.  We perform all possible block transformation shown on the left as the red, blue, green, and orange block tilings of the unblocked lattice.  We then store the links of the blocked lattice as shown on the right hand side of the figure.}
   \label{fig:block2}
 \end{figure}
 
@@ -186,7 +186,7 @@ Since the different block transformations correspond to different renormalized t
 We use the first parameter of the nHYP smearing as an optimization parameter and fix the second and third.
 We identify the optimal blocking accordingly:
 \begin{enumerate}
-  \item Consistent matching between the different opera- tors: along the RT all expectation values should agree on the matched configuration sets. Any deviation is a measure that the RT has not been reached.
+  \item Consistent matching between the different operators: along the RT all expectation values should agree on the matched configuration sets. Any deviation is a measure that the RT has not been reached.
   \item Consecutive blocking steps should give the same matching coupling.
 \end{enumerate}
 
@@ -194,26 +194,25 @@ We identify the optimal blocking accordingly:
 
 \begin{figure}[h]
   \centering
-  \includegraphics[height=3in]{\cnum{4}/fig/block2.png}
-  \caption{}
-  \label{fig:block2}
+  \includegraphics[height=3in]{\cnum{4}/fig/renorm_uvfp.png}
+  \caption{The RG flow of a chirally broken theory on the $m=0$ critical surface. $\beta$ is the relevant gauge coupling, $\beta'$ are irrelevant couplings.}
+  \label{fig:confiningRG}
 \end{figure}
 
 In a confining chiral broken theory, such as QCD, the RG flow will away from the repulsive UV fixed point into the IR.
 If the fermions are massless the only relevant operator is the gauge coupling $\beta$.
 This is the $\beta$ that we set in the action of our lattice simulation.
 Therefore the renormalized trajectory will flow along the $\beta$ axis in coupling space from infinity to zero.
-RG flows will flow to the renormalized trajectory and then along it as shown in \ref{fig:}
+RG flows will flow to the renormalized trajectory and then along it as shown in \ref{fig:confiningRG}
 
-\subsection{Confining Theories}
+\subsection{Conformal Theories}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[height=3in]{\cnum{4}/fig/block2.png}
-  \caption{}
-  \label{fig:block2}
+  \includegraphics[height=3in]{\cnum{4}/fig/renorm_irfp.png}
+  \caption{The RG flow of a conformal theory on the $m=0$ critical surface. $\beta$ is the relevant gauge coupling, $\beta'$ are irrelevant couplings.}
+  \label{fig:conformalRG}
 \end{figure}
-
 
 In a conformal system with massless fermions, the RG flow from points on the weak coupling side of the IRFP will also flow towards the renormalized trajectory in irrelevant directions.
 However unlike the QCD case the flow along the renormalized trajectory will terminate at the IRFP.
@@ -221,4 +220,4 @@ At the IRFP $\beta$ also becomes an irrelevant operator.
 Had we started from the strong coupling side of the IRFP we would observe something completely new.
 The flow would move towards the renormalized trajectory in the irrelevant directions but it would flow into the IRFP.
 The flow into the IRFP from the strong coupling is `backwards' from the flow in a chiral broken theory.
-The behavior of a conformal theory is shown in figure \ref{fig:}.
+The behavior of a conformal theory is shown in figure \ref{fig:conformalRG}.

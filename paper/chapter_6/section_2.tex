@@ -1,21 +1,36 @@
 % 6.2
-% MCRG recap?
+% Wilson Flow Optimized MCRG
 
-MCRG techniques probe lattice field theories by applying RG blocking transformations that integrate out high-momentum (short-distance) modes, moving the system in the infinite-dimensional space of lattice-action couplings.
-In an IR-conformal system on the $m = 0$ critical surface, a renormalized trajectory runs from the perturbative gaussian FP (where the gauge coupling \be is a relevant operator) to the IRFP (where \be is irrelevant).
-Because the locations of these fixed points in the action-space depend on the renormalization scheme, each scheme corresponds to a different renormalized trajectory.
-The RG flow produced by the blocking steps moves the system towards and along the renormalized trajectory, from the perturbative FP to the infrared fixed point.
-At stronger couplings, where we would na\"ively expect backward flow, there might be no ultraviolet FP to drive the RG flow along a renormalized trajectory.
-Except in the immediate vicinity of the IRFP, every method that attempts to determine the strong-coupling flow of the gauge coupling (including MCRG two-lattice matching) might then become meaningless.
+As an alternative to optimizing the RG blocking transformation, and thus changing the renormalization scheme at each coupling $\be_F$, here we propose to use the Wilson flow to move the lattice system as close as possible to the renormalized trajectory of a fixed renormalization scheme.
 
-We determine the bare step-scaling function $s_b(\be_1)$ by matching the lattice actions $S(\be_1, n_b)$ and $S(\be_2, n_{b - 1})$ for systems with bare couplings $\{\be_1, \be_2\}$ after $\{n_b, n_{b - 1}\}$ blocking steps: $s_b(\be_1) \equiv \lim_{n_b \to \infty} \be_1 - \be_2$~\cite{Petropoulos:2012mg}.
-When the lattice actions are identical, all observables are identical.
-We use the plaquette, the three six-link loops and a planar eight-link loop to perform this matching.
-Using short-distance gauge observables allows us to carry out more blocking steps, down to small $2^4$ or $3^4$ lattices.
-We minimize finite-volume effects by comparing observables measured on the same blocked volume~\cite{Hasenfratz:2011xn}.
-We perform the matching independently for each observable, fitting the data as a cubic function of \be to smoothly interpolate between investigated values of the gauge coupling.
+The Wilson flow is a continuous smearing transformation~\cite{Narayanan:2006rf} that can be related to the \MSbar running coupling in perturbation theory~\cite{Luscher:2010iy}.
+Refs.~\cite{Fodor:2012td, Fodor:2012qh} recently used the Wilson flow to compute a renormalized step-scaling function in a way similar to Schr\"odinger functional methods.
+While this approach appears very promising, it is based on perturbative relations that are only fully reliable at weak coupling.
+Here we do not use this perturbative connection, instead applying the Wilson flow as a continuous smearing that removes UV fluctuations.
+The Wilson flow moves the system along a surface of constant lattice scale in the infinite-dimensional action-space; it is not a renormalization group transformation and does not change the IR properties of the system.
 
-Our finite lattices only allow a few blocking steps, so we must optimize the procedure to reach the renormalized trajectory in as few steps as possible.
-In practice, we optimize by tuning some parameter so that consecutive RG blocking steps yield the same $\be_1 - \be_2$, which we identify as $s_b(\be_1)$.
-Traditional optimization tunes the RG blocking transformation at each coupling separately, resulting in a different renormalization scheme at each bare coupling $\be_1$: the $s_b$ we obtain is a composite of many different discrete \be functions.
-The Wilson flow provides a parameter that we can tune without changing the scheme.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[height=3 in]{\cnum{6}/fig/wilson_flow_opt}
+  \caption{In Wilson Flow MCRG we use the Wilson Flow (blue) to approach the renormalized trajectory.  An optimization step similar to that used in MCRG allows us to locate the flow time that gets us closest to the renormalized trajectory (orange). We then block our lattice using a fixed block transformation (green).}
+  \label{fig:wilson_flow_opt}
+\end{figure}
+
+Our goal is to use a one-parameter Wilson flow transformation to move the lattice system as close as possible to the renormalized trajectory of our fixed RG blocking transformation.
+This is shown in figure \ref{fig:wilson_flow_opt}.
+We proceed by carrying out two-lattice matching after applying the Wilson flow for a flow time $t_f$ on all lattice volumes.
+(The Wilson flow is run only on the unblocked lattices, not in between RG blocking steps.)
+As above, since we can block our lattices only a few times, we must optimize $t_f$ by requiring that consecutive RG blocking steps yield the same $\De\be_F$, as shown in \ref{fig:t_optimization}.
+As for traditional MCRG, increasing the number of blocking steps reduces the dependence on the optimization parameter; in the limit $n_b \to \infty$, our results would be independent of $t_f$.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[height=3 in]{\cnum{6}/fig/t_optimization.pdf}
+  \caption{Optimization of the Wilson flow time $t_f$ with fixed $\al = 0.5$, for $\be_F = 4.5$.  The uncertainties on the data points are dominated by averaging over the different observables.}
+  \label{fig:t_optimization}
+\end{figure}
+
+With Wilson-flowed MCRG we can efficiently determine bare step-scaling functions that correspond to unique RG \be functions.
+This new capability opens up interesting directions for future studies.
+By comparing different \be functions around the perturbative gaussian FP, we can study scaling violations in the lattice system.
+In IR-conformal systems, we can investigate the scheme-dependence of the \be function near the IRFP, an issue explored in perturbation theory by \refcite{Ryttov:2012nt}.

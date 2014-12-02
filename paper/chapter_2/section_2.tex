@@ -40,6 +40,20 @@ Moreover, $\nu$ is related to the Fermi constant, $G_F$, by
   \nu=\frac{1}{\sqrt{\sqrt{2}G_F}}\approx 246 \mbox{ GeV}.
 \end{equation}
 
+\begin{figure}[h]
+    \begin{center}
+        \begin{tikzpicture}[domain=-2:2,smooth]
+            \draw[->] (0,0) -- (3,0) node[below] {$\phi_1$};
+            \draw[->] (0,0) -- (0,3) node[left] {$V(\phi)$};
+            \draw[->] (0,0) -- (-1,-1) node[below] {$\phi_2$};
+            \draw plot[id=mexpot] function{(x**4)/4 - (x**2)/2 + 1.0/4};
+    \end{tikzpicture}
+    \end{center}
+    \caption{The Higgs potential with $\mu^2>0$ has a spontaneously broken global symmetry.  We can think of this classically. The origin is a local maximum of potential energy and therefore an unstable equilibrium. If we place a particle at the origin any perturbation will push the particle `down hill' to a minimum of the potential.  Since there are a number of degenerate minima, choosing one spontaneously breaks the symmetry.}
+    \label{fig:higgspot}
+\end{figure}
+
+
 If we assign our theory to have hypercharge $Y=+\frac{1}{2}$, a complete gauge transformation in this theory is
 \begin{equation}
   \Phi\rightarrow e^{i\alpha^a(x)\tau^a}e^{i\beta(x)/2}\Phi.

@@ -38,13 +38,14 @@ Without optimization, residual flows in irrelevant directions can distort the re
 
 \begin{figure}[htpb]
   \centering
-  \includegraphics[height=3in]{\cnum{4}/fig/plots/optimization.pdf}\hfill
-  \caption{Examples of two-lattice matching optimization for 12-flavor systems.  Left: Optimization of the HYP-smearing parameter \al in the RG blocking transformation, for $\be_F = 5.0$.  Right: Optimization of the Wilson flow time $t_f$ with fixed $\al = 0.5$, for $\be_F = 4.5$.  In both cases, the uncertainties on the data points are dominated by averaging over the different observables as described in the text.}
+  \includegraphics[height=3in]{\cnum{4}/fig/plots/optimization.pdf}
+  \caption{Optimization of the HYP-smearing parameter \al in the RG blocking transformation, for $\be_F = 5.0$.  The uncertainties on the data points are dominated by averaging over the different observables as described in the text.}
   \label{fig:opt}
 \end{figure}
 
 We note that finite-volume effects are minimized by carrying out the optimization on blocked lattices of the same volume, which was reported by \refcite{Hasenfratz:2011xn}.
 That is, we should compare $\De\be_F$ from matching $12^3\X24$ blocked to $3^3\X6$ vs.\ $6^3\X12$ blocked to $3^3\X6$ with that from matching $24^3\X48$ blocked to $3^3\X6$ vs.\ $12^3\X24$ blocked to $3^3\X6$.
+As in Refs.~\cite{Hasenfratz:2011xn, Hasenfratz:2011np}, we do not explore weak enough couplings to recover the two-loop perturbative predictions $s_b \approx 0.3$ for $N_f = 12$.
 
 \subsection{8 Flavors}
 In our study of SU(3) gauge theories with 8 flavors we calculated the step scaling function at four couplings corresponding to $\beta_F = 5.4, 5.6, 6, 7$.
@@ -63,25 +64,38 @@ This picture is consistent with 8 flavors being chirally broken and confining.
 
 \begin{figure}[htpb]
   \centering
-  \includegraphics[height=3in]{\cnum{4}/fig/plots/8flavor.pdf}\hfill
-  \caption{Results for the bare step-scaling function $s_b$ from traditional MCRG two-lattice matching with $24^3\X48$, $12^3\X24$ and $6^3\X12$ lattice volumes, for $N_f = 8$ (left) and $N_f = 12$ (right).  The blue dashed lines are perturbative predictions for asymptotically weak coupling.}
+  \includegraphics[height=3in]{\cnum{4}/fig/plots/8flavor.pdf}
+  \caption{Results for the bare step-scaling function $s_b$ from traditional MCRG two-lattice matching with $24^3\X48$, $12^3\X24$ and $6^3\X12$ lattice volumes for $N_f = 8$.  The blue dashed lines are perturbative predictions for asymptotically weak coupling.}
   \label{fig:8MCRG}
 \end{figure}
 
 \subsection{12 Flavors}
 Our investigation of SU(3) gauge theory with 12 flavors reveals behavior very different from the 8 flavor results.
+We calculated the step scaling function at $\beta_F=5,6,7,8,9,10$.
+As with the 8 flavor case we were unable to perform matching at stronger couplings because of the \Sb phase at $\beta=2.7$.
+At the weakest couplings studied, we find that our results for the step scaling function are smaller than those predicted by the two loop perturbative calculation which predicts $s_b\approx 0.3$.
+As with the 8 flavor results, this implies that we are at strong enough coupling that perturbation theory is unreliable.
 
-As in Refs.~\cite{Hasenfratz:2011xn, Hasenfratz:2011np}, we do not explore weak enough couplings to recover the two-loop perturbative predictions $s_b \approx 0.3$ for $N_f = 12$.
-
+The results shown in \ref{fig:12MCRG} show that the step scaling function for $\beta_F=8,9,10$ is positive while the step scaling function at $\beta_F=5,6,7$ is negative or close to zero.
+This is consistent with backwards flow at strong couping and an infrared fixed point at $\beta_F<8$.
+Although we are unable to cleanly identify where the fixed point is due to reasons I will elucidate in the next section, the results are not consistent with a chirally broken theory.
 \begin{figure}[htpb]
   \centering
   \includegraphics[height=3in]{\cnum{4}/fig/plots/12flavor.pdf}
-  \caption{Results for the bare step-scaling function $s_b$ from traditional MCRG two-lattice matching with $24^3\X48$, $12^3\X24$ and $6^3\X12$ lattice volumes, for $N_f = 8$ (left) and $N_f = 12$ (right).  The blue dashed lines are perturbative predictions for asymptotically weak coupling.}
+  \caption{Results for the bare step-scaling function $s_b$ from traditional MCRG two-lattice matching with $24^3\X48$, $12^3\X24$ and $6^3\X12$ lattice volumes for $N_f = 12$.  The blue dashed lines are perturbative predictions for asymptotically weak coupling.}
   \label{fig:12MCRG}
 \end{figure}
 
 \subsection{The Case of the Wandering Fixed Point}
-The downside of optimizing the RG blocking transformation in this manner is that we have to use a different renormalization scheme for each $\be_F$.
-As a result, the bare step-scaling function we obtain is a composite of many different discrete \be functions.
 Recall that our optimization of the RG blocking transformation means that we use a different renormalization scheme for each coupling $\be_F$, so these bare step scaling functions are composites of several different discrete \be functions.
+In an IR conformal system, each renormalization scheme has a fixed point because the existence of the fixed point is scheme independent.
+The location of the fixed point however is a scheme dependant property.
+Therefore it is reasonable to expect the IRFP to be located at a different point in coupling space for each $\beta_F$ that we calculate $s_b$ for.
 For example, with $N_f = 12$ at $5 \leq \be_F \leq 6$, our optimization selects renormalization schemes with the fixed point near $\be_F$, so that $s_b$ is roughly consistent with zero over an extended range.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[height=3in]{\cnum{4}/fig/opt_prob.png}
+  \caption{An illustration of how optimizing the block transformation can result in difficulties locating an IRFP, $\beta$ is the relevant gauge coupling and $\beta'$ are irrelevant couplings.  The upper figure shows the renormalized trajectory in red, green, and blue found by optimizing the RG transformation at $\beta_1, \beta_2, and \beta_3$ respectively.  The location of the IRFP changes in each renormalized trajectory, in this picture the IRFP is moved to the coupling we perform MCRG at.  The resulting $s_b$ is consistent with zero across a wide range of couplings. }
+  \label{fig:opt_prob}
+\end{figure}

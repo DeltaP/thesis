@@ -1,7 +1,7 @@
 % 2.4
 % Composite Higgs
 
-One solution to the heirarchy problem is for the Higgs to be a composite composed of particles from a new strongly interacting sector.
+One solution to the hierarchy problem is for the Higgs to be a composite composed of particles from a new strongly interacting sector.
 This new sector is responsible for electroweak symmetry breaking.
 There are many types of theories that use such a modus operandi.
 While these theories have the benefits of ... they typically favor a heavier Higgs mass than what has been observed.
@@ -13,8 +13,8 @@ In the next three subsections I will give a flavor for two classes of composite 
 
 \subsection{Conformal Window}
 \label{sec:sec:conformalwindow}
-A general class of strongly interracting theories that are of interest for technicolor and extended technicolor dynamics are Yang-Mills gauge theories.
-Pure gauge Yang-Mills theories have $SU(N_c)$ interractions while more general theories include $N_f$ flavors of fermions in some representation.
+A general class of strongly interacting theories that are of interest for Technicolor and extended Technicolor dynamics are Yang-Mills gauge theories.
+Pure gauge Yang-Mills theories have $SU(N_c)$ interactions while more general theories include $N_f$ flavors of fermions in some representation.
 At low energies QCD is effectively a $SU(3)$ gauge theory with $N_f$=2.
 This description includes only the up and down quarks which are nearly massless and respect an approximate $SU(2)$ isospin symmetry.
 The most general Yang-Mills Lagrangian with a $SU(N_c)$ local gauge symmetry and $N_f$ flavors of massless fermions in a representation R is:
@@ -31,7 +31,7 @@ where $A^a_\mu$ is the field, a is a group index and the structure coefficient $
 \end{equation}
 and $T^a$ are the generators of the group.
 The Lagrangians may look similar however their behavior in both UV and IR can be dramatically different from theory to theory.
-While the Lagrangain is classically scale invariant; the quantum theory is not.
+While the Lagrangian is classically scale invariant; the quantum theory is not.
 This is understood through the beta function,
 \begin{equation}
   \beta (g^2)=-\mu\frac{\partial g^2}{\partial \mu}.
@@ -43,12 +43,14 @@ This function can be expanded in perturbation theory and is universal to two loo
 \end{equation}
 Any terms beyond two loops are renormalization scheme dependant and are not relevant for the following discussion.
 The values for $b_1$ and $b_2$ are:
-\begin{align}
-  b_1&=\frac{11}{3}N_c-\frac{4}{3}N_fT(R)\\
-  b_2&=\frac{34}{3}N_c^2-\frac{4}{3}T(R)N_f\Big[5N_c+3C_2(R)\Big].
-\end{align}
-$T(R)$ and $C_2(R)$ are the first and second Casimir invariants and depend on the represenation R of the group.
-Table \ref{table:casimir} give these invarients for a few common representations.
+\begin{equation}
+  \begin{aligned}
+    b_1&=\frac{11}{3}N_c-\frac{4}{3}N_fT(R)\\
+    b_2&=\frac{34}{3}N_c^2-\frac{4}{3}T(R)N_f\Big[5N_c+3C_2(R)\Big].
+  \end{aligned}
+\end{equation}
+$T(R)$ and $C_2(R)$ are the first and second Casimir invariants and depend on the representation R of the group.
+Table \ref{table:casimir} give these invariants for a few common representations.
 
 \begin{table}
   \centering
@@ -61,82 +63,110 @@ Table \ref{table:casimir} give these invarients for a few common representations
     $G$               & $N^2-1$             & $N$             & $N$                     \\\\
   \end{tabular}
   \label{table:casimir}
-  \caption{this is the caption}
+  \caption{This table summarizes some commonly used groups, their dimension, first Casimir invariant, and second Casimir invariant.  $F, S_2, A_2$ and $G$ are the is the fundamental, 2-index symmetric, 2-index antisymmetric, and adjoint representations respectively.}
 \end{table}
 
 Clearly tuning $N_c$, $N_f$ and $R$ offers a great deal of freedom in specifying the gauge theory.
 \begin{figure}[h]
   \centering
-  \includegraphics[height=3in]{\cnum{2}/fig/temp.png}
-  \caption{}
+  \includegraphics[height=3in]{\cnum{2}/fig/confining.png}
+  \caption{In a confining theory, such as QCD, the running of the coupling starts out negative.  As $g^2$ grows the running becomes increasingly negative.  Chiral symmetry is broken and the theory is described by confined bound states.}
   \label{fig:confining}
 \end{figure}
 
 We can see from equation \ref{eqn:} that if the coefficients $b_1$ and $b_2$ are both positive than the beta function is negative.
 In this scenario the theory asymptotically free, confining, and spontaneously breaks chiral symmetry.
-The dynamics in the IR will be strongly coupled and nonperturbative.
+The dynamics in the IR will be strongly coupled and non-perturbative.
 Figure \ref{fig:confining} shows what this scenario looks like.
-This occurs in QCD ($SU(3)$ $N_f=2\mbox{ or }3$) is an example of a theory where the beta function is negative.
+This occurs in QCD ($SU(3)$ $N_f=2\mbox{ or }3$ depending on your treatment of the light quarks) is an example of a theory where the beta function is negative.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[height=3in]{\cnum{2}/fig/temp.png}
-  \caption{}
+  \includegraphics[height=3in]{\cnum{2}/fig/conformal.png}
+  \caption{In a conformal field theory the $\beta$ function starts out negative but turns around and crosses the $\beta=0$ axis.  At this crossing the theory has an infrared fixed point.  The renormalized flow for the theory will run to the IR fixed point and the theory is conformal.}
   \label{fig:conformal}
 \end{figure}
+
 If we keep $b_1$ positive and allow $b_2$ to become negative we can force the two terms to compete.
+In perturbation theory this occurs at at a critical value of fermions $N^crit_f<\frac{17N_c^2}{2T(R)[5N_c+C(R)]}$.
 Such a beta function would start out negative, then at some coupling it would pass through a local minimum after which it would grow.
-Eventually the beta function would have a zero where $\beta=0$.
-Perturbatively this zero occurs at $g^2_*=-b_1/b2$ and is a Banks-Zaks infrared fixed point.
-This is illustrated in \ref{fig:conformal}, such a theory is governed by the conformal dynamcis at the infrared fixed point and is scale invarient.
-Unlike confining theories, such theories do not support bound states of particles.
+Eventually at some $g^2_*$ the beta function would have a zero where $\beta=0$.
+Perturbatively this zero occurs at $g^2_*=-b_1/b_2$ and is a Banks-Zaks infrared fixed point.
+This is illustrated in \ref{fig:conformal}, such a theory is governed by the conformal dynamics at the infrared fixed point and is scale invariant.
+If the fixed point is at very weak coupling it is possible to gain insights from perturbation theory, however many theories are known to have strongly coupled IRFP's where insights from perturbation theory are unreliable.
+Conformal theories, like the scenario described above, do not support bound states of particles.
+As such they are often referred to as `unparticle theories'.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[height=3in]{\cnum{2}/fig/temp.png}
-  \caption{}
+  \includegraphics[height=3in]{\cnum{2}/fig/trivial.png}
+  \caption{If the fermionic degrees of freedom overwhelm those of the bosons it the beta function will start positive.  This is the loss of asymptotic freedom.  The beta function for such a theory resembles that of QED.}
   \label{fig:trivial}
 \end{figure}
+
 Allowing both $b_1$ and $b_2$ to be negative results in a trivial theory.
 Such a theory, shown in \ref{fig:trivial} is not asymptotically free.  
-Such a beta function is very similar to that of QED.
-Perturbatively this occurs when $N_f>$.
+The beta function is very similar to that of QED.
+Perturbatively this occurs when $N_f<\frac{11N_c}{4T(R)}$.
 
-The region in theory space between where the IRFP appears and where asymptotic freedom is lost is reffered to as the conformal window.
-Limmiting our consideration to theories using the fundamental representaiton fermions and $N_c=3$ we see that the conformal window is between $N_f= \mbox{ and } N_f=$.
-It is important to note that because of the nature of these theories perturbation theory is not reliable and these numbers only serve as motivation for where to look.
+The region in theory space between where the IRFP appears and where asymptotic freedom is lost is referred to as the conformal window.
+Limiting our consideration to theories using the fundamental representation fermions and $N_c=3$ we see that perturbation theory predicts the conformal window is between $N_f \approx 9.4 \mbox{ and } N_f16.5$.
+It is important to note that all of the discussion in this section these are perturbative results.
+On the upper end of the conformal window before asymptotic freedom is lost the IRFP of many theories is weak enough that perturbation theory is reasonable.
+However, as we pass through the conformal to theories with less fermionic degrees of freedom, the IRFP becomes strongly coupled.
+Here perturbation theory is not to be trusted.
+The location of the lower bound of the conformal window is an area of active research.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[height=3in]{\cnum{2}/fig/temp.png}
-  \caption{}
+  \includegraphics[height=3in]{\cnum{2}/fig/walking.png}
+  \caption{In a walking theory the beta function looks similar to the conformal picture of figure \ref{fig:conformal}.  The crucial difference is that before the $\beta$ function develops a zero, shown by the dashed line, chiral symmetry is spontaneously broken driving the beta function back down.  Near the would be IRFP where the dashed line has a zero, the coupling runs very slowly and is said to be walking.}
   \label{fig:walking}
 \end{figure}
-The conformal window itself is not a very interesting system to study but understanding the lower bound of the conformal window is of great interet for potential technicolor theories.
+
+The conformal window itself is not a very interesting system to study but understanding the lower bound of the conformal window is of great internet for potential Technicolor theories.
 Right below the conformal window it is believed that a walking theory can exist.
 In such a theory, shown in figure \ref{fig:walking} the beta function would start out like the conformal scenario.
-However, as the theory approaches the IRFP chiral symmetry is spontateously broken and the beta function would turn around away from the IRFP.
+However, as the theory approaches the IRFP chiral symmetry is spontaneously broken and the beta function would turn around away from the IRFP.
 This scenario allows 
 
 \subsection{Lattice Studies}
-There has been a growing interest in studying beyond the standard model theories on the lattices over the past decade.
-To date there are a number of active lattice groups carrying out caluclations in this field.
-It is healthy that such a variety of theories have been studied usinging different methods.
-Beyond standard model physics is inherently a difficult subject to study because we don't know the answer before hand.
-Taking a holisitic approach and finding consensus is vital to our understanding.
+Today there is a rich ecosystem of lattice studies of BSM studies, a survey of the current state of the field can be found in \cite{need to find a good overview}.
+It is extremely important that different ways of probing for IR conformality on different lattice discretization schemes converge to common conclusions.
+In general this is accomplished but there are still systems that cause debate because different groups draw different conclusions from their findings.  Below I summarize the sate of the field both in terms of calculation types and inters of theories studied.
+
+Many studies that seek to locate the conformal window have proceeded by calculating the RG flow of the theory under consideration.
+The first example of this type of study is \cite{124}.
+If an IRFP is found then the theory is conformal while a lack of an IRFP at strong coupling indicates that chiral symmetry is broken and the theory confines.
+One benefit of running coupling calculations is that they are not as computationally intensive as many other alternatives.
+There are multiple types of calculations that fall under this umbrella.
+Schr\"odinger functional, MCRG \ref{ch:MCRG,ch:WMCRG}, and now the Wilson flow step scaling \ref{ch:wflow} are examples.
+
+Another common method uses lattice spectroscopy calculations.
+In these methods the masses of light bound states are measured at a variety of input quark masses.
+The fit of the bound state as a function of the bare quark mass will determine if the theory is best described by a chiraly broken theory or conformal one.
+References \cite{125-127} are examples of studying the conformal window using spectroscopy.
+In practice these fits are extremely difficult, in particular fits for volume squeezed conformal theories has proved troublesome.
+
+Several groups have studied the finite temperature phase diagram \cite{131}.
+These studies identify an IRFP with a deconfining bulk transition
+Additionally techniques using Dirac eigenvalue spectrum \cite{130} has proven useful.
+
+The majority of calculations have been for theories with $N_c=3$ with fermions in the fundamental representation.
+This is in part because the wide availability of optimized code bases for three colors.
+Within these studies staggered fermions are commonly employed because they are cheap to simulate and preserve a U(1) remnant of chrial symmetry \ref{}.
+As a consequence theories with $N_f=4,8,12,16$ are most widely studied although others have been studied as well.
+The consensus is that $N_f\le8$ are confining, $N_f=12$ is probably conformal, and $N_f=16$ is conformal.
+
+There is also a grown number of calculations with $SU(2)$.
+The two flavor model in the adjoint representation is widly studied and is clearly in the conformal window\cite{137-156}.
+Studies with fundamental fermions exist for $N_f=2,4,6,8,10$ with the conformal window being identified as existing between $4<N_f<8$.
+Studies of $SU(3)$ and $SU(4)$ in the 2-index symmetric representation also exist.
+
+Clearly, beyond standard model physics is inherently a difficult subject to study on the lattice.
+Unlike studies of QCD we don't know the answer before hand.
+Taking a holistic approach and finding consensus is vital to our understanding.
 Additionally, as more of these theories have been studied, vital improvements have been made.
 This is true of the lattice code base which prior to BSM studies was highly optimized and sometimes only available for QCD simulations.
-Improvements hav also been made in the way the data is analyzed.
+Improvements have also been made in the way the data is analyzed.
 I will discuss two improvements we have developed in chapters \ref{ch:}-\ref{ch:}
-
-As I mentioned above there are a number of ways to appraoch BSM lattice studies.
-One class of method which I have been involved with is to calculate the beta function directly.
-There are several ways to calculate the beta function on the lattice.
-One technique is called the Schr\"{o}dinger functional.
-The Schr\"{o}dinger functional has been widly used to study several theories.
-Another method is 
-
-
-
-Another class of methods involve lattice spectroscopy.
-

@@ -12,19 +12,20 @@ It is important to note that this color charge has nothing to do with visible co
 Unlike electric charge which can be expressed by only one number, color charge is expressed by three numbers commonly labeled R, G, B, for red, green, and blue respectively.
 The Lagrangian for QCD is
 \begin{equation}
-\label{eq:qcd}
-  \Lagr = \frac{1}{4g^2}F^a_{\mu\nu}F^{\mu\nu,a}+\sigma_j \bar{\psi_j}(i\gamma^\mu D_\mu+m_j)q_j,
+  \label{eq:qcd}
+  \Lagr = \sum_j\bar{\psi_j}(i\slashed{D})\psi_j-\frac{1}{4}F^a_{\mu\nu}F^{\mu\nu}_a,
 \end{equation}
 where
 \begin{equation}
-  G^a_{\mu\nu}=
-\end{equation},
+  F^a_{\mu\nu}=\partial_\mu A^a_\nu-\partial_\nu A^a_\mu+gf^{abc}A^b_\mu A^b_\nu,
+\end{equation}
 and
 \begin{equation}
-  D_u=
-\end{equation}.
+  \slashed{D}=D_\mu\gamma^\mu=(\partial_\mu-igA^a_\mu\lambda^a)\gamma^\mu.
+\end{equation}
 $A^\mu$ are the gluon fields, $\psi_j$ is the jth quark flavor.
-$\mu$ and $\nu$ are the usual spacetime indices while a,b and c are color indices.
+$\mu$ and $\nu$ are the usual spacetime indices while a, b, and c are color indices.
+The structure constant $f^{abc}$ is given by the commutation relation between the generators of the group $[\lambda^a,\lambda^b]=\frac{i}{2}f^{abc}\lambda^c$ where $\lambda^a$ are the Gell-Mann matricies.
 
 The Lagrangian allows the three vertices shown in figure \ref{fig:qcdvert}.
 The first vertex couples a fermion to a gluon and is analogous to diagrams in QED that couple an electron to the photon.
@@ -77,7 +78,7 @@ A repercussion of the gluons being charged is that the color field is anti-scree
     \end{fmfgraph*}
   \end{fmffile}
   \label{fig:qcdvert}
-  \caption{here}
+  \caption{These are the Feynman Diagrams of the allowed QCD verticies.  All interractions in the theory are built by combining these verticies.  Quarks are represented by the solid lines and gluons are represented by curly lines.  The three and four gluon vertecies are unique to non-Abelian gauge theories.}
 \end{figure}
 
 QCD exhibits two interesting properties: confinement and asymptotic freedom.
@@ -125,11 +126,11 @@ Only one vertex is allowed that couples a fermion to a photon.
       \fmf{fermion}{v1,o2}
       \fmf{photon}{v1,b} 
       % Labels on vertices.
-      \fmflabel{e}{i2} \fmflabel{e}{o2}
+      \fmflabel{f}{i2} \fmflabel{f}{o2}
     \end{fmfgraph*}
   \end{fmffile}
   \label{fig:qedvert}
-  \caption{here}
+  \caption{There is only one allowed vertex in QED which couples a fermion charged under U(1) with the photon.}
 \end{figure}
 
 In both the QCD and Electroweak sector matter is divided into three generations of matter.

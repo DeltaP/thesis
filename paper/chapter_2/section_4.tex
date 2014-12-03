@@ -4,12 +4,124 @@
 One solution to the hierarchy problem is for the Higgs to be a composite composed of particles from a new strongly interacting sector.
 This new sector is responsible for electroweak symmetry breaking.
 There are many types of theories that use such a modus operandi.
-While these theories have the benefits of ... they typically favor a heavier Higgs mass than what has been observed.
-Additionally, these theories are highly constrained by precision electroweak measurements.
-In the next three subsections I will give a flavor for two classes of composite Higgs theories, introduce the conformal window, and discuss the state of Lattice endeavors in this area.
+While these theories have the benefits of solving the heirarchy and fine tuning problems with the standard model Higgs they typically favor a heavier Higgs mass than what has been observed and pose other theoretical challenges that I will elaborate on below.
+In the next three subsections I will give briefly discuss technicolor, extended techniclolor, introduce the conformal window, and discuss the state of Lattice endeavors in this area.
 
-\subsection{Technicolor and Extended Technicolor}
+\subsection{Technicolor}
 
+Technicolor seeks to replace the Higgs sector of the electroweak theory with a new strongly interacting sector.
+In this section I will show how this is accomplished.
+Some good reviews on the subject can be found in references \cite{ds 93-98}
+For simplicity lets consider a $SU(3)_{TC}$ gauge group that couples to a pair of massless fermions $\Psi=(\psi_1,\psi_2)$ in the fundamental representation.
+It is worth noting that so far this theory is identical to QCD with massless up and down quarks.
+The Lagrangian for our theory is
+\begin{equation}
+  \begin{aligned}
+    \Lagr_{TC}=-\frac{1}{4}F^a_{\mu\nu}F^{\mu\nu,a}+\sum_i \bar{\Psi}(i\slashed{D})\Psi_i.
+  \end{aligned}
+\end{equation}
+Recall that fermions have a right handed and left handed component $\phi=(\phi_L,\phi_R)$.
+We know from QCD that such a theory possesses a global $SU(2)_L\times SU(2)_R$ symmetry and that this symmetry is spontaneously broken to the vector subgroup $SU(2)_V$.
+This symmetry manifests itself in the nonzero VEV of the chiral condensate
+\begin{equation}
+  <\bar{\Psi}\Psi>=<\bar{\Psi}_L\Psi_R+\bar{\Psi}_R\Psi_L>\neq 0.
+\end{equation}
+
+To see how spontaneous chiral symmetry breaking translates to spontaneous electroweak symmetry breaking we have to use chiral perturbation theory.
+Chiraly perturbation theory is an effective field theory whose fundamental degrees of freedom are the Goldstone bosons associated with the symmetry breaking.
+In our case the broken $SU(2)$ symmetry has 3 degrees of freedom and therefore our effective theory will have three massless Goldstone bosons.
+Continuing our analogy to QCD, these bosons are the pions.
+
+The chiral Lagrangian is nonlinear and possesses an infinite number of terms.
+The standard approach is to perform an expansion about momentum, $p$, that are small with respect to the cutoff $\Lambda$.
+We are then free to choose what order in $\frac{p}{\Lambda}$ we work with.
+The lowest order in the expansion is
+\begin{equation}
+  \Lagr_{\chi}=\frac{F^2}{4}Tr\Big[(D^\mu U)^\dagger(D_\mu U)\Big].
+\end{equation}
+U is a non-linear function of the Goldstone fields $\phi_a$
+\begin{equation}
+  U\equiv e^{\sigma^a\phi_a\frac{2i}{f}}.
+\end{equation}
+
+The derivative $D_\mu$ is coupled to the electroweak and gauge field because our technifermions are charged under $SU(2)\times U(1)$
+\begin{equation}
+  D_\mu=\partial_\mu - ig\frac{\sigma^a}{2}A^a_\mu+ig'\frac{\sigma^3}{2}B_\mu.
+\end{equation}
+We can substitute our derivative into our lowest order effective Lagrangian and find that\begin{equation}
+  \Lagr_{\chi}=\frac{F^2}{4}Tr\left[\frac{g^2}{4}\left[\left(A^1_\mu-\frac{4}{Fg}\partial_\mu\phi_1\right)^2 + \left(A^2_\mu-\frac{4}{fg}\partial_\mu\phi_2\right)^2 + 
+  \left(A^3_\mu-\frac{g'}{g}B_\mu-\frac{4}{fg}\partial_\mu\phi_3\right)^2\right]\right].
+\end{equation}
+We can now make the field redefinitions
+\begin{equation}
+  \begin{aligned}
+    W^{1,2}_\mu &\equiv A^{1,2}_\mu - \frac{4}{fg}\partial_\mu\phi_{1,2} \\
+    Z_\mu &\equiv \frac{g}{\sqrt{g^2+g'^2}}\left(A^3_\mu - \frac{g'}{g}B_\mu - \frac{4}{fg}\partial_\mu\phi_3\right) \\
+    A_\mu &\equiv \frac{g}{\sqrt{g^2+g'^2}}\left(\frac{g'}{g}A^3_\mu+B_\mu\right).
+  \end{aligned}
+\end{equation}
+The field redefinition completely removes $\phi_a$ from our theory to first order.
+The field $A_\mu$ is the massless photon field.
+Our Lagrangian now reads
+\begin{equation}
+  \Lagr_{\chi}=\Lagr_{\mbox{kinetic}}+\frac{1}{2}m_W^2\left[(W^1_\mu)^2+(W_\mu^2)^2\right]+\frac{1}{2}m_Z^2Z^2_\mu,
+\end{equation}
+where the masses for the heavy bosons are
+\begin{equation}
+  \begin{aligned}
+    m_W&=\frac{1}{2}Fg \\
+    m_Z&=\frac{1}{2}F\sqrt{g^2+g'^2}.
+  \end{aligned}
+\end{equation}
+With the substitution $F=\nu$ we reproduce $m_W$ and $m_Z$ that we found in section \ref{sec:higgs_mech} exactly!
+This is quite a shock, as I mentioned earlier so far everything we are doing is simply QCD with 2 flavors of massless quarks, why did we introduce the Higgs field in the first place?
+Simply put the effect in QCD is much too small.
+In QCD, $F=F_\pi\approx93MeV$, this is more than a factor of a thousand too small to account for the observed $W^\pm$ and $Z$ masses.
+
+Despite the fact that spontaneous chiral symmetry breaking in QCD is too small to account for the observed electroweak sector there is no reason that we can't introduce a new strongly interacting theory where the equivalent $F=\nu\approx246$.
+Furthermore we can choose a different gauge group, number of fermions, and representation if we wish.
+The only constraint is that chiral symmetry is broken and the results are phenomenologically consistent with experimental observation.
+It is worth noting that more flavors of fermions will produce additional pions that will acquire masses.
+In general $SU(N_f)_L\times SU(N_f)_R\rightarrow SU(N_f)_V$ will produce $N^2_f-1$ Goldstone bosons, three can be eaten to form the $W^\pm$ and $Z$ and the remaining $N_f^2-4$ become massive pseudo-Goldstone bosons.
+The masses of the pseudo-Goldstone bosons in a viable theory need to be large enough to not have been discovered yet.
+
+In summary we have shown how strong dynamics can explain electroweak symmetry breaking.
+Because of asymptotic freedom, such a theory does not have UV divergences, solving the fine tuning problem.
+One failure of our model is that we have lost an explanation for the fermion masses.
+It is possible to construct an effective theory of fermion masses using a four fermion operator and adjusting the couplings for each quark and lepton flavor by hand.
+Unfortunately a four-Fermi interaction is non-renormalizable, for a UV complete technicolor that gives fermion masses we need extended Technicolor.
+
+\subsection{Extended Technicolor}
+
+In order for a theory of electroweak symmetry breaking to replace the Higgs mechanism it must also generate masses for the quarks and leptons of the standard model.
+This is accomplished through a framework called extended technicolor.
+Under this framework an extended technicolor group is introduced $SU(3+N_{TC})_{ETC}$.
+This extended group is asymptotically free and contains the usual standard model content as well as $SU(N_{TC})$.
+At some scale $\Lambda_{ETC}>>\nu$ the ETC group spontaneously breaks to $SU(N)_{TC}\times SU(3)_c\times SU(2)_L\times U(1)_Y$.
+The gauge bosons of ETC theories have masses $M_{ETC} \approx g_{ETC}\Lambda_{ETC}$.
+Because of the wide range of masses for standard model fermions most models ETC models typically spontaneously break at multiple scales.
+Most models have three breaking scales, corresponding to the three generations of quarks and leptons.
+A successful model will solve another outstanding theoretical issue the flavor hierarchy problem and the number of free parameters in the standard model.
+It is not surprising then that no `reasonable' ETC model has been produced yet.
+
+ETC is an ambitious theory however it faces many practical problems.
+One major hurdle flavor changing neutral currents (FCNC).
+Flavor changing neutral currents such as $\mu\rightarrow e\bar{e}e$ and mixing between neutral mesons is highly constrained in the standard model.
+Most ETC theories typically introduce FCNC that are proportional to $M^2_{ETC}$.
+
+Another issue with ETC theories is size of the top quark mass.
+The top quark is so massive, $m_t=172 GeV$, that its associated ETC scale is $M_{ETC}\approx 3 TeV$.
+This is comparable to the electroweak scale!
+Additionally incorporating both the top and the bottom with the same ETC breaking would require an accompanying large isospin breaking.
+This has conundrum has forced many models to give the top special treatment in so called top assisted ETC.
+
+Skirting these and other issues without producing particles light enough to have already been discovered is a daunting task.
+There are many models that have been able to trade one defect for another, but to date no complete model exists.
+There is a general consensus that any viable ETC model probably will have a slowly running (walking) coupling.
+In a walking theory $\gamma(\alpha(\mu))$ is large between $\Lambda_{TC}$ and $M_{ETC}$ 
+It has been shown that walking behavior addresses all of the problems I have discussed to a point.
+However any model that breaks at multiple scales and has the peculiarities of walking between those scales is likely to be very baroque.
+I discuss ways to generate a walking theory in detail below.
 
 \subsection{Conformal Window}
 \label{sec:sec:conformalwindow}
@@ -66,7 +178,6 @@ Table \ref{table:casimir} give these invariants for a few common representations
   \caption{This table summarizes some commonly used groups, their dimension, first Casimir invariant, and second Casimir invariant.  $F, S_2, A_2$ and $G$ are the is the fundamental, 2-index symmetric, 2-index antisymmetric, and adjoint representations respectively.}
 \end{table}
 
-Clearly tuning $N_c$, $N_f$ and $R$ offers a great deal of freedom in specifying the gauge theory.
 \begin{figure}[h]
   \centering
   \includegraphics[height=3in]{\cnum{2}/fig/confining.png}
@@ -74,6 +185,7 @@ Clearly tuning $N_c$, $N_f$ and $R$ offers a great deal of freedom in specifying
   \label{fig:confining}
 \end{figure}
 
+Clearly tuning $N_c$, $N_f$ and $R$ offers a great deal of freedom in specifying the gauge theory.
 We can see from equation \ref{eqn:} that if the coefficients $b_1$ and $b_2$ are both positive than the beta function is negative.
 In this scenario the theory asymptotically free, confining, and spontaneously breaks chiral symmetry.
 The dynamics in the IR will be strongly coupled and non-perturbative.
@@ -88,7 +200,7 @@ This occurs in QCD ($SU(3)$ $N_f=2\mbox{ or }3$ depending on your treatment of t
 \end{figure}
 
 If we keep $b_1$ positive and allow $b_2$ to become negative we can force the two terms to compete.
-In perturbation theory this occurs at at a critical value of fermions $N^crit_f<\frac{17N_c^2}{2T(R)[5N_c+C(R)]}$.
+In perturbation theory this occurs at at a critical value of fermions $N^{crit}_f<\frac{17N_c^2}{2T(R)[5N_c+C(R)]}$.
 Such a beta function would start out negative, then at some coupling it would pass through a local minimum after which it would grow.
 Eventually at some $g^2_*$ the beta function would have a zero where $\beta=0$.
 Perturbatively this zero occurs at $g^2_*=-b_1/b_2$ and is a Banks-Zaks infrared fixed point.
@@ -110,8 +222,8 @@ The beta function is very similar to that of QED.
 Perturbatively this occurs when $N_f<\frac{11N_c}{4T(R)}$.
 
 The region in theory space between where the IRFP appears and where asymptotic freedom is lost is referred to as the conformal window.
-Limiting our consideration to theories using the fundamental representation fermions and $N_c=3$ we see that perturbation theory predicts the conformal window is between $N_f \approx 9.4 \mbox{ and } N_f16.5$.
-It is important to note that all of the discussion in this section these are perturbative results.
+Limiting our consideration to theories using the fundamental representation fermions and $N_c=3$ we see that perturbation theory predicts the conformal window is between $N_f \approx 9.4 \mbox{ and } N_f=16.5$.
+It is important to note that all of the discussion in this section are perturbative results.
 On the upper end of the conformal window before asymptotic freedom is lost the IRFP of many theories is weak enough that perturbation theory is reasonable.
 However, as we pass through the conformal to theories with less fermionic degrees of freedom, the IRFP becomes strongly coupled.
 Here perturbation theory is not to be trusted.
@@ -127,8 +239,9 @@ The location of the lower bound of the conformal window is an area of active res
 The conformal window itself is not a very interesting system to study but understanding the lower bound of the conformal window is of great internet for potential Technicolor theories.
 Right below the conformal window it is believed that a walking theory can exist.
 In such a theory, shown in figure \ref{fig:walking} the beta function would start out like the conformal scenario.
-However, as the theory approaches the IRFP chiral symmetry is spontaneously broken and the beta function would turn around away from the IRFP.
-This scenario allows 
+However, as the theory approaches the IRFP chiral symmetry is spontaneously broken and the beta function would turn around away from the `would be' IRFP.
+If this occurs, the coupling $g$ will run very slowly (walk) over a wide range of scales where the $\beta$ function approaches zero.
+Walking is necessary to achieve a wide sepaeration of scales in Technicolor theoriews witout generating flavor changing neutral currents.
 
 \subsection{Lattice Studies}
 Today there is a rich ecosystem of lattice studies of BSM studies, a survey of the current state of the field can be found in \cite{need to find a good overview}.

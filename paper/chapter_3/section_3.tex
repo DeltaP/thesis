@@ -1,10 +1,139 @@
 % 3.3
 % Fermionic Fields
+\subsection{Naïve Fermions}
+Fermions prove to be a much thornier issue and great care must be taken with their discretization.
+Lets see what happens when we take a theory of one free fermion
+\begin{equation}
+  S_f=\int d^4x\Big(\bar{\psi}(x)\gamma^\mu\partial_\mu\psi(x)+m\bar{\psi}(x)\psi(x)\Big),
+\end{equation}
+and define the discretized lattice derivative to be the difference 
+\begin{equation}
+  \partial_\mu\psi(x)\rightarrow\Delta_\mu\psi_x=\frac{\psi_{x+\hat{\mu}}-\psi_{x-\hat{\mu}}}{2a}.
+\end{equation}
+The fermionic fields $\psi$ are gauge invariant and have the following gauge transformation:
+\begin{equation}
+  \begin{aligned}
+    \psi_x&\rightarrow\Omega(x)\psi_x \\
+    \bar{\psi}_x&\rightarrow\bar{\psi}_x\Omega^\dagger(x).
+  \end{aligned}
+\end{equation}
+We will now use the link variables $U_{x,\mu}$ to transport the $\psi$ fields between neighboring sites
+\begin{equation}
+  S_f=\frac{1}{2}\sum_{x,\mu} \bar{\psi}_x\gamma^\mu\big[U_{x,\mu}\psi_{x+\hat{\mu}}-U^\dagger_{x-\hat{\mu}}\psi_{x-\hat{\mu}}\big]+m\sum_x \bar{\psi}_x\psi_x.
+\end{equation}
+Now we can construct the free propagator in momentum space
+\begin{equation}
+  \frac{1}{a}S(p)=(i\gamma^\mu\sin(p_\mu a) + ma)^{-1}=\frac{-i\gamma_\mu\sin(p_\mu a)+ma}{\sum_\mu \sin^2(p_\mu a)+m^2a^2},
+\end{equation}
+where the momenta are restricted by the lattice discretization $p_\mu=\frac{2\pi ix_\mu}{N_\mu}$ for a lattice of $N_\mu$ sites in direction $\mu$.
+For small momenta, $p_\mu \approx (0,0,0,0)$ we can Taylor expand $\gamma^\mu\sin(p_\mu)\approx \slashed{p}$ and recover the continuum fermionic propagator $\frac{1}{\slashed{p}-m}$.
+Unfortunately we also recover the continuum propagator for fifteen other values of the four lattice momenta $p_\mu\approx(\pi,0,0,0),p_\mu\approx(0,\pi,,0,0),...,p_\mu\approx(\pi,\pi,\pi,\pi)$.
+Thus instead of describing one species of fermion, our theory instead describes 16 degenerate species of fermions.
 
-naive fermions
+\subsection{Wilson Fermions}
+This is the fermion doubling problem.
+For each dimension $d$ of the lattice we get $2^d$ species of fermions.
+Wilson attempted to solve this problem by adding a second derivative term to the action,
+\begin{equation}
+  \Delta_\mu^2\psi_x=\frac{\psi_{x+\hat{\mu}}-2\psi_x+\psi_{x-\hat{\mu}}}{2a}.
+\end{equation}
+Such a term does not affect or continuum extrapolation because it is a dimension 5 operator and therefore is irrelevant.
+The resulting action
+\begin{equation}
+  S_f=-\frac{1}{2}\sum_{x,\mu}\bar{\psi_x}\Big[(1-\gamma^\mu)U_{x,\mu}\psi_{x+\hat{\mu}}+(1+\gamma^\mu)U^\dagger_{x-\hat{\mu}}\Big]+(4+m)\sum_x\bar{\psi}_x\psi_x,
+\end{equation}
+has the following free momentum space propagator
+\begin{equation}
+  \begin{aligned}
+    \frac{1}{a}S(p)&=\Big[i\gamma^\mu\sin(p_\mu)+m+\sum_\mu(1-\cos(p_\mu))\Big]^{-1}  \\
+                   &=\frac{-i\gamma^\mu\sin(p_\mu)+m+\sum_\mu\big(1-\cos(p_\mu)\big)}{\sum_\mu\sin^2(p_\mu)+\Big[m+\sum_\mu\big(1-cos(p\mu)\big)\Big]^2}.
+  \end{aligned}
+\end{equation}
+Now all of the doubler modes with any component of momentum $p_\mu\approx\pi$ become massive and are integrated out.
+The mass doubler modes gain is proportional to the inverse of the lattice spacing.
+The caveat in this strategy is that the Wilson term explicitly breaks chiral symmetry on the lattice even at zero fermion mass.
 
-wilson fermions
+Unfortunately there is no easy way around this problem.
+The Nielsen and Ninomiya no-go theorem states that you can not place chiral fermions on a regular lattice of even dimension without fermion doublers.
+Any solution to the doubler problem will have to sacrifice chiral symmetry, dimensionality, or the regularity of the lattice.
+There are several types of fermionic actions that trade off these downfalls.
+Some actions are able to preserve a near exact chiral symmetry, generally by adding dimensionality, however these actions are extremely expensive and difficult to simulate at strong coupling.
+The only action I will address further is the staggered action because it is used in our study.
 
-staggard fermions
+\subsection{Staggered Fermions}
 
-nHYP staggered fermions
+Staggered fermions were introduced by Kogut and Sussking \cite{ac69}.
+The staggered action mixes Dirac and space time indices of the naïve fermionic action to reduce the number of doublers from 16 to 4.
+To accomplish this lets define new field variables $\psi(x)'$ and $\bar{\psi}(x)'$
+\begin{equation}
+  \begin{aligned}
+    \psi(n)&=\gamma_1^{n_1}\gamma_2^{n_2}\gamma_3^{n_3}\gamma_4^{n_4}\psi(n)'\\
+    \bar{\psi}(n)&=\bar{\psi}(n)'\gamma_4^{n_4}\gamma_3^{n_3}\gamma_2^{n_2}\gamma_1^{n_1}.
+  \end{aligned}
+\end{equation}
+The transformation matrix is products of $\gamma_\mu$ raised to the power of the corresponding component $n_\mu$ of th site index $n_\mu=(n_1,n_2,n_3,n_4)$.
+We can now use these fields to build the staggered action
+\begin{equation}
+  S(\psi',\bar{\psi}')=a^4\sum_n \bar{\psi}(x)'\mathbb{1}\Big(\sum_{\mu=1}^4\eta_\mu(x)\frac{\psi(n+\hat{\mu})'-\psi(n-\hat{\mu})'}{2a}+m\psi(n)'\Big),
+\end{equation}
+where $\eta_\mu$ are the staggered sign functions
+\begin{equation}
+  \begin{aligned}
+    n_1(n)&=1 \\
+    n_2(n)&=(-1)^{n_1} \\
+    n_3(n)&=(-1)^{n_1+n_2} \\
+    n_4(n)&=(-1)^{n_1+n_2+n_3}.
+  \end{aligned}
+\end{equation}
+This action has four copies of itself, one for each Dirac component.
+We finalize the action by taking one of these copies and coupling it to the gauge fields
+\begin{equation}
+  S(\chi,\bar{\chi})=a^4\sum_n \bar{\chi}(n)\Big(\sum_{\mu=1}^4\eta_\mu(x)\frac{U_\mu(n)\chi(n+\hat{\mu})-U_\mu^\dagger(n-\hat{\mu})\chi(n-\hat{\mu})}{2a}+m\chi(n)\Big).
+\end{equation}
+The fields $\chi$ and $\bar{\chi}$ are Grassmann fields with only color indices and lack Dirac structure.
+Since we have kept one of four copies identical copies of our naïve fermionic action we have essentially kept 4 of the 16 doubler modes.
+This action can be interpreted as having a $2^4$ dimensional hyper cube unit cell with four flavors of fermions spread across it.
+The four species of fermions that remain are called referred to as tastes.
+While taste symmetry is exact in the continuum it is broken by lattice artifacts.
+Taste breaking can be especially problematic at strong coupling where the gauge fields are coarser.
+To remove lattice artifacts associated with taste breaking various smearing terms are added to improve staggered actions.
+I will discuss the smearing improvement that we use in our simulations in the next section.
+One huge advantage that staggered fermions have is that they preserve a $U(1)_A$ chiral symmetry.
+Additionally there is a protected Goldstone mode which protects fermion masses from additive renormalization, another problem of Wilson fermions.
+
+In QCD studies, taste poses a unique problem when trying to study 2, or 2+1, or 2+1+1 flavors of fermions.
+The 4 degenerate flavors have to be transformed into 1 or 2 flavors.
+This is accomplished by a technique called rooting.
+Although rooted calculations routinely reproduce correct results, there is still some controversy about the technique.
+Fortunately in our studies we examine theories with multiples of 4 flavors thereby circumventing the rooting problem entirely.
+
+\subsection{Improved Fermions}
+
+In the simulations detailed in chapters \ref{ch:MCRG,ch:WFLOW,ch:WMCRG} we use nHYP improved staggered fermions in our action.
+nHYP smearing was introduced in \cite{ac5,34,2} and reduces the problem of lattice artifacts, specifically taste breaking, in staggered actions.
+
+nHYP smearing is built out of three consecutive smearing steps that are restricted to the hypercubes associated with the link being smeared.
+The first step:
+\begin{align}
+  \bar{\Gamma}_{n,\mu;\nu,\rho}&=(1-\alpha_3)U_{n,\mu}+\frac{\alpha_3}{2}\sum_{\pm\eta\neq\rho,\nu,\mu}U_{n,\eta}U_{n+\hat{\eta},\mu}U^\dagger_{n+\hat{\mu},\eta} \\
+  \bar{V}&=\bar{\Gamma}(\bar{\Gamma}^\dagger\bar{\Gamma})^{-\frac{1}{2}},
+\end{align}
+where $\bar{V}=\Gamma(\Gamma^\dagger\Gamma)^\frac{1}{2}$ is a $U(N)$ projection.
+The second step uses the links from the first smearing step and projection and performs another smearing and projection
+\begin{align}
+  \widetilde{\Gamma}_{n,\mu;\nu}&=(1-\alpha_2)U_{n,\mu}+\frac{\alpha_2}{4}\sum_{\pm\rho\neq\nu,\mu}\bar{V}_{n,\rho;\nu,\mu}\bar{V}_{n+\hat{\rho},\mu;\rho,\nu}\bar{V}^\dagger_{n+\hat{\mu},\rho;\nu,\mu} \\
+  \widetilde{V}&=\widetilde{\Gamma}(\widetilde{\Gamma}^\dagger\widetilde{\Gamma})^{-\frac{1}{2}}.
+\end{align}
+Finally the last step is a third iteration of the smearing step
+\begin{align}
+  \Gamma_{n,\mu}&=(1-\alpha_1)U_{n,\mu}+\frac{\alpha_1}{6}\sum_{\nu\neq\mu}\widetilde{V}_{n,\nu;\mu}\widetilde{V}_{n+\hat{\nu},\mu;\nu}\widetilde{V}^\dagger_{n+\hat{\mu},\nu;\mu} \\
+  V&=\Gamma(\Gamma^\dagger\Gamma)^{-\frac{1}{2}}.
+\end{align}
+Here the links $U_{n,\mu}$ are un-smeared and the nHYP smeared links are $V_{n,\mu}$.
+The parameters $(\alpha_1,\alpha_2,\alpha_3)$ are parameters which can be tuned to control the amount of smearing.
+The indices after the semi-colon are not included in the staple sum.
+The link products
+\begin{equation}
+  \sqcap_{n,\mu}=\sum_{\nu\neq\mu}U_{n,\nu}U_{n+\hat{\nu},\mu}U^\dagger_{n+\hat{\mu},\nu}
+\end{equation}
+is the staple sum of the un-smeared link $U_{n,\mu}$.

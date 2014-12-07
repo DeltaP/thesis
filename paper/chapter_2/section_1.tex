@@ -1,14 +1,15 @@
 % 2.1
 % The Standard Model
 
-In our current understanding of the universe there are four fundamental forces in nature: gravity, electromagnetism, the strong nuclear force, and the weak nuclear force.
+In our current understanding of the universe, there are four fundamental forces in nature: gravity, electromagnetism, the strong nuclear force, and the weak nuclear force.
 The latter three forces are understood in terms of quantum field theories which form the Standard Model (SM).
-The Standard Model is a $SU(3)_c\times SU(2)_W\times U(1)_Y$ gauge theory.
+The Standard Model is a $SU(3)_C\times SU(2)_W\times U(1)_Y$ gauge theory.
 
-The $SU(3)_c$ component of the theory explains the strong nuclear force, also called quantum chromodynamics (QCD).
+The $SU(3)_C$ component of the theory explains the strong nuclear force, also called quantum chromodynamics (QCD).
 QCD is a $SU(3)$ Yang Mills theory with fermions in the fundamental representation.
 This force explains how spin 1/2 quarks possessing `color' charge interact by exchanging gluons.
-It is important to note that this color charge has nothing to do with visible colors and is analogous to electric charge.
+It is important to note that this color charge has nothing to do with visible colors which are actually a narrow band of electromagnetic radiation that we can see.
+Rather the color charge is analogous to electric charge.
 Unlike electric charge which can be expressed by only one number, color charge is expressed by three numbers commonly labeled R, G, B, for red, green, and blue respectively.
 The Lagrangian for QCD is
 \begin{equation}
@@ -30,7 +31,7 @@ The structure constant $f^{abc}$ is given by the commutation relation between th
 The Lagrangian allows the three vertices shown in figure \ref{fig:qcdvert}.
 The first vertex couples a fermion to a gluon and is analogous to diagrams in QED that couple an electron to the photon.
 The other two vertices have no analogue in QED, these are the three and four gluon vertices.
-The gluon vertices consequence of the gluons having a charge anti-charge moment.
+The gluon verticies are a result of the non-abelian nature of the theory, consequently the gluons having a charge anti-charge moment.
 A repercussion of the gluons being charged is that the color field is anti-screened.
 
 \begin{figure}
@@ -89,6 +90,7 @@ Hadrons come in two varieties $q\bar{q}$ pairs called mesons and $qqq$ triplets 
 Despite the fact that confinement is easy to demonstrate on the lattice, there is an outstanding Millennium Prize for an analytic proof.
 Asymptotic freedom reflects that at very large momentum transfers the quarks and gluons interract weakly.
 This is described by the $\beta$ function and is elaborated on in section \ref{sec:sec:conformalwindow}.
+The 2004 Nobel prize in physics was awarded for the discovery of asymptotic freedom by Frank Wilczek, David Gross, and David Politzer in 1973.
 
 The strong nuclear force is responsible for the proton, composed of two up and one down quark, and neutron, composed of two down and one up quark.
 Additionally, the strong nuclear force binds these particles together to form atomic nuclei.
@@ -100,15 +102,15 @@ The remaining $SU(2)_W\times U(1)_Y$ part of the standard model is the electrowe
 This force accounts for the quantum theory of electrodynamics and how particles decay via the weak process.
 The electroweak force has three bosonic force carriers: the massless photon and the massive $W^\pm$ and $Z$.
 As a result of being carried by the massless photon, electrodynamics is an infinite range force.
-However, the weak force has an interraction range of $O\approx10^{16}m$ due to the heavieness of the $W^{\pm}$ and $Z$.
+However, the weak force has an interraction range of $\mathcal{O}\approx10^{16}$m due to the heavieness of the $W^{\pm}$ and $Z$.
 In addition to effecting the quark sector, the electroweak force also interracts with leptons.
-Leptons are spin 1/2 fermions that are not charged under the $SU(3)_c$ group. 
+Leptons are spin 1/2 fermions that are not charged under the $SU(3)_C$ group. 
 The electron, muon, tau, and their corresponding neutrinos are all leptons.
 
-An essential feature of the electroweak theory is that $SU(2)_W\times U(1)_Y$ spontaneously breaks down to $U(1)_{EM}$ see section \ref{sec:higgs_mech} for further details.
-This breaking gives the $W^\pm$ and $Z$ bosons their mass and also accounts for SM fermion masses.
+An essential feature of the electroweak theory is that $SU(2)_W\times U(1)_Y$ spontaneously breaks down to $U(1)_{EM}$, see section \ref{sec:higgs_mech} for further details.
+This breaking gives the $W^\pm$ and $Z$ bosons their mass and also accounts for the standard model fermion masses.
 $U(1)_{EM}$ is the theory of quantum electrodynamics in which spin 1/2 fermionic matter charged with electric charge interact by exchanging photos.
-Unlike in QCD photons are not charged under U(1) and therefore don't interact at tree level.
+Unlike in QCD, photons are not charged under U(1) and therefore don't interact at tree level.
 This yields a much simpler theory than QCD and can be understood perturbatively.
 
 The Lagrangian for QED is similar to \ref{eq:qcd} however the field strength tensor $F^a_{\mu\nu}$ is replaced by $F_{\mu\nu}$, dropping the color indices.
@@ -140,7 +142,7 @@ Only one vertex is allowed that couples a fermion to a photon.
   \caption{There is only one allowed vertex in QED which couples a fermion charged under U(1) with the photon.}
 \end{figure}
 
-In both the QCD and Electroweak sector matter is divided into three generations of matter.
+In both the QCD and Electroweak sector, matter is divided into three generations of matter.
 The first generation of matter is the most familiar.
 It consists of the up quark down quark, electron, and electron neutrino.
 All of the matter that we experience in our daily lives is made of this generation of matter.
@@ -148,6 +150,41 @@ The other two generations of matter are essentially heavier replicas of the firs
 These heavier generations rapidly decay via the weak nuclear force to the first generation of matter and therefore are only detected in high energy events such as cosmic rays or particle physics experiments.
 The second generation consists of the strange quark, charm quark, muon, and muon neutrino.
 Finally the third consists of the top quark, bottom quark, tau, and tau neutrino.
-The properties of all the standard model particles is summarized in table \ref{table:sm}.
+The properties of all the standard model particles is summarized in table \ref{table:fermions,table:bosons}.
 
-INSERT TABLE OF SM PARTICLES
+\begin{table}
+  \centering
+  \begin{tabular}{c c c c c c c c}
+    Type    & Particle Name     & Symbol    & Mass    & Generation  & $U(1)_Y$  & $U(1)_{\mbox{EM}}$  & color charge  \\
+    \hline
+    lepton  & electron          & e         & 511 KeV & 1           &           &                     & no            \\
+    lepton  & muon              & $\mu$     & 106 MeV & 2           &           &                     & no            \\
+    lepton  & tau               & $\tau$    &     MeV & 3           &           &                     & no            \\
+    lepton  & electron neutrino & $\nu_e$   &     KeV & 1           &           &                     & no            \\
+    lepton  & muon neutrino     & $\nu_\mu$ &     MeV & 2           &           &                     & no            \\
+    lepton  & tau neutrino      & $\nu_\tau$&     MeV & 3           &           &                     & no            \\
+    quark   & up                & $u$       &         &             &           &                     & yes           \\
+    quark   & down              & $d$       &         &             &           &                     & yes           \\
+    quark   & strange           & $s$       &         &             &           &                     & yes           \\
+    quark   & charm             & $c$       &         &             &           &                     & yes           \\
+    quark   & top (truth)       & $t$       &         &             &           &                     & yes           \\
+    quark   & bottom (beauty)   & $b$       &         &             &           &                     & yes           
+  \end{tabular}
+  \label{table:fermions}
+  \caption{The standard model fermions}
+\end{table}
+
+\begin{table}
+  \centering
+  \begin{tabular}{c c}
+    Particle Name & Symbol    \\
+    \hline
+    photon        & $\gamma$  \\
+    $W^+$         & $W^+$     \\
+    $W^-$         & $W^-$     \\
+    $Z$           & $Z$       \\
+    gluon         & $g$       
+  \end{tabular}
+  \label{table:bosons}
+  \caption{The standard model bosons}
+\end{table}

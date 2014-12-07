@@ -1,6 +1,91 @@
 % 3.2
 % Gauge Fields
 
-Gauge action
+\subsection{Pure Gauge}
+The simplest quantum field theory to put on the lattice is a pure Yang-Mills gauge theory.
+In group theory this these are $SU(N_C)$ gauge theories without any pesky fermions.
+The most straight forward discretization of a pure gauge action is in terms of the plaquette
+\begin{equation}
+  P_{x,\mu\nu}=\mbox{Tr}\Big[U_{x,\mu}U_{x+\hat{\mu},\nu}U^{\dagger}_{x+\hat{\nu},\mu}U^{\dagger}_{x,\nu}\Big],
+\end{equation}
+where $\mu\neq\nu$ and the trace over color and spin indices is implied.
+The plaquette is the smallest closed loop and therefore the smallest gauge invariant observable, corresponding to the links multiplied around a unit square of the lattice.
+The Hermitian conjugate, $P^{\dagger}_{x,\mu\nu}$, is the same loop with the order of the link products in the opposite direction.
 
-improvements
+To illustrate how the action is built out of plaquettes lets consider an abelian gauge theory for simplicity.
+For an abelian gauge theory
+\begin{align}
+  F_{\mu\nu} &= \partial_\mu A_\nu-\partial_\nu A_\mu \\
+  \Lagr &= \frac{1}{4}F_{\mu\nu}F^{\mu\nu} \\
+  S &= \int \Lagr d^4x = \int  \frac{1}{4}F_{\mu\nu}F^{\mu\nu}
+\end{align}
+Introducing the lattice spacing a we have link variables
+\begin{equation}
+  U_{x,\mu}= e^{igaA_\mu(x)}.
+\end{equation}
+Here $g$ is the charge, $a$ is the lattice spacing, and $A_\mu$ is the vector potential along the link.
+Note that the link variable is gauge invariant under the transformation
+\begin{equation}
+  U_{x,\mu}\rightarrow \Omega_x U_{x,\mu} \Omega_{x+a\hat{\mu}}.
+\end{equation}
+Although not necessary for the abelian case, considering $A_\mu(x)$ to have an underlying group structure will help us generalize this discussion at the end.
+Therefore useing the identity $\mbox{exp}(A)\mbox{exp}(B)=\mbox{exp}(A+B+\frac{1}{2}[A,B]+...)$ for matrices A and B, we can now construct the plaquette
+\begin{equation}
+  \begin{aligned}
+    P_{x,\mu\nu}=&e^{ig}\mbox{exp}\Big[aA_\mu(x)+aA_\nu(x+\hat{\mu})-aA_\mu(x+\hat{\nu})-aA_\nu(x) \\
+                 &-\frac{a^2}{2}[A_\mu(x),A_\nu(x+\hat{\mu})]-\frac{a^2}{2}[A_\mu(x+\hat{\nu}),A_\nu(x)] \\
+                 &+\frac{a^2}{2}[A_\nu(x+\hat{\mu}),A_\mu(x+\hat{\nu})] + \frac{a^2}{2}[A_\mu(x),A_\nu(x)] \\
+                 &+\frac{a^2}{2}[A_\mu(x),A_\mu(x+\hat{\nu})]+\frac{a^2}{2}[A_\nu(x+\hat{\mu}),A_\nu(x)]+O(a^3)\Big]
+  \end{aligned}
+\end{equation}
+Taylor expanding the shifted terms yields
+\begin{equation}
+  A_\nu(x+\hat{\mu})=A_\nu(x)+a\partial_\mu A_\nu(n)+O(a^2),
+\end{equation}
+so that the plaquette becomes
+\begin{equation}
+  \begin{aligned}
+  P_{x,\mu\nu}&=e^{ig}\mbox{exp}\Big[a^2\big(\partial_\mu A_\nu(x)-\partial_\nu A(x) + [A_\mu(x),A_\nu(x)]\big)+O(a^3)\Big] \\
+              &=\mbox{exp}\Big[iga^2F_{\mu\nu}(x)+O(a^3)\Big]  \\
+              &=1+iga^2F_{\mu\nu}(x)-\frac{g^2a^4}{2}F_{\mu\nu}(x)F^{\mu\nu}(x) + O(a^2)
+  \end{aligned}
+\end{equation}
+In the last step we Taylor expand about $a$.
+We can take the trace, note that $F_{\mu\nu}$ is traceless,
+\begin{equation}
+  \mbox{Tr}[P_{x,\mu\nu}]=\mbox{Tr}\Big[1-\frac{g^2a^4}{2}F_{\mu\nu}(x)F^{\mu\nu}(x) + O(a^2)\Big].
+\end{equation}
+From this relationship it is clear that we can construct the following action from the plaquette
+\begin{equation}
+  S_G(P_{x,\mu\nu})=\frac{2}{g^2}\sum_{x} \sum_{\mu<\nu} \big(1-P_{x,\mu\nu}\big).
+\end{equation}
+As we take the continuum limit, $a\rightarrow 0$, we recover the continuum action
+\begin{equation}
+  S\rightarrow \int d^4x\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
+\end{equation}
+This can be trivially generalized to $SU(N_c)$ gauge theories
+\begin{equation}
+  S_G(P_{x,\mu\nu})=\beta\sum_{x} \sum_{\mu<\nu} \mbox{Re}\Big[\mbox{Tr}\big[\mathbb{I}-\frac{1}{N_c}P_{x,\mu\nu}\big]\Big],
+\end{equation}
+where $\beta\equiv\frac{2N_c}{g^2}$.
+This is the Wilson gauge action.
+
+There are several ways to improve upon the Wilson gauge action.
+The general idea is to add additional gauge invariant terms into the action with the goal of removing higher order lattice discretization errors.
+There are many improved actions that have been developed in the past few decades.
+Improved gauge actions are beyond the scope of this thesis.
+I will briefly comment on a negative adjoint term that we use in our action.
+
+\subsection{Negative Adjoint Term}
+
+In our studies we have added a negative adjoint term to the gauge part of the action.
+The purpose of this term is to avoid a well known spurious UV fixed point \cite{ac 3,80,4} in the fundamental adjoint plane.
+The mixed fundamental-adjoint action is
+\begin{equation}
+  S_{AF}=\beta_F\sum_{x} \sum_{\mu<\nu} \mbox{Re}\Big[\mbox{Tr}\big[\mathbb{I}-\frac{1}{N_c}P_{x,\mu\nu}\big]\Big] + \beta_A\sum_{x} \sum_{\mu<\nu}\Big[\mbox{Tr}\big[\mathbb{I}-\frac{1}{N_c^2}P_{x,\mu\nu}^\dagger P_{x,\mu\nu}\big]\Big]
+\end{equation}
+In our studies we set the ratio $\frac{\beta_A}{\beta_F}=-0.25$ which avoids a crossover that extends from the UV fixed point across the $\beta_A=0$ axis.
+With our action the perturbative relation to the bare coupling is
+\begin{equation}
+  \frac{6}{g^2}=\beta_F+2\beta_A.
+\end{equation}

@@ -5,7 +5,7 @@ One solution to the hierarchy problem is for the Higgs to be a composite compose
 This new sector is responsible for electroweak symmetry breaking.
 There are many types of theories that use such a modus operandi.
 While these theories have the benefits of solving the heirarchy and fine tuning problems with the standard model Higgs they typically favor a heavier Higgs mass than what has been observed and pose other theoretical challenges that I will elaborate on below.
-In the next three subsections I will give briefly discuss technicolor, extended techniclolor, introduce the conformal window, and discuss the state of Lattice endeavors in this area.
+In the next three subsections I will briefly discuss technicolor, extended techniclolor, introduce the conformal window, and discuss the state of Lattice endeavors in this area.
 
 \subsection{Technicolor}
 
@@ -78,7 +78,7 @@ This is quite a shock, as I mentioned earlier so far everything we are doing is 
 Simply put the effect in QCD is much too small.
 In QCD, $F=F_\pi\approx93MeV$, this is more than a factor of a thousand too small to account for the observed $W^\pm$ and $Z$ masses.
 
-Despite the fact that spontaneous chiral symmetry breaking in QCD is too small to account for the observed electroweak sector there is no reason that we can't introduce a new strongly interacting theory where the equivalent $F=\nu\approx246$.
+Despite the fact that spontaneous chiral symmetry breaking in QCD is too small to account for the observed electroweak sector, there is no reason that we can't introduce a new strongly interacting theory where the equivalent $F=\nu\approx246$.
 Furthermore we can choose a different gauge group, number of fermions, and representation if we wish.
 The only constraint is that chiral symmetry is broken and the results are phenomenologically consistent with experimental observation.
 It is worth noting that more flavors of fermions will produce additional pions that will acquire masses.
@@ -94,19 +94,21 @@ Unfortunately a four-Fermi interaction is non-renormalizable, for a UV complete 
 \subsection{Extended Technicolor}
 
 In order for a theory of electroweak symmetry breaking to replace the Higgs mechanism it must also generate masses for the quarks and leptons of the standard model.
-This is accomplished through a framework called extended technicolor.
+This is accomplished through a framework called extended technicolor (ETC)\footnote{The first rule of ETC is no scalar fields, the second rule of ETC is no scalar fields.}. 
 Under this framework an extended technicolor group is introduced $SU(3+N_{TC})_{ETC}$.
-This extended group is asymptotically free and contains the usual standard model content as well as $SU(N_{TC})$.
+This extended group is also asymptotically free and therefore UV complete.
+Both the usual standard model content as well as $SU(N_{TC})$ are charged under ETC.
 At some scale $\Lambda_{ETC}>>\nu$ the ETC group spontaneously breaks to $SU(N)_{TC}\times SU(3)_c\times SU(2)_L\times U(1)_Y$.
 The gauge bosons of ETC theories have masses $M_{ETC} \approx g_{ETC}\Lambda_{ETC}$.
-Because of the wide range of masses for standard model fermions most models ETC models typically spontaneously break at multiple scales.
+Because of the wide range of masses for standard model fermions, most models ETC models spontaneously break at multiple scales.
 Most models have three breaking scales, corresponding to the three generations of quarks and leptons.
-A successful model will solve another outstanding theoretical issue the flavor hierarchy problem and the number of free parameters in the standard model.
+ETC is an ambitions theory, a successful model of ETC will solve almost all the outstanding theoretical issues with the SM. 
+Both the flavor hierarchy problem and the number of free parameters in the standard model would be solved dynamically.
 It is not surprising then that no `reasonable' ETC model has been produced yet.
 
-ETC is an ambitious theory however it faces many practical problems.
-One major hurdle flavor changing neutral currents (FCNC).
-Flavor changing neutral currents such as $\mu\rightarrow e\bar{e}e$ and mixing between neutral mesons is highly constrained in the standard model.
+Extended technicolor faces many practical problems.
+One major hurdle is flavor changing neutral currents (FCNC).
+Flavor changing neutral currents such as $\mu\rightarrow e\bar{e}e$ and mixing between neutral mesons are highly constrained in the standard model.
 Most ETC theories typically introduce FCNC that are proportional to $M^2_{ETC}$.
 
 Another issue with ETC theories is size of the top quark mass.
@@ -121,7 +123,7 @@ There is a general consensus that any viable ETC model probably will have a slow
 In a walking theory $\gamma(\alpha(\mu))$ is large between $\Lambda_{TC}$ and $M_{ETC}$ 
 It has been shown that walking behavior addresses all of the problems I have discussed to a point.
 However any model that breaks at multiple scales and has the peculiarities of walking between those scales is likely to be very baroque.
-I discuss ways to generate a walking theory in detail below.
+I discuss how walking a walking theory can be generated in more detail below.
 
 \subsection{Conformal Window}
 \label{sec:sec:conformalwindow}
@@ -156,6 +158,7 @@ This function can be expanded in perturbation theory and is universal to two loo
 Any terms beyond two loops are renormalization scheme dependant and are not relevant for the following discussion.
 The values for $b_1$ and $b_2$ are:
 \begin{equation}
+  \label{eqn:b1b2}
   \begin{aligned}
     b_1&=\frac{11}{3}N_c-\frac{4}{3}N_fT(R)\\
     b_2&=\frac{34}{3}N_c^2-\frac{4}{3}T(R)N_f\Big[5N_c+3C_2(R)\Big].
@@ -185,12 +188,12 @@ Table \ref{table:casimir} give these invariants for a few common representations
   \label{fig:confining}
 \end{figure}
 
-Clearly tuning $N_c$, $N_f$ and $R$ offers a great deal of freedom in specifying the gauge theory.
-We can see from equation \ref{eqn:} that if the coefficients $b_1$ and $b_2$ are both positive than the beta function is negative.
+Clearly, tuning $N_c$, $N_f$ and $R$ offers a great deal of freedom in specifying the gauge theory.
+We can see from equation \ref{eqn:b1b2} that if the coefficients $b_1$ and $b_2$ are both positive than the beta function is negative.
 In this scenario the theory asymptotically free, confining, and spontaneously breaks chiral symmetry.
 The dynamics in the IR will be strongly coupled and non-perturbative.
 Figure \ref{fig:confining} shows what this scenario looks like.
-This occurs in QCD ($SU(3)$ $N_f=2\mbox{ or }3$ depending on your treatment of the light quarks) is an example of a theory where the beta function is negative.
+This occurs in QCD ($SU(3)$ $N_f=2\mbox{ or }3$ depending on your treatment of the light quarks), which is an example of a theory where the beta function is negative.
 
 \begin{figure}[h]
   \centering
@@ -202,9 +205,9 @@ This occurs in QCD ($SU(3)$ $N_f=2\mbox{ or }3$ depending on your treatment of t
 If we keep $b_1$ positive and allow $b_2$ to become negative we can force the two terms to compete.
 In perturbation theory this occurs at at a critical value of fermions $N^{crit}_f<\frac{17N_c^2}{2T(R)[5N_c+C(R)]}$.
 Such a beta function would start out negative, then at some coupling it would pass through a local minimum after which it would grow.
-Eventually at some $g^2_*$ the beta function would have a zero where $\beta=0$.
+Eventually, at some $g^2_*$, the beta function would have a zero where $\beta(g^2_*)=0$.
 Perturbatively this zero occurs at $g^2_*=-b_1/b_2$ and is a Banks-Zaks infrared fixed point.
-This is illustrated in \ref{fig:conformal}, such a theory is governed by the conformal dynamics at the infrared fixed point and is scale invariant.
+This is illustrated in figure \ref{fig:conformal}, such a theory is governed by the conformal dynamics at the infrared fixed point and is scale invariant.
 If the fixed point is at very weak coupling it is possible to gain insights from perturbation theory, however many theories are known to have strongly coupled IRFP's where insights from perturbation theory are unreliable.
 Conformal theories, like the scenario described above, do not support bound states of particles.
 As such they are often referred to as `unparticle theories'.
@@ -217,14 +220,14 @@ As such they are often referred to as `unparticle theories'.
 \end{figure}
 
 Allowing both $b_1$ and $b_2$ to be negative results in a trivial theory.
-Such a theory, shown in \ref{fig:trivial} is not asymptotically free.  
+Such a theory, shown in figure \ref{fig:trivial} is not asymptotically free.  
 The beta function is very similar to that of QED.
 Perturbatively this occurs when $N_f<\frac{11N_c}{4T(R)}$.
 
 The region in theory space between where the IRFP appears and where asymptotic freedom is lost is referred to as the conformal window.
 Limiting our consideration to theories using the fundamental representation fermions and $N_c=3$ we see that perturbation theory predicts the conformal window is between $N_f \approx 9.4 \mbox{ and } N_f=16.5$.
 It is important to note that all of the discussion in this section are perturbative results.
-On the upper end of the conformal window before asymptotic freedom is lost the IRFP of many theories is weak enough that perturbation theory is reasonable.
+On the upper end of the conformal window before asymptotic freedom is lost, the IRFP of many theories is weak enough that perturbation theory is reasonable.
 However, as we pass through the conformal window and consider theories with less fermionic degrees of freedom, the IRFP becomes strongly coupled.
 Here perturbation theory is not to be trusted.
 The location of the lower bound of the conformal window is an area of active research.
@@ -236,17 +239,17 @@ The location of the lower bound of the conformal window is an area of active res
   \label{fig:walking}
 \end{figure}
 
-The conformal window itself is not a very interesting system to study but understanding the lower bound of the conformal window is of great internet for potential Technicolor theories.
+The conformal window itself is not a very interesting system to study but understanding the lower bound of the conformal window is of great interest for potential Technicolor theories.
 Right below the conformal window it is believed that a walking theory can exist.
 In such a theory, shown in figure \ref{fig:walking} the beta function would start out like the conformal scenario.
-However, as the theory approaches the IRFP chiral symmetry is spontaneously broken and the beta function would turn around away from the `would be' IRFP.
+However, as the beta function approaches the IRFP, chiral symmetry is spontaneously broken and the beta function would turn around away from the `would be' IRFP.
 If this occurs, the coupling $g$ will run very slowly (walk) over a wide range of scales where the $\beta$ function approaches zero.
 Walking is necessary to achieve a wide separation of scales in Technicolor theories without generating flavor changing neutral currents.
 
 \subsection{Lattice Studies}
 Today there is a rich ecosystem of lattice studies of BSM studies, a survey of the current state of the field can be found in \cite{need to find a good overview}.
 It is extremely important that different ways of probing for IR conformality on different lattice discretization schemes converge to common conclusions.
-In general this is accomplished but there are still systems that cause debate because different groups draw different conclusions from their findings.  Below I summarize the sate of the field both in terms of calculation types and inters of theories studied.
+In general this is accomplished but there are still systems that cause debate because different groups draw different conclusions from their findings.  Below I summarize the sate of the field both in terms of calculation types and methods of theories studied.
 
 Many studies that seek to locate the conformal window have proceeded by calculating the RG flow of the theory under consideration.
 The first example of this type of study is \cite{124}.
@@ -262,8 +265,8 @@ References \cite{125-127} are examples of studying the conformal window using sp
 In practice these fits are extremely difficult, in particular fits for volume squeezed conformal theories has proved troublesome.
 
 Several groups have studied the finite temperature phase diagram \cite{131}.
-These studies identify an IRFP with a deconfining bulk transition
-Additionally techniques using Dirac eigenvalue spectrum \cite{130} has proven useful.
+These studies identify an IRFP with a deconfining bulk transition.
+Additionally techniques using Dirac eigenvalue spectrum \cite{130} has proven useful in calculating $\gamma_m$ over a wide range of scales.
 
 The majority of calculations have been for theories with $N_c=3$ with fermions in the fundamental representation.
 This is in part because the wide availability of optimized code bases for three colors.
@@ -280,6 +283,10 @@ Clearly, beyond standard model physics is inherently a difficult subject to stud
 Unlike studies of QCD we don't know the answer before hand.
 Taking a holistic approach and finding consensus is vital to our understanding.
 Additionally, as more of these theories have been studied, vital improvements have been made.
-This is true of the lattice code base which prior to BSM studies was highly optimized and sometimes only available for QCD simulations.
-Improvements have also been made in the way the data is analyzed.
-I will discuss two improvements we have developed in chapters \ref{ch:}-\ref{ch:}
+This is true of the lattice code base, which prior to BSM studies was highly optimized and sometimes only available for QCD simulations.
+This is also true for improvements in how we analyze lattice data.
+I will discuss two improvements we have developed in chapters \ref{ch:WFLOW} and \ref{ch:WMCRG}.
+Chapter \ref{ch:WFLOW} introduces an improvement to the gradient flow method for calculating the renormalized step scaling function.
+Chapter \ref{ch:WMCRG} introduces an improvement to the traditional MCRG method of calculating the bare step scaling function.
+Finally work in BSM physics on the lattice has pushed forward our knowledge of formulating lattice actions and understanding the nature of lattice artifacts.
+Many of the theories that have been studied are sufficiently un-QCD like that lattice QCD intuitions are being upended with a new tribal knowledge.

@@ -15,13 +15,13 @@ The steps scaling function is the discrete analog of the beta function in the co
 In general it is possible to recover the beta function from the step scaling function.
 However, for our purposes this is not important.
 Our goal is to determine whether or not a particular theory is conformal in the IR.
-As long as strong enough couplings are studied the IRFP will be visible in both the bare step scaling function and the renormalized beta function.
+As long as strong enough couplings are studied, the IRFP will be visible in both the bare step scaling function and the renormalized beta function.
 
 In the Wilsonian picture, couplings are characterized by their engineering dimension.
 In a four dimensional theory, a coupling is relevant if its engineering dimension is less than four.
 The coupling is marginal if its engineering dimension is equal to four and irrelevant if the engineering dimension is greater than four.
 The RG flow of the system is governed by fixed points and the renormalized trajectory.
-Additionally fixed points can be attractive or repulsive.
+Additionally, fixed points can be attractive or repulsive.
 A repulsive fixed point will push the RG flow along relevant directions.
 This flow characterizes the renormalized trajectory.
 Flow in irrelevant directions will always be directed towards the renormalized trajectory.
@@ -33,10 +33,15 @@ Generally the flow should be fastest in irrelevant directions.
 \subsection{Blocking}
 The first step in MCRG is to block the lattice.
 Blocking requires that the theory is defined on a regular lattice that has a discrete scaling symmetry.
-Discrete scaling symmetry, shown in \ref{fig:blocking} simply means that you can divide the sites of the lattice into regular blocks that tile the entire lattice and then replace those blocks with a single site.
+Discrete scaling symmetry, shown in figure \ref{fig:blocking} simply means that you can divide the sites of the lattice into regular blocks that tile the entire lattice and then replace those blocks with a single site.
 The new site can be located at a sight from the original lattice or anywhere in the block.
 The value at this site is typically computed as some function of the sites in the blocking group.
-If we perform this replacement the same way to every block in the original lattice and the lattice formed by the block variables is identical after scaling the lattice spacing $a\rightarrow a'\equiv sa$ to the original lattice then the system has discrete scaling symmetry.
+The lattice has a discrete scaling symmetry if:
+\begin{enumerate}
+  \item we perform this block replacement the same way to every block in the original lattice
+  \item we scale the lattice spacing of the lattice formed by the block variables: $a\rightarrow a'\equiv sa$ 
+  \item the lattice of block replaced observables is the same size as the original lattice 
+\end{enumerate}
 Here $s$ is a scale factor which relates the original lattice to the blocked lattice.
 
 \begin{figure}[h]
@@ -47,13 +52,13 @@ Here $s$ is a scale factor which relates the original lattice to the blocked lat
 \end{figure}
 
 The blocked lattice will have fewer sites than the original lattice.
-If the block variable has $p$ sites from the original lattice and $d$ dimensions then the relationship between the number of sites lost, the scale factor and the lattice dimension is $p=s^d$.
+If the block variable has $P$ sites from the original lattice and $d$ dimensions then the relationship between the number of sites lost, the scale factor and the lattice dimension is $p=s^d$.
 Naturally the blocking process can be repeated in a recursive manner until blocking is no longer possible.
 As an example consider a $32^2$ square lattice that is being blocked by a factor $s=2$.
 Such a lattice can be blocked 4 times: $32^2 \rightarrow 16^2 \rightarrow 8^2 \rightarrow 4^2 \rightarrow 2^2$.
 Performing another blocking would result in a single point which doesn't have the same dimensionality as our initial $2-D$ lattice.
 It is clear that some starting volumes are more flexible than others.
-An $14^2$ lattice can only be blocked once, $14^2 \rightarrow 7^2$, $7^2$ can not be blocked with a scale factor of 2.
+A $14^2$ lattice can only be blocked once, $14^2 \rightarrow 7^2$, since a $7^2$ lattice can not be blocked with a scale factor of 2.
 
 In a lattice simulation the quantities we are interested in are the link variables.
 The link variable $U_{n,\mu}$ encodes the gauge field at sight $n$ in all four $\hat{\mu}$ directions.
@@ -71,8 +76,8 @@ In four dimensions this means that an observable such as a Wilson loop will have
 Fortunately, on an $N$ dimensional hyper cubic lattice there are $2^N$ unique ways to perform this blocking.
 Therefore in four dimensions there are 16 unique blocking configurations.
 We can preserve statistics in our calculation by performing all of the unique blocking transformations and averaging all of the observables from those blocking transformations together.
-Additionally we store the blocked links on a lattice of the original cardinality using offsets as shown in \ref{fig:block2}.
-This allows us to efficiently store a lattice blocked down to any allowable level and has the added benefit that only minor adjustments need to be made to calculate blocked observables.
+Additionally we store the blocked links on a lattice of the original cardinality using offsets as shown in figure \ref{fig:block2}.
+This allows us to efficiently store a lattice blocked down to any allowable level and has the added benefit that only minor adjustments need to be made to our code to calculate blocked observables.
 
 Lets consider how blocking will effect a lattice model with $d$ dimensions and action $S(K_i)$.
 Here $K_i$ are the set of all possible couplings in the action.
@@ -91,20 +96,19 @@ where $K_i^0$ denotes the couplings on the unblocked lattice.
 Although the physical correlation length is unchanged the lattice correlation length after $n_b$ blocking steps is scaled by
 \begin{equation}
   \label{eqn:xi}
-  \xi^{n_b}=s^{-n}\xi^{(0)}.
+  \xi^{n_b}=s^{-n_b}\xi^{(0)}.
 \end{equation}
-Critical fixed points exist when $\xi = \inf$ and trivial fixed points exist when $\xi = 0$.
+Critical fixed points exist when $\xi = \infty$ and trivial fixed points exist when $\xi = 0$.
 The scaling behavior at critical fixed points are well understood theoretically.
 Here the linearized RG transformation predicts the scaling operators and the corresponding scaling dimension.
 
-Figure \ref{fig:Kflow} visualizes the renormalization group flow that I have described for a system with one fixed point and only one relevant coupling at the fixed point, $K_0$.
+Figure \ref{fig:Kflow-block} visualizes the renormalization group flow that I have described for a system with one fixed point and only one relevant coupling at the fixed point, $K_0$.
 All other couplings are irrelevant and are collapsed onto the y-axis.
 The critical surface is shown in the figure is depicted at at $K_0=0$.
-A simulation point in parameter space, $p$, is chosen.
+A simulation point in parameter space, $P$, is chosen.
 The flow lines approach the fixed point in the irrelevant directions and flow away from the fixed point in the relevant direction.
 After some number of RG steps the irrelevant operators have died out and the system is flowing along the renormalized trajectory.
 The renormalized trajectory is uniquely determined by the RG transformation.
-
 
 Finally, in our blocking step we also apply a nHYP smearing step.
 By changing the parameters in the smearing step we can control the renormalized trajectory that we will flow to under successive blocking steps.
@@ -130,24 +134,38 @@ At stronger coupling a physical quantity or other quantity such as the Sommer pa
 Since the primary focus of this thesis is to determine the existence or lack thereof of an infrared fixed point in strong coupling I don't attempt to follow such a procedure.
 In the future finding the corresponding renormalized beta function may be of interested.
 
-Figure \ref{fig:Kflow2lm} demonstrates how two lattice matching is performed.
-In the figure we start with two points in coupling space $p_1$ and $p_2$.
+\begin{figure}[h]
+  \centering
+  \includegraphics[height=3in]{\cnum{4}/fig/mcrg_block_uvfp.png}
+  \caption{}
+  \label{fig:Kflow-block}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[height=3in]{\cnum{4}/fig/mcrg_match.png}
+  \caption{}
+  \label{fig:Kflow-match}
+\end{figure}
+
+Figure \ref{fig:Kflow-match} demonstrates how two lattice matching is performed.
+In the figure we start with two points in coupling space $P_1$ and $P_2$.
 Under successive RG transformations they flow along the lines indicated.
 If we can identify two sets of couplings that flow to the same point on the renormalized trajectory after the same number of blocking steps we know that the correlation lengths are identical.
 From equation \ref{eqn:xi} we know that if two sets of couplings flow to the same point on the renormalized trajectory, but one set of couplings required one less blocking step that the lattice correlation length differers from a factor of $s$.
 Thus we have accomplished our goal.
-We have identified two points in coupling space $p_1$ and $p_2$ with corresponding $\xi_2=\xi/s$ after $n$ and $(n-1)$ blocking steps.
+We have identified two points in coupling space $P_1$ and $P_2$ with corresponding $\xi_2=\xi_1/s$ after $n$ and $(n-1)$ blocking steps.
 
-Demonstrating that the couplings are equal is equivalent to showing that the actions are identical, $S(p_1^{(n_b)})=S(p_2^{(n_{b-1})})$.
-Calculating the blocked action is extremely challenging.
+Demonstrating that the couplings are equal is equivalent to showing that the actions are identical, $S(P_1^{(n_b)})=S(P_2^{(n_{b-1})})$.
+Calculating the blocked action is extremely challenging, fortunately we don't have to.
 We are saved because we don't need to know the exact form of the actions to demonstrate that they are equivalent.
-Instead we can show that expectation values of every operator measured on $p_1^{(n_b)}$ and $p_2^{(n_{b-1})}$ are identical.
+Instead we can show that expectation values of every operator measured on $P_1^{(n_b)}$ and $P_2^{(n_{b-1})}$ are identical.
 Generating configuration ensembles of blocked lattices with Boltzman weights is trivial, we simply need to take an existing ensemble of configurations and then block them \cite{Swendsen:1979}.
 
 Putting everything together we can prescribe the following procedure for two lattice matching \cite{Hasenfratz:2009}:
 \begin{enumerate}
-  \item Generate a configuration ensemble of size $L^d$ with action $S(p_1)$. Block each configuration $n_b$ times and measure a set of expectation values on the resulting $(L/s^{n_b})^d$ set.
-  \item Generate several configurations of size $(L/s)^d$ with action $S(p_2)$, where each $p_2$ is a trial coupling. Block each configuration $(n_b-1)$ times and measure the same expectation values on the resulting $(L/s^{n_b})^d$ set. Compare the results with that obtained in step 1 and tune the coupling $p_2$ such that the expectation values agree. 
+  \item Generate a configuration ensemble of size $L^d$ with action $S(P_1)$. Block each configuration $n_b$ times and measure a set of expectation values on the resulting $(L/s^{n_b})^d$ set.
+  \item Generate several configurations of size $(L/s)^d$ with action $S(P_2)$, where each $P_2$ is a trial coupling. Block each configuration $(n_b-1)$ times and measure the same expectation values on the resulting $(L/s^{n_b})^d$ set. Compare the results with that obtained in step 1 and tune the coupling $P_2$ such that the expectation values agree. 
 \end{enumerate}
 
 This method is powerful for several reasons.
@@ -161,7 +179,7 @@ If we fail to reach the renormalized trajectory it will be evident in that the o
 Therefore we can use the spread in the matching values of the different operators as a measure a systematic error in our matching.
 
 The discussion so far has focused on fixed points with one relevant operator.
-If the fixed point has two relevant operators the matching process is identical only now it is necessary to tune two operators to find pairs of points in coupling space.
+If the fixed point has two relevant operators the matching process is identical only now it is necessary to tune two operators to find pairs of points in a two dimensional coupling space.
 While this is possible it is much easier to fix one of the relevant couplings to its fixed point value.
 By effectively removing one of the relevant couplings we can proceed as with the matching of the remaining coupling.
 
@@ -203,7 +221,7 @@ In a confining chiral broken theory, such as QCD, the RG flow will away from the
 If the fermions are massless the only relevant operator is the gauge coupling $\beta$.
 This is the $\beta$ that we set in the action of our lattice simulation.
 Therefore the renormalized trajectory will flow along the $\beta$ axis in coupling space from infinity to zero.
-RG flows will flow to the renormalized trajectory and then along it as shown in \ref{fig:confiningRG}
+RG flows will flow to the renormalized trajectory and then along it as shown in figure \ref{fig:confiningRG}
 
 \subsection{Conformal Theories}
 

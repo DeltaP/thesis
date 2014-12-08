@@ -29,7 +29,7 @@ Note that the link variable is gauge invariant under the transformation
   U_{x,\mu}\rightarrow \Omega_x U_{x,\mu} \Omega_{x+a\hat{\mu}}.
 \end{equation}
 Although not necessary for the abelian case, considering $A_\mu(x)$ to have an underlying group structure will help us generalize this discussion at the end.
-Therefore useing the identity $\mbox{exp}(A)\mbox{exp}(B)=\mbox{exp}(A+B+\frac{1}{2}[A,B]+...)$ for matrices A and B, we can now construct the plaquette
+Therefore using the identity $\mbox{exp}(A)\mbox{exp}(B)=\mbox{exp}(A+B+\frac{1}{2}[A,B]+...)$ for matrices A and B, we can now construct the plaquette
 \begin{equation}
   \begin{aligned}
     P_{x,\mu\nu}=&e^{ig}\mbox{exp}\Big[aA_\mu(x)+aA_\nu(x+\hat{\mu})-aA_\mu(x+\hat{\nu})-aA_\nu(x) \\
@@ -68,23 +68,22 @@ This can be trivially generalized to $SU(N_c)$ gauge theories
   S_G(P_{x,\mu\nu})=\beta\sum_{x} \sum_{\mu<\nu} \mbox{Re}\Big[\mbox{Tr}\big[\mathbb{I}-\frac{1}{N_c}P_{x,\mu\nu}\big]\Big],
 \end{equation}
 where $\beta\equiv\frac{2N_c}{g^2}$.
-This is the Wilson gauge action.
+This is the Wilson gauge action \cite{PhysRevD.10.2445}.
 
 There are several ways to improve upon the Wilson gauge action.
-The general idea is to add additional gauge invariant terms into the action with the goal of removing higher order lattice discretization errors.
+The general idea is to add additional gauge invariant terms into the action with the goal of removing higher order lattice discretization errors \cite{Symanzik1983205, Weisz19831, Lüscher1985250}.
 There are many improved actions that have been developed in the past few decades.
-Improved gauge actions are beyond the scope of this thesis.
-I will briefly comment on a negative adjoint term that we use in our action.
+Although improved gauge actions in general are beyond the scope of this thesis, I will briefly comment on a negative adjoint term that we use in our action.
 
 \subsection{Negative Adjoint Term}
 
 In our studies we have added a negative adjoint term to the gauge part of the action.
-The purpose of this term is to avoid a well known spurious UV fixed point \cite{ac 3,80,4} in the fundamental adjoint plane.
+The purpose of this term is to avoid a well known spurious UV fixed point \cite{PhysRevD.24.3212,Bhanot1982337,Blum1995301} in the fundamental adjoint plane.
 The mixed fundamental-adjoint action is
 \begin{equation}
   S_{AF}=\beta_F\sum_{x} \sum_{\mu<\nu} \mbox{Re}\Big[\mbox{Tr}\big[\mathbb{I}-\frac{1}{N_c}P_{x,\mu\nu}\big]\Big] + \beta_A\sum_{x} \sum_{\mu<\nu}\Big[\mbox{Tr}\big[\mathbb{I}-\frac{1}{N_c^2}P_{x,\mu\nu}^\dagger P_{x,\mu\nu}\big]\Big]
 \end{equation}
-In our studies we set the ratio $\frac{\beta_A}{\beta_F}=-0.25$ which avoids a crossover that extends from the UV fixed point across the $\beta_A=0$ axis.
+In our studies we set the ratio $\frac{\beta_A}{\beta_F}=-0.25$ which avoids a crossover that extends from the UV fixed point across the $\beta_A=0$ axis \cite{Hasenfratz:2010fi}.
 With our action the perturbative relation to the bare coupling is
 \begin{equation}
   \frac{6}{g^2}=\beta_F+2\beta_A.

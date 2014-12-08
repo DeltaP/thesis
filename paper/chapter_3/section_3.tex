@@ -54,7 +54,7 @@ The mass doubler modes gain is proportional to the inverse of the lattice spacin
 The caveat in this strategy is that the Wilson term explicitly breaks chiral symmetry on the lattice even at zero fermion mass.
 
 Unfortunately there is no easy way around this problem.
-The Nielsen and Ninomiya no-go theorem states that you can not place chiral fermions on a regular lattice of even dimension without fermion doublers.
+The Nielsen and Ninomiya no-go theorem states that you can not place chiral fermions on a regular lattice of even dimension without fermion doublers \cite{Nielsen198120,Nielsen1981173,Nielsen1981219,kaplan:fermions}.
 Any solution to the doubler problem will have to sacrifice chiral symmetry, dimensionality, or the regularity of the lattice.
 There are several types of fermionic actions that trade off these downfalls.
 Some actions are able to preserve a near exact chiral symmetry, generally by adding dimensionality, however these actions are extremely expensive and difficult to simulate at strong coupling.
@@ -62,7 +62,7 @@ The only action I will address further is the staggered action because it is use
 
 \subsection{Staggered Fermions}
 
-Staggered fermions were introduced by Kogut and Sussking \cite{ac69}.
+Staggered fermions were introduced by Kogut and Sussking \cite{PhysRevD.11.395}.
 The staggered action mixes Dirac and space time indices of the naïve fermionic action to reduce the number of doublers from 16 to 4.
 To accomplish this lets define new field variables $\psi(x)'$ and $\bar{\psi}(x)'$
 \begin{equation}
@@ -103,14 +103,14 @@ Additionally there is a protected Goldstone mode which protects fermion masses f
 
 In QCD studies, taste poses a unique problem when trying to study 2, or 2+1, or 2+1+1 flavors of fermions.
 The 4 degenerate flavors have to be transformed into 1 or 2 flavors.
-This is accomplished by a technique called rooting.
-Although rooted calculations routinely reproduce correct results, there is still some controversy about the technique.
+This is accomplished by a technique called rooting \cite{PhysRevD.72.114512}.
+Although rooted calculations routinely reproduce correct results, there is still some controversy about the technique \cite{Creutz2007230,Creutz2007241,Kronfeld:2007ek}.
 Fortunately in our studies we examine theories with multiples of 4 flavors thereby circumventing the rooting problem entirely.
 
 \subsection{Improved Fermions}
 
 In the simulations detailed in chapters \ref{ch:MCRG,ch:WFLOW,ch:WMCRG} we use nHYP improved staggered fermions in our action.
-nHYP smearing was introduced in \cite{ac5,34,2} and reduces the problem of lattice artifacts, specifically taste breaking, in staggered actions.
+nHYP smearing was introduced in \cite{Hasenfratz:2007rf} and reduces the problem of lattice artifacts, specifically taste breaking, in staggered actions \cite{Hasenfratz:2001tw}.
 
 nHYP smearing is built out of three consecutive smearing steps that are restricted to the hypercubes associated with the link being smeared.
 The first step:

@@ -154,37 +154,47 @@ The properties of all the standard model particles is summarized in table \ref{t
 
 \begin{table}
   \centering
-  \begin{tabular}{c c c c c c c c}
-    Type    & Particle Name     & Symbol    & Mass    & Generation  & $U(1)_Y$  & $U(1)_{\mbox{EM}}$  & color charge  \\
+  \begin{tabular}{c c c c c}
+    Particle Name     & Symbol      & Mass (MeV)            & Generation  & charge $(U(1)_{EM}$ \\
     \hline
-    lepton  & electron          & e         & 511 KeV & 1           &           &                     & no            \\
-    lepton  & muon              & $\mu$     & 106 MeV & 2           &           &                     & no            \\
-    lepton  & tau               & $\tau$    &     MeV & 3           &           &                     & no            \\
-    lepton  & electron neutrino & $\nu_e$   &     KeV & 1           &           &                     & no            \\
-    lepton  & muon neutrino     & $\nu_\mu$ &     MeV & 2           &           &                     & no            \\
-    lepton  & tau neutrino      & $\nu_\tau$&     MeV & 3           &           &                     & no            \\
-    quark   & up                & $u$       &         &             &           &                     & yes           \\
-    quark   & down              & $d$       &         &             &           &                     & yes           \\
-    quark   & strange           & $s$       &         &             &           &                     & yes           \\
-    quark   & charm             & $c$       &         &             &           &                     & yes           \\
-    quark   & top (truth)       & $t$       &         &             &           &                     & yes           \\
-    quark   & bottom (beauty)   & $b$       &         &             &           &                     & yes           
+    electron          & e           & $0.510999$            & 1           & -1                  \\
+    electron neutrino & $\nu_e$     & $< 2.2\times10^{-6}$  & 1           & 0                   \\
+    muon              & $\mu$       & $105.659$             & 2           & -1                  \\
+    muon neutrino     & $\nu_\mu$   & $< 0.170$             & 2           & 0                   \\
+    tau               & $\tau$      & $1.776\times10^{3}$   & 3           & -1                  \\
+    tau neutrino      & $\nu_\tau$  & $< 15.5$              & 3           & 0                   \\
   \end{tabular}
   \label{table:fermions}
-  \caption{The standard model fermions}
+  \caption{The standard model fermions are spin 1/2 fundamental particles in the color singlet.  The masses for the electron, muon, and tau are known to the percision given.  The neutrinos are know to have masses but their masses are not percicly measured.  Left handed leptons have weak hypercharge of -1 while right handed leptons have weak hyperchange of -2.  Right handed neutrinos have not been observed.}
+\end{table}
+
+\begin{table}
+  \begin{tabular}{c c c c c}
+    Particle Name     & Symbol    & Mass                                & Generation  & charge $U(1)_{\mbox{EM}}$  \\
+    \hline
+    up                & $u$       & $2.3^{+0.7}_{-0.5}$                 & 1           & $\frac{2}{3}$              \\
+    down              & $d$       & $4.8^{0.5}_{-0.3}$                  & 1           & $-\frac{1}{3}$             \\
+    strange           & $s$       & $95\pm5$                            & 2           & $-\frac{1}{3}$             \\
+    charm             & $c$       & $(1.275\pm0.025)\times10^3$         & 2           & $\frac{2}{3}$              \\
+    top (truth)       & $t$       & $(173.07\pm1)\times10^{3}$          & 3           & $\frac{2}{3}$              \\
+    bottom (beauty)   & $b$       & $(4.180\pm0.03)\times10^3$          & 3           & $-\frac{1}{3}$
+  \end{tabular}
+  \label{table:quarks}
+  \caption{The standard model quarks are spin 1/2 fundamental particles that are charged under $SU(3)_C$.  Left handed quarks have 1/3 hyperchage.  Right handed quarks with 2/3 electric charge have weak hypercharge of 4/3 while the right handed quarks with -1/3 electric charge have weak hypercharge of -2/3.}
 \end{table}
 
 \begin{table}
   \centering
-  \begin{tabular}{c c}
-    Particle Name & Symbol    \\
+  \begin{tabular}{c c c c}
+    Particle Name & Symbol    & mass (MeV)                      & charge $U(1)_{\mbox{EM}}$ \\
     \hline
-    photon        & $\gamma$  \\
-    $W^+$         & $W^+$     \\
-    $W^-$         & $W^-$     \\
-    $Z$           & $Z$       \\
-    gluon         & $g$       
+    gluon         & $g$       & 0                               &  0                        \\
+    photon        & $\gamma$  & 0                               &  0                        \\
+    $W^+$         & $W^+$     & $(80.385\pm0.015)\times10^3$    &  1                        \\
+    $W^-$         & $W^-$     & $(80.385\pm0.015)\times10^3$    & -1                        \\
+    $Z$           & $Z$       & $(91.1876\pm0.0021)\times10^3$  &  0                        \\
+    Higgs         & $H$       & $(125.9\pm0.4)\times10^3$       &  0
   \end{tabular}
   \label{table:bosons}
-  \caption{The standard model bosons}
+  \caption{The standard model bosons.  All partiles are spin 1 except for the Higgs particle which is spin 0.}
 \end{table}

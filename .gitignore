@@ -26,3 +26,26 @@
 
 sources
 */*/fig
+misc
+talk/fig
+
+paper/DistributionScattering.1
+paper/DistributionScattering.2
+paper/DistributionScattering.3
+paper/DistributionScattering.mp
+paper/DistributionScattering.t1
+paper/DistributionScattering.t2
+paper/DistributionScattering.t3
+paper/Q.tex
+paper/qcdvertex.1
+paper/qcdvertex.2
+paper/qcdvertex.3
+paper/qcdvertex.mp
+paper/qcdvertex.t1
+paper/qcdvertex.t2
+paper/qcdvertex.t3
+paper/qedvertex.1
+paper/qedvertex.mp
+paper/qedvertex.t1
+paper/simple.mp
+paper/thesis.mexpot.gnuplot

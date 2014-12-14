@@ -30,9 +30,9 @@
 \setbeamertemplate{footline}[frame number]
 
 \title{\huge{Improved Lattice Renormalization Group Techniques}}
-\author{\textbf{Gregory Petropoulos}\\ Anqi Cheng, Anna Hasenfratz, David Schaich}
+\author{\textbf{Gregory Petropoulos}\\ Anqi Cheng, Anna Hasenfratz, David Schaich, Yuzhi Liu}
 \institute{University of Colorado Boulder}
-\date{July 30, 2013}
+\date{December 17, 2014}
 
 \AtBeginSection{\frame{\sectionpage}}
 \AtBeginSubsection{\frame{\subsectionpage}}
@@ -51,7 +51,11 @@
   \end{frame}
   \addtocounter{framenumber}{-1}
 
-  \section{Lattice Beyond the Standard Model}
+                      %******************%
+%********************% SM and Beyond      %********************%
+                      %******************%
+
+  \section{Standard Model and Beyond}
   \addtocounter{framenumber}{-1}
 
   \begin{frame}
@@ -61,9 +65,9 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Higgs Particle}
+    \frametitle{Hierarchy Problem}
     \centering
-    \includegraphics[width=0.7\textwidth]{fig/higgs_collage.png}
+    $m^2_H=m^2_0+\frac{3}{4\pi}\lambda\Lambda_{cut}^2$
   \end{frame}
 
   \begin{frame}
@@ -79,13 +83,9 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Lattice Studies}
+    \frametitle{Walking}
     \centering
-    \includegraphics[width=0.9\textwidth]{fig/lattice_studies.pdf}
   \end{frame}
-
-  \section{Lets Study the $\beta$ Function}
-  \addtocounter{framenumber}{-1}
 
   \begin{frame}
     \frametitle{The $\beta$ Function}
@@ -100,10 +100,22 @@
     \includegraphics[width=0.6\textwidth]{fig/betafn.png}
   \end{frame}
 
+                      %******************%
+%********************% Lattice Studies    %********************%
+                      %******************%
+
+  \section{Lattice Studies}
+  \addtocounter{framenumber}{-1}
+
   \begin{frame}
-    \frametitle{Lattice Studies}
+    \frametitle{Lattice Gauge Theory}
     \centering
-    \includegraphics[width=0.9\textwidth]{fig/EthanRM.pdf}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Lattice BSM Studies}
+    \centering
+    \includegraphics[width=0.9\textwidth]{fig/lattice_studies.pdf}
   \end{frame}
 
   \begin{frame}
@@ -120,6 +132,10 @@
       \item Wilson Flow MCRG
     \end{itemize}
   \end{frame}
+
+                      %******************%
+%********************% Wilson RG          %********************%
+                      %******************%
 
   \section{Wilson Renormalization Group}
   \addtocounter{framenumber}{-1}
@@ -192,27 +208,6 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Blocking}
-    \begin{columns}[T]
-      \begin{column}{.5\textwidth}
-        \begin{block}{}
-          \includegraphics[width=\textwidth]{fig/block2.png}
-        \end{block}
-      \end{column}
-      \begin{column}{.5\textwidth}
-        \begin{block}{}
-          \begin{itemize}
-            \item NHYP smear the lattice
-            \item we use a scale factor $s=2$
-            \item average links $U_{n,\mu}$, $U_{n+1,\mu}$
-            \item perform all possible blocking
-          \end{itemize}
-        \end{block}
-      \end{column}
-    \end{columns}
-  \end{frame}
-
-  \begin{frame}
     \frametitle{Two Lattice Matching}
     \centering
     \includegraphics[width=0.5\textwidth]{fig/2lm.png}
@@ -242,14 +237,6 @@
         \end{block}
       \end{column}
     \end{columns}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Finite Volume Correction}
-    \centering
-    \includegraphics[width=\textwidth]{fig/3lm.png}
-    \vspace{12pt}
-    Can apply two separate two lattice matchings such the final blocked volumes for $n_b$, $n_{b-1}$, and $n_{b-2}$ are the same.
   \end{frame}
 
   \begin{frame}
@@ -294,6 +281,23 @@
   \end{frame}
 
   \begin{frame}
+    \frametitle{Results}
+    Summary of calculation and lattices used.
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Results - 8 flavors}
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig/8flavor.pdf}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Results - 12 flavors}
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig/12flavor.pdf}
+  \end{frame}
+
+  \begin{frame}
     \frametitle{Stitching Together different $s_b$}
     \begin{columns}[T]
       \begin{column}{.5\textwidth}
@@ -335,6 +339,10 @@
       \end{column}
     \end{columns}
   \end{frame}
+
+                      %******************%
+%********************% Gradient Flow      %********************%
+                      %******************%
 
   \section{Gradient (Wilson) Flow}
   \addtocounter{framenumber}{-1}
@@ -404,7 +412,6 @@
       U(x,\mu)\rightarrow U'(x,\mu)&=e^{\epsilon [Z(U)](x,\mu)}U(x,\mu) \\
       Z(U) &=-g^2_0\nabla_{x,\mu}S_w
     \end{align*}
-
   \end{frame}
 
   \begin{frame}
@@ -595,7 +602,7 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{Conclusions}
+    \frametitle{Summary - WMCRG}
     \begin{itemize}
       \item New work on an established method
       \item With Wilson flow MCRG we can find a unique step scaling function
@@ -620,6 +627,141 @@
   \end{frame}
 
   \begin{frame}
+    \frametitle{First Look}
+    Very different from asymptotic freedom.
+    \begin{columns}
+      \begin{column}{0.7\textwidth}
+        \includegraphics[width=1.2\textwidth]{fig/wflow.png}
+      \end{column}
+      \begin{column}{0.3\textwidth}
+        \begin{centering}
+          \vspace{12pt}
+          fixed $\beta$ in strong coupling:\\
+          $g^2(L)$ decreases as\\
+          $L$ increases\\
+          crossigns=IRFP\\
+        \end{centering}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Continuum Extrapolation}
+    This is not $\beta = \infty$ continuum limit.
+    \begin{columns}
+      \begin{column}{0.7\textwidth}
+        \includegraphics[width=1.2\textwidth]{fig/wflow_continuum.png}
+      \end{column}
+      \begin{column}{0.3\textwidth}
+        \begin{center}
+          fix $g^2(L)=g_0^2$\\\vspace{24pt}
+          compare\\$g^2(2L)-g^2(L)$\\\vspace{24pt}
+          $L\rightarrow \infty$\\requires\\decreasing $\beta$
+        \end{center}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Continuum Extrapolation}
+    \begin{columns}
+      \begin{column}{0.7\textwidth}
+        \includegraphics[width=1.2\textwidth]{fig/cont_extrap_no_improv.png}
+      \end{column}
+      \begin{column}{0.3\textwidth}
+        \begin{center}
+        \end{center}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Wilson Flow Optimization}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Combined Fit - Vary $\tau_0$}
+      \includegraphics[width=\textwidth]{fig/fit_s2_c02.pdf}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Combined Fit - $\tau_{opt}$}
+    \includegraphics[width=\textwidth]{fig/fit_c02_tau004.pdf}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Summary - Optimized Gradient Flow Step Scaling}
+    \begin{itemize}
+      \item New work on an established method
+      \item With Wilson flow MCRG we can find a unique step scaling function
+      \item Wilson flow MCRG predicts an IRFP for SU(3) $N_f=12$ in all analysis
+      \item Wilson flow MCRG is computationally inexpensive; does not rely on perturbation theory
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Conclusions}
+    \begin{itemize}
+      \item Wilson flow step scaling is a complementary technique to MCRG
+      \item Our preliminary results are consistent with what we see in MCRG
+      \item Find IRFP (crossings) and backwards flow on strong coupling side of IRFP
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Acknowledgments}
+    \begin{itemize}
+      \item{Anna, David, Anqi, Yuzhi}
+      \item{DOE Office of Science Graduate Student Fellowship}
+      \item{USQCD}
+      \item{University of Colorado Research Computing (Janus)}
+      \item{NSF XSEDE}
+      \item{Thank you for watching}
+    \end{itemize}
+  \end{frame}
+
+%********************%                    %********************%
+                      %******************%
+%********************%                    %********************%
+
+  \begin{frame}
+    \addtocounter{framenumber}{-1}
+    \frametitle{Auxiliary Slides}
+  \end{frame}
+
+  \begin{frame}
+    \addtocounter{framenumber}{-1}
+    \frametitle{Blocking}
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
+        \begin{block}{}
+          \includegraphics[width=\textwidth]{fig/block2.png}
+        \end{block}
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \begin{block}{}
+          \begin{itemize}
+            \item NHYP smear the lattice
+            \item we use a scale factor $s=2$
+            \item average links $U_{n,\mu}$, $U_{n+1,\mu}$
+            \item perform all possible blocking
+          \end{itemize}
+        \end{block}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \addtocounter{framenumber}{-1}
+    \frametitle{Finite Volume Correction}
+    \centering
+    \includegraphics[width=\textwidth]{fig/3lm.png}
+    \vspace{12pt}
+    Can apply two separate two lattice matchings such the final blocked volumes for $n_b$, $n_{b-1}$, and $n_{b-2}$ are the same.
+  \end{frame}
+
+  \begin{frame}
+    \addtocounter{framenumber}{-1}
     \frametitle{Comparison}
     \begin{columns}[T]
       \begin{column}{0.5\textwidth}
@@ -649,6 +791,7 @@
   \end{frame}
 
   \begin{frame}
+    \addtocounter{framenumber}{-1}
     \frametitle{Wilson Flow - Preliminary} 
     \begin{columns}
       \begin{column}{0.7\linewidth}
@@ -664,90 +807,4 @@
     \end{columns}
   \end{frame}
 
-  \begin{frame}
-    \frametitle{Continuum Extrapolation - Preliminary}
-    Very different from asymptotic freedom.
-    \begin{columns}
-      \begin{column}{0.7\textwidth}
-        \includegraphics[width=1.2\textwidth]{fig/wflow_fixed_beta.png}
-      \end{column}
-      \begin{column}{0.3\textwidth}
-        \begin{centering}
-          \vspace{24pt}
-          at fixed $\beta$:\\
-          $g^2(L)$ decreases as\\
-          $L$ increases\\
-        \end{centering}
-      \end{column}
-    \end{columns}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Continuum Extrapolation - Preliminary}
-    This is not $\beta = \infty$ continuum limit.
-    \begin{columns}
-      \begin{column}{0.7\textwidth}
-        \includegraphics[width=1.2\textwidth]{fig/wflow_continuum.png}
-      \end{column}
-      \begin{column}{0.3\textwidth}
-        \begin{center}
-          fix $g^2(L)=g_0^2$\\\vspace{24pt}
-          compare\\$g^2(2L)-g^2(L)$\\\vspace{24pt}
-          $L\rightarrow \infty$\\requires\\decreasing $\beta$
-        \end{center}
-      \end{column}
-    \end{columns}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Conclusions}
-    \begin{itemize}
-      \item Wilson flow step scaling is a complementary technique to MCRG
-      \item Our preliminary results are consistent with what we see in MCRG
-      \item Find IRFP (crossings) and backwards flow on strong coupling side of IRFP
-    \end{itemize}
-  \end{frame}
-
-  \section{Future Work}
-  \addtocounter{framenumber}{-1}
-
-  \begin{frame}
-    \frametitle{Future Work}
-    WMCRG
-    \begin{itemize}
-      \item More volumes and statistics needed to nail down $32^4$
-      \item Possibly $48^4$
-      \item Improve interpolation used in matching
-    \end{itemize}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Future Work}
-    Wilson Flow
-    \begin{itemize}
-      \item More volumes and statistics needed to nail down $32^4$ and $36^4$
-      \item More work needed on the continuum extrapolation in the Wilson Flow Step Scaling analysis
-    \end{itemize}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Future Work}
-    \begin{itemize}
-      \item These methods are portable
-      \item $SU(3)$ $N_f=8$ USBSM project
-      \item QUDA
-    \end{itemize}
-  \end{frame}
-
-  \begin{frame}
-    \frametitle{Acknowledgments}
-    \begin{itemize}
-      \item{Anna, David, Anqi}
-      \item{DOE Office of Science Graduate Student Fellowship}
-      \item{USQCD}
-      \item{University of Colorado Research Computing (Janus)}
-      \item{NSF XSEDE}
-      \item{Thank you for watching}
-    \end{itemize}
-  \end{frame}
 \end{document}

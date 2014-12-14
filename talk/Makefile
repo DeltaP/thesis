@@ -1,4 +1,4 @@
-FILE = "comps3"
+FILE = "defense.tex"
 
 main:
 	pdflatex $(FILE)

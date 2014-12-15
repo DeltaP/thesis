@@ -1,0 +1,264 @@
+                      %******************%
+%********************% Wilson RG          %********************%
+                      %******************%
+
+  \section{Wilson Renormalization Group}
+  \addtocounter{framenumber}{-1}
+
+  \begin{frame}
+    \frametitle{Wilson Renormalization Group}
+    RG transformation integrates out high momentum modes
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
+        \begin{block}{}
+          \includegraphics[width=\textwidth]{fig/renorm_uvfp.png}
+        \end{block}
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \begin{block}{}
+          \includegraphics[width=\textwidth]{fig/renorm_irfp.png}
+        \end{block}
+      \end{column}
+    \end{columns}
+    \begin{itemize}
+      \item \emph{\textcolor{flow}{flow}} to \textcolor{renorm_traj}{renormalized trajectory} in irrelevant directions
+      \item \emph{\textcolor{flow}{flow}} along \textcolor{renorm_traj}{renormalized trajectory} in relevant directions
+      \item \emph{\textcolor{flow}{flow}} away from \textcolor{uvfp}{ultraviolet fixed points}
+      \item \emph{\textcolor{flow}{flow}} to \textcolor{irfp}{infrared fixed points}
+    \end{itemize}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Monte Carlo Renormalization Group}
+    Goal:  Calculate the bare step scaling function, $s_b$
+    \vspace{24pt}
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
+        \begin{block}{}
+          \includegraphics[width=\textwidth]{fig/mcrg_uvfp.png}
+        \end{block}
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \begin{itemize}
+          \item block
+          \item match
+          \begin{equation*}
+            \begin{aligned}
+              (\beta_1,n_b) &\equiv(\beta_2,n_{b-1})\\
+              \Delta\beta &\equiv \beta_1-\beta_2\\
+              \lim_{n_b\to\infty} \Delta\beta &= s_b
+            \end{aligned}
+          \end{equation*}
+          \item optimize
+        \end{itemize}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Blocking Procedure}
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
+        \begin{block}{}
+          \includegraphics[width=\textwidth]{fig/block.png}
+        \end{block}
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \begin{block}{}
+          \begin{itemize}
+            \item integrate out UV
+            \item flow in parameter space towards and along RT
+            \item nHYP smearing in block transformation
+            \vspace{12pt}
+            \item reduce degrees of freedom by a factor of $s^D$
+            \item $s$ - scale factor
+            \item $D$ - dimension
+            \item $a \rightarrow 2a$
+            \item $\Lambda_{\text{cut}} \rightarrow \tfrac{\Lambda_{\text{cut}}}{2}$
+          \end{itemize}
+        \end{block}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Two Lattice Matching in Action Space}
+    \centering
+    \includegraphics[width=0.5\textwidth]{fig/2lm.png}
+    \newline
+    \vspace{12pt}
+    \emph{Hard to calculate and match blocked lattice actions!}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Two Lattice Matching on the Lattice}
+    \begin{columns}[T]
+      \begin{column}{.4\textwidth}
+        \includegraphics[width=\textwidth]{fig/mcrg_match.png}
+      \end{column}
+      \begin{column}{.6\textwidth}
+        \begin{itemize}
+          \item If $S_1=S_2$ then $<O_1>=<O_2>$\\
+          \item Blocking ensemble gives correct Boltzmann weights for blocked latices
+        \end{itemize}
+        \vspace{32pt}
+      \begin{center}\emph{What observables to measure?}\end{center}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Two Lattice Matching Observables}
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
+        \begin{figure}
+          \includegraphics[width=\textwidth]{fig/observables.png}
+          \caption{Observables}
+        \end{figure}
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \begin{block}{}
+          \begin{itemize}
+            \item The actions will be the same when all the observables are the same
+            \item Measuring small observables allows us to block down to small lattices
+            \item Measure plaquette, 6 link loops, 8 link loop
+            \item All observables should give the same $s_b$, differences reflect systematic error
+          \end{itemize}
+        \end{block}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Need for Optimization to reach RT}
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
+        \begin{block}{}
+          \includegraphics[width=\textwidth]{fig/need_to_opt.png}
+        \end{block}
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \begin{block}{}
+          \begin{itemize}
+            \item you are not guaranteed to reach the renormalized trajectory
+            \item each time you block $L\rightarrow\frac{L}{s}$
+            \item to reach RT with $V=L^4$ in $n$ steps you need $V=s^nL^{4}$
+            \item to reach RT (left) with $V=2^4$ need $V=512^4$!
+          \end{itemize}
+        \end{block}
+      \end{column}
+    \end{columns}
+  \begin{center}\emph{How can we optimize our block transformation?}\end{center}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Optimizing the Block Transformation}
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
+        \begin{block}{}
+          \includegraphics[width=\textwidth]{fig/trad_opt.png}
+        \end{block}
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \begin{block}{}
+          \begin{itemize}
+            \item change the block transformation at each large volume bare coupling
+            \item nHYP parameters ($\alpha$, 0.2, 0.2)
+            \item move the RT in coupling space
+          \end{itemize}
+        \end{block}
+      \end{column}
+    \end{columns}
+
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Results}
+    Summary of calculation and lattices used.
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Results - 8 flavors}
+    \begin{columns}[T]
+      \begin{column}{.6\textwidth}
+        \includegraphics[width=\textwidth]{fig/8flavor.pdf}
+      \end{column}
+      \begin{column}{.4\textwidth}
+        No IRFP\\
+        Chirally Broken\\
+        Confining\\
+        \vspace{48pt}
+        $\ensuremath{\cancel{S^4}}$ lattice artifact
+      \end{column}
+    \end{columns}
+    \vspace{12pt}
+    Error bars show spread in $s_b$ predicted by each observable.
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Results - 12 flavors}
+    \begin{columns}[T]
+      \begin{column}{.6\textwidth}
+        \includegraphics[width=\textwidth]{fig/12flavor.pdf}
+      \end{column}
+      \begin{column}{.4\textwidth}
+        Conformal:\\
+        \vspace{12pt}
+        \begin{tabular}{l l}
+          Weak Coupling: & $s_b>0$ \\
+          Strong Coupling: & $s_b\lessapprox0$\\
+        \end{tabular}
+        \newline\\
+        \vspace{24pt}
+        $\ensuremath{\cancel{S^4}}$ lattice artifact
+      \end{column}
+    \end{columns}
+    \vspace{12pt}
+    Error bars show spread in $s_b$ predicted by each observable.\\
+    \vspace{12pt}
+    \emph{Why isn't the fixed point more clear?}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Stitching Together different $s_b$}
+    \begin{columns}[T]
+      \begin{column}{.5\textwidth}
+        \begin{block}{}
+          \includegraphics[width=.8\textwidth]{fig/opt_prob.png}
+        \end{block}
+      \end{column}
+      \begin{column}{.5\textwidth}
+        \begin{block}{}
+          \begin{itemize}
+            \item change the block transformation at each large volume bare coupling
+            \item move the RT in coupling space
+            \item location of IRFP is scheme dependant
+            \item `stitching together' different step scaling functions
+          \end{itemize}
+        \end{block}
+        \begin{center}\emph{Can we do better?}\end{center}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{Alternative Optimizations}
+    \begin{columns}[T]
+      \begin{column}{.4\textwidth}
+        \begin{block}{}
+          \includegraphics[width=\textwidth]{fig/wilson_flow_opt.png}
+        \end{block}
+      \end{column}
+      \begin{column}{.6\textwidth}
+        \begin{block}{}
+          Simulate close to RT (hard)\newline
+          Find optimization that:
+          \begin{itemize}
+            \item does not change lattice spacing
+            \item moves the system toward the RT
+          \end{itemize}
+          Once on RT proceed with blocking
+        \end{block}
+      \end{column}
+    \end{columns}
+  \end{frame}

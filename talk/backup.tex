@@ -1,0 +1,86 @@
+%********************%                    %********************%
+                      %******************%
+%********************%                    %********************%
+
+\begin{frame}
+  \addtocounter{framenumber}{-1}
+  \frametitle{Auxiliary Slides}
+\end{frame}
+
+\begin{frame}
+  \addtocounter{framenumber}{-1}
+  \frametitle{Blocking}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \begin{block}{}
+        \includegraphics[width=\textwidth]{fig/block2.png}
+      \end{block}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{block}{}
+        \begin{itemize}
+          \item NHYP smear the lattice
+          \item we use a scale factor $s=2$
+          \item average links $U_{n,\mu}$, $U_{n+1,\mu}$
+          \item perform all possible blocking
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \addtocounter{framenumber}{-1}
+  \frametitle{Finite Volume Correction}
+  \centering
+  \includegraphics[width=\textwidth]{fig/3lm.png}
+  \vspace{12pt}
+  Can apply two separate two lattice matchings such the final blocked volumes for $n_b$, $n_{b-1}$, and $n_{b-2}$ are the same.
+\end{frame}
+
+\begin{frame}
+  \addtocounter{framenumber}{-1}
+  \frametitle{Comparison}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \begin{block}{\centering MCRG}
+        \begin{itemize}
+          \item does not depend on perturbation theory
+          \item does not require special b.c.
+          \item requires a scale factor of 2
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{block}{\centering Wilson Flow}
+        \begin{itemize}
+          \item unclear what happens on strong coupling side of IRFP
+          \item does not require special b.c.
+          \item does not require a scale factor of 2
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \ \newline
+  \begin{flushright}
+    Fodor, Holland, Kuti, Nogradi, Wong: arXiv:1208.1051\\
+    Fritzsch, Ramos:  arXiv: 1301.4388
+  \end{flushright}
+\end{frame}
+
+\begin{frame}
+  \addtocounter{framenumber}{-1}
+  \frametitle{Wilson Flow - Preliminary} 
+  \begin{columns}
+    \begin{column}{0.7\linewidth}
+      \includegraphics[width=1.2\textwidth]{fig/wflow.png}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      $c=\frac{\sqrt{8t}}{L}=0.3$\vspace{24pt}
+      $g_c^2=\frac{128\pi^2\left<t^2E(t)\right>}{3(N^2-1)(1+\delta_c)}$\vspace{24pt}
+      $1+\delta_c\approx0.97$
+      \begin{column}{0.3\textwidth}
+      \end{column}
+    \end{column}
+  \end{columns}
+\end{frame}

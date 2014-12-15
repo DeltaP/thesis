@@ -1,0 +1,159 @@
+
+                      %******************%
+%********************% Background         %********************%
+                      %******************%
+
+\section{Background}
+\addtocounter{framenumber}{-1}
+
+\begin{frame}
+  \frametitle{The Standard Model}
+  \begin{columns}[T]
+    \begin{column}{.6\textwidth}
+      \includegraphics[width=\textwidth]{fig/higgs_standard_mod.png}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      Explained:
+      \begin{itemize}
+        \item Strong Nuclear Force
+        \item Weak Nuclear Force
+        \item Electricity and Magnetism
+        \item Electroweak Symmetry Breaking
+      \end{itemize}
+      Unexplained:
+      \begin{itemize}
+        \item Gravity
+        \item Dark Matter
+        \item Dark Energy
+        \item Neutrino Masses
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  Scalar Higgs $\rightarrow$ Hierarchy Problem!
+\end{frame}
+
+\begin{frame}
+  \frametitle{Solving the Hierarchy Problem with a Composite Higgs}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      Hierarchy Problem:
+      \begin{itemize}
+        \item $m^2_H=m^2_0+\frac{3}{4\pi}\lambda\Lambda_{cut}^2$
+        \item $m_H=126$ GeV
+        \item $\Lambda_{cut} \gg m_H$
+        \item tune $\lambda$ to balance $\Lambda_{cut}$
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      A Possible Solution:
+      \begin{itemize}
+        \item Asymptotically free, gauge-fermion QFT 
+        \item Goldstone bosons from the broken chiral symmetry give $W^{\pm}$ and $Z$ mass
+        \item Higgs:  $0^{++}$
+        \item Higgs must be light (126 GeV)
+        \item Other bound states must be heavy
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  Any viable theory needs to have a slowly running coupling (walking) constant.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Walking coupling}
+  How the coupling changes over energy scale is determined by the $\beta$ function.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Hints from the Perturbative $\beta$ Function}
+  The $\beta$ function encodes how the coupling, $g$, changes with respect to scale, $\mu$.
+  The 2-loop $\beta$ function is scheme independent.
+  \begin{center}
+    \begin{align*}
+      \beta(g^2)&=\frac{d g^2}{d\text{log}(\mu^2)}=-\frac{b_1}{16\pi^2}g^4-\frac{b_2}{(16\pi^2)^2}g^6\\
+      b_1&=\frac{11}{3}N_c-\frac{4}{3}N_fT(R)\\
+      b_2&=\frac{34}{3}N_c^2-\frac{4}{3}T(R)N_f\Big[5N_c+3C_2(R)\Big]
+    \end{align*}
+  \end{center}
+  \vspace{12pt}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \small
+      \begin{tabular}{l l}
+        $N_c$: & Number of Colors\\
+        $N_f$: & Number of flavors of fermions\\
+        $R$:   & Representation of the fermions
+      \end{tabular}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \small
+      \begin{tabular}{l l}
+        $T(R)$: & First Casimir invariant\\
+        $C_2(R)$: & Second Casimir invariant
+      \end{tabular}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{The $\beta$ Function in Pictures}
+  \begin{equation*}
+    \beta(g^2)=\frac{d g^2}{d\text{log}(\mu^2)}=-\frac{b_1}{16\pi^2}g^4-\frac{b_2}{(16\pi^2)^2}g^6
+  \end{equation*}
+  \centering
+  \includegraphics[width=0.7\textwidth]{fig/betafn.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Roadmap for the Conformal Window}
+  \begin{columns}[T]
+    \begin{column}{.6\textwidth}
+      \includegraphics[width=1.1\textwidth]{fig/lattice_studies.pdf}
+    \end{column}
+    \begin{column}{.4\textwidth}
+      \small
+      Conformal Window:
+      \begin{tabular}{l l}
+        Shaded: & ?\\
+        Dashed: & 2-loop $\beta$ function
+      \end{tabular}
+      \vspace{24pt}
+      \newline
+      Fermion Representation:
+      \begin{tabular}{l l}
+        F: & Fundamental\\
+        2A: & 2-index Antisymmetric\\
+        2S: & 2-index Symmetric\\
+        Adj: & Adjoint
+      \end{tabular}
+    \end{column}
+  \end{columns}
+  \vspace{12pt}
+  The exact location of the conformal window requires non-perturbative investigation.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Studying the $\beta$ Function on the Lattice}
+  \begin{center}
+    There are several techniques:
+  \end{center}
+  \begin{itemize}
+    \item Schrodinger Functional
+    \item Twisted Polyakov Loop scheme
+    \item \textbf{Monte Carlo Renormalization Group (MCRG)}
+    \item \textbf{Wilson Flow Step Scaling}
+    \item Wilson Flow Step Scaling + Schrodinger Functional
+    \item \textbf{Wilson Flow MCRG}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Simulation Details}
+  \begin{itemize}
+    \item Staggered Fermions
+    \item nHYP smearing
+    \item Negative adjoint gauge term with $\beta_A/\beta_F=-0.25$
+    \item hybrid Monte Carlo (HMC algorithm
+    \item code based on MILC collaboration code
+  \end{itemize}
+\end{frame}

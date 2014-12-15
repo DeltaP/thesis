@@ -39,6 +39,75 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Gradient Flow - Origins}
+  Use trivializing maps to improve the hybrid Monte Carlo (HMC) algorithm used in configuration generation\newline
+  \vspace{12pt}
+  Generate trivializing map by integrating a flow.
+  \newline
+  $U \xrightarrow{F^{-1}} V \xrightarrow{\text{HMC}} V' \xrightarrow{F} U'$
+  \newline
+  \begin{enumerate}
+    \item rough links
+    \item update links
+    \item smooth links back
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Wilson Flow - Definition}
+    Wilson Action
+    \begin{align*}
+      S_w &= \frac{1}{g^2} \sum\limits_{p}\text{Re }\text{Tr}[\mathbb{I}-U(p)]
+    \end{align*}
+    Wilson Flow
+    \begin{align*}
+      V_t(x,\mu)|_{t=0} &= U(x,\mu) \\
+      \dot{V}_t(x,\mu) &= -g_0^2[\nabla_{x,\mu}S_w(V_t)]V_t(x,\mu)
+    \end{align*}
+
+    The derivative is the natural $SU(3)$ valued differential operator with respect to $V_t(x,\mu)$.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Connection to Stout Smearing}
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{fig/stout.png}
+  \end{center}
+  \begin{columns}[T]
+    \begin{column}{.5\textwidth}
+      \begin{block}{}
+        \begin{align*}
+          Q = & \frac{i}{2}(\Sigma U^{\dagger}-U\Sigma^{\dagger}) \\
+              & - \frac{i}{2N}\text{Tr}(\Sigma U^{\dagger}-U\Sigma^{\dagger})
+        \end{align*}
+        \begin{align*}
+          W=e^{ipQ}U_{n,\mu}=(\mathbb{I}+iQ+...)U_{n,\mu}
+        \end{align*}
+      \end{block}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{block}{}
+        \begin{itemize}
+          \item $U$ is the link, $\Sigma$ is the staple sum
+          \item Q is Hermitian
+          \item Generates smeared links W that are in the group
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Stout Smearing as Wilson Flow}
+  Integrating infinitesimal stout smearing steps is equivalent to finding the solution to the flow equations
+  \begin{align*}
+    U(x,\mu)\rightarrow U'(x,\mu)&=e^{\epsilon [Z(U)](x,\mu)}U(x,\mu) \\
+    Z(U) &=-g^2_0\nabla_{x,\mu}S_w
+  \end{align*}
+\end{frame}
+
+
+\begin{frame}
   \addtocounter{framenumber}{-1}
   \frametitle{Comparison}
   \begin{columns}[T]

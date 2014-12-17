@@ -40,7 +40,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{SU(3) $\text{N}_{\text{f}}=$ 12}
+  \frametitle{Simulation $SU(3)$ $N_f=12$}
   \begin{columns}[c]
     \begin{column}{0.5\textwidth}
       \begin{itemize}
@@ -197,7 +197,7 @@
   \begin{itemize}
     \item New work on an established method
     \item With Wilson flow MCRG we can find a unique step scaling function
-    \item Wilson flow MCRG predicts an IRFP for SU(3) $N_f=12$ in all analysis
+    \item Wilson flow MCRG predicts an infrared fixed point for SU(3) $N_f=12$ in all analysis
     \item Wilson flow MCRG is computationally inexpensive; does not rely on perturbation theory
   \end{itemize}
 \end{frame}
@@ -274,9 +274,9 @@
       \begin{equation*}
         \lim_{(\frac{a}{L})^2\to 0} g^2_*(L;s)\equiv g^2_*
       \end{equation*}
-      \begin{equation*}
-        g^2_*=5.50\pm0.12
-      \end{equation*}
+      %\begin{equation*}
+        %g^2_*=5.50\pm0.12
+      %\end{equation*}
       \footnotesize
       Black line: continuum extrapolation\\
       \vspace{12pt}
@@ -291,7 +291,7 @@
 
 \begin{frame}
   \frametitle{Wilson Flow Optimization}
-  We want to remove cutoff effects without using $c>0.3$ which sacrifices statical uncertainty.\\
+  We want to remove cutoff effects without using $c>0.3$. Large values of $c$ introduce additional statistical uncertainty.\\
   \vspace{12pt}
   Replace:
   \begin{equation*}
@@ -299,9 +299,9 @@
   \end{equation*}
   with
   \begin{equation*}
-    \widetilde{g}_c^2=g_c^2\frac{\left<E(t+\tau_0)\right>}{\left<E(t)\right>}
+    \widetilde{g}_c^2=g_c^2\frac{\left<E(t+\tau_0a^2)\right>}{\left<E(t)\right>}
   \end{equation*}
-  keeping $\tau_0\ll t$\\
+  keeping $|\tau_0|\ll \frac{t}{a^2}$\\
   \vspace{12pt}
   \emph{No additional computation is necessary!}
 \end{frame}
@@ -351,8 +351,8 @@
 \begin{frame}
   \frametitle{Summary - Optimized Gradient Flow Step Scaling}
   \begin{itemize}
-    \item We calculate the gradient flow for $SU(3)$ $N_f=12$ and see an IRFP
-    \item The IRFP survives the continuum limit
+    \item We calculate the gradient flow for $SU(3)$ $N_f=12$ and see an infrared fixed point 
+    \item The infrared fixed point survives the continuum limit
     \item We introduce an improvement that removes $\mathcal{O}(a^2)$ dependence
 from the continuum extrapolation
   \end{itemize}

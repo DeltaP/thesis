@@ -4,6 +4,7 @@
 In our current understanding of the universe, there are four fundamental forces in nature: gravity, electromagnetism, the strong nuclear force, and the weak nuclear force.
 The latter three forces are understood in terms of quantum field theories which form the Standard Model (SM).
 The Standard Model is a $SU(3)_C\times SU(2)_W\times U(1)_Y$ gauge theory.
+$Y$ is electroweak hypercharge and is related to electric charge and the weak neutral current.
 
 The $SU(3)_C$ component of the theory explains the strong nuclear force, also called quantum chromodynamics (QCD).
 QCD is a $SU(3)$ Yang Mills theory with fermions in the fundamental representation.
@@ -30,9 +31,8 @@ The structure constant $f^{abc}$ is given by the commutation relation between th
 
 The Lagrangian allows the three vertices shown in figure \ref{fig:qcdvert}.
 The first vertex couples a fermion to a gluon and is analogous to diagrams in QED that couple an electron to the photon.
-The other two vertices have no analogue in QED, these are the three and four gluon vertices.
-The gluon verticies are a result of the non-abelian nature of the theory, consequently the gluons having a charge anti-charge moment.
-A repercussion of the gluons being charged is that the color field is anti-screened.
+The other two vertices are the three and four gluon verticies and have no analogue in QED.
+The gluon verticies are a result of the non-abelian nature of the theory.
 
 \begin{figure}
   \centering
@@ -79,7 +79,7 @@ A repercussion of the gluons being charged is that the color field is anti-scree
     \end{fmfgraph*}
   \end{fmffile}
   \label{fig:qcdvert}
-  \caption{These are the Feynman Diagrams of the allowed QCD verticies.  All interractions in the theory are built by combining these verticies.  Quarks are represented by the solid lines and gluons are represented by curly lines.  The three and four gluon vertecies are unique to non-Abelian gauge theories.}
+  \caption{These are the Feynman Diagrams of the allowed QCD verticies.  All interactions in the theory are built by combining these verticies.  Quarks are represented by the solid lines and gluons are represented by curly lines.  The three and four gluon vertecies are unique to non-Abelian gauge theories.}
 \end{figure}
 
 QCD exhibits two interesting properties: confinement and asymptotic freedom.
@@ -88,30 +88,29 @@ In fact if you try to pull two quarks apart eventually there will be enough ener
 As a result we never observe free quarks in nature, they only exist in colorless bound states called hadrons.
 Hadrons come in two varieties $q\bar{q}$ pairs called mesons and $qqq$ triplets called baryons.
 Despite the fact that confinement is easy to demonstrate on the lattice \cite{PhysRevD.10.2445}, there is an outstanding Millennium Prize for an analytic proof\cite{prize}.
-Asymptotic freedom reflects that at very large momentum transfers the quarks and gluons interract weakly.
-This is described by the $\beta$ function and is elaborated on in section \ref{sec:sec:conformalwindow}.
+Asymptotic freedom reflects that at very large momentum transfers the quarks and gluons interact weakly.
 The 2004 Nobel prize in physics was awarded for the discovery of asymptotic freedom by Frank Wilczek, David Gross, and David Politzer in 1973 \cite{PhysRevLett.30.1343,Politzer:1973fx}.
 
 The strong nuclear force is responsible for the proton, composed of two up and one down quark, and neutron, composed of two down and one up quark.
 Additionally, the strong nuclear force binds these particles together to form atomic nuclei.
 Most of the understood mass in the universe is a result of the strong nuclear force.
-In QCD the up and down quarks have masses on the order of an MeV while the proton has a mass of 938GeV.
+In QCD the up and down quarks have masses on the order of an MeV while the proton has a mass of 938 GeV.
 Almost all of the proton mass results from its own binding energy.
 
 The remaining $SU(2)_W\times U(1)_Y$ part of the standard model is the unified electroweak force \cite{Salam:1964ry, Weinberg:1967tq, Guralnik:1964eu, PhysRevLett.13.508, Higgs1964132, Englert:1964et, Glashow1961579}.
-This force accounts for the quantum theory of electrodynamics and how particles decay via the weak process.
+This force accounts for the quantum theory of electrodynamics and the weak interactions.
 The electroweak force has three bosonic force carriers: the massless photon and the massive $W^\pm$ and $Z$.
 As a result of being carried by the massless photon, electrodynamics is an infinite range force.
-However, the weak force has an interraction range of $\mathcal{O}\approx10^{16}$m due to the heavieness of the $W^{\pm}$ and $Z$.
-In addition to effecting the quark sector, the electroweak force also interracts with leptons.
+However, the weak force has an interaction range of $\mathcal{O}\approx10^{16}$m due to the heaviness of the $W^{\pm}$ and $Z$.
+In addition to affecting the quark sector, the electroweak force also interacts with leptons.
 Leptons are spin 1/2 fermions that are not charged under the $SU(3)_C$ group. 
 The electron, muon, tau, and their corresponding neutrinos are all leptons.
 
 An essential feature of the electroweak theory is that $SU(2)_W\times U(1)_Y$ spontaneously breaks down to $U(1)_{EM}$, see section \ref{sec:higgs_mech} for further details.
 This breaking gives the $W^\pm$ and $Z$ bosons their mass and also accounts for the standard model fermion masses.
-$U(1)_{EM}$ is the theory of quantum electrodynamics in which spin 1/2 fermionic matter charged with electric charge interact by exchanging photos.
+$U(1)_{EM}$ is the theory of quantum electrodynamics in which spin 1/2 fermionic matter charged with electric charge interact by exchanging photons.
 Unlike in QCD, photons are not charged under U(1) and therefore don't interact at tree level.
-This yields a much simpler theory than QCD and can be understood perturbatively.
+This yields a much simpler theory than QCD which can be understood perturbatively.
 
 The Lagrangian for QED is similar to \ref{eq:qcd} however the field strength tensor $F^a_{\mu\nu}$ is replaced by $F_{\mu\nu}$, dropping the color indices.
 The simpler Abelian U(1) symmetry also means that the field strength tensor is defined as
@@ -165,12 +164,12 @@ The properties of all the standard model particles is summarized in table \ref{t
     tau neutrino      & $\nu_\tau$  & $< 15.5$              & 3           & 0                   \\
   \end{tabular}
   \label{table:fermions}
-  \caption{The standard model fermions are spin 1/2 fundamental particles in the color singlet.  The masses for the electron, muon, and tau are known to the percision given.  The neutrinos are know to have masses but their masses are not percicly measured.  Left handed leptons have weak hypercharge of -1 while right handed leptons have weak hyperchange of -2.  Right handed neutrinos have not been observed.}
+  \caption{The standard model fermions are spin 1/2 fundamental particles in the color singlet.  The masses for the electron, muon, and tau are known to the percision given.  The neutrinos are know to have masses but their masses are not precisely measured.  Left handed leptons have weak hypercharge of -1 while right handed leptons have weak hyperchange of -2.  Right handed neutrinos have not been observed.}
 \end{table}
 
 \begin{table}
   \begin{tabular}{c c c c c}
-    Particle Name     & Symbol    & Mass                                & Generation  & charge $U(1)_{\mbox{EM}}$  \\
+    Particle Name     & Symbol    & Mass (MeV/$c^2$)                    & Generation  & charge $U(1)_{\mbox{EM}}$  \\
     \hline
     up                & $u$       & $2.3^{+0.7}_{-0.5}$                 & 1           & $\frac{2}{3}$              \\
     down              & $d$       & $4.8^{0.5}_{-0.3}$                  & 1           & $-\frac{1}{3}$             \\
@@ -196,5 +195,5 @@ The properties of all the standard model particles is summarized in table \ref{t
     Higgs         & $H$       & $(125.9\pm0.4)\times10^3$       &  0
   \end{tabular}
   \label{table:bosons}
-  \caption{The standard model bosons.  All partiles are spin 1 except for the Higgs particle which is spin 0.}
+  \caption{The standard model bosons.  All particles are spin 1 except for the Higgs particle which is spin 0.}
 \end{table}

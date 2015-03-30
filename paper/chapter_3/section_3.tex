@@ -1,6 +1,6 @@
 % 3.3
 % Fermionic Fields
-\subsection{Naïve Fermions}
+\subsection{Naive Fermions}
 Fermions prove to be a much thornier issue and great care must be taken with their discretization.
 Lets see what happens when we take a theory of one free fermion
 \begin{equation}
@@ -10,7 +10,7 @@ and define the discretized lattice derivative to be the difference
 \begin{equation}
   \partial_\mu\psi(x)\rightarrow\Delta_\mu\psi_x=\frac{\psi_{x+\hat{\mu}}-\psi_{x-\hat{\mu}}}{2a}.
 \end{equation}
-The fermionic fields $\psi$ are gauge invariant and have the following gauge transformation:
+The fermionic fields $\psi$ have the following gauge transformation:
 \begin{equation}
   \begin{aligned}
     \psi_x&\rightarrow\Omega(x)\psi_x \\
@@ -29,15 +29,15 @@ where the momenta are restricted by the lattice discretization $p_\mu=\frac{2\pi
 For small momenta, $p_\mu \approx (0,0,0,0)$ we can Taylor expand $\gamma^\mu\sin(p_\mu)\approx \slashed{p}$ and recover the continuum fermionic propagator $\frac{1}{\slashed{p}-m}$.
 Unfortunately we also recover the continuum propagator for fifteen other values of the four lattice momenta $p_\mu\approx(\pi,0,0,0),p_\mu\approx(0,\pi,,0,0),...,p_\mu\approx(\pi,\pi,\pi,\pi)$.
 Thus instead of describing one species of fermion, our theory instead describes 16 degenerate species of fermions.
-
-\subsection{Wilson Fermions}
 This is the fermion doubling problem.
 For each dimension $d$ of the lattice we get $2^d$ species of fermions.
-Wilson attempted to solve this problem by adding a second derivative term to the action,
+
+\subsection{Wilson Fermions}
+Wilson solved the fermion doubling problem by adding a second derivative term to the action,
 \begin{equation}
   \Delta_\mu^2\psi_x=\frac{\psi_{x+\hat{\mu}}-2\psi_x+\psi_{x-\hat{\mu}}}{2a}.
 \end{equation}
-Such a term does not affect or continuum extrapolation because it is a dimension 5 operator and therefore is irrelevant.
+Such a term does not affect our continuum extrapolation.
 The resulting action
 \begin{equation}
   S_f=-\frac{1}{2}\sum_{x,\mu}\bar{\psi_x}\Big[(1-\gamma^\mu)U_{x,\mu}\psi_{x+\hat{\mu}}+(1+\gamma^\mu)U^\dagger_{x-\hat{\mu}}\Big]+(4+m)\sum_x\bar{\psi}_x\psi_x,
@@ -49,12 +49,12 @@ has the following free momentum space propagator
                    &=\frac{-i\gamma^\mu\sin(p_\mu)+m+\sum_\mu\big(1-\cos(p_\mu)\big)}{\sum_\mu\sin^2(p_\mu)+\Big[m+\sum_\mu\big(1-cos(p\mu)\big)\Big]^2}.
   \end{aligned}
 \end{equation}
-Now all of the doubler modes with any component of momentum $p_\mu\approx\pi$ become massive and are integrated out.
+Now all of the doubler modes with any component of momentum $p_\mu\approx\pi$ become massive.
 The mass doubler modes gain is proportional to the inverse of the lattice spacing.
-The caveat in this strategy is that the Wilson term explicitly breaks chiral symmetry on the lattice even at zero fermion mass.
+The caveat in this strategy is that the Wilson term explicitly breaks chiral symmetry on the lattice even at zero bare fermion mass.
 
 Unfortunately there is no easy way around this problem.
-The Nielsen and Ninomiya no-go theorem states that you can not place chiral fermions on a regular lattice of even dimension without fermion doublers \cite{Nielsen198120,Nielsen1981173,Nielsen1981219,kaplan:fermions}.
+The Nielsen and Ninomiya no-go theorem states that you cannot place chiral fermions on a regular lattice of even dimension without fermion doublers \cite{Nielsen198120,Nielsen1981173,Nielsen1981219,kaplan:fermions}.
 Any solution to the doubler problem will have to sacrifice chiral symmetry, dimensionality, or the regularity of the lattice.
 There are several types of fermionic actions that trade off these downfalls.
 Some actions are able to preserve a near exact chiral symmetry, generally by adding dimensionality, however these actions are extremely expensive and difficult to simulate at strong coupling.
@@ -62,7 +62,7 @@ The only action I will address further is the staggered action because it is use
 
 \subsection{Staggered Fermions}
 
-Staggered fermions were introduced by Kogut and Sussking \cite{PhysRevD.11.395}.
+Staggered fermions were introduced by Kogut and Susskind \cite{PhysRevD.11.395}.
 The staggered action mixes Dirac and space time indices of the naïve fermionic action to reduce the number of doublers from 16 to 4.
 To accomplish this lets define new field variables $\psi(x)'$ and $\bar{\psi}(x)'$
 \begin{equation}

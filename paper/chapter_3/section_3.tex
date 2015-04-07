@@ -21,9 +21,9 @@ We will now use the link variables $U_{x,\mu}$ to transport the $\psi$ fields be
 \begin{equation}
   S_f=\frac{1}{2}\sum_{x,\mu} \bar{\psi}_x\gamma^\mu\big[U_{x,\mu}\psi_{x+\hat{\mu}}-U^\dagger_{x-\hat{\mu}}\psi_{x-\hat{\mu}}\big]+m\sum_x \bar{\psi}_x\psi_x.
 \end{equation}
-Now we can construct the free propagator in momentum space
+Now we can construct the propagator in momentum space
 \begin{equation}
-  \frac{1}{a}S(p)=(i\gamma^\mu\sin(p_\mu a) + ma)^{-1}=\frac{-i\gamma_\mu\sin(p_\mu a)+ma}{\sum_\mu \sin^2(p_\mu a)+m^2a^2},
+  S(p)=\frac{m-i\sum_{\mu}\gamma_\mu\sin(p_\mu a)/a}{m^2+\sum_\mu \sin^2(p_\mu a)/a^2},
 \end{equation}
 where the momenta are restricted by the lattice discretization $p_\mu=\frac{2\pi ix_\mu}{N_\mu}$ for a lattice of $N_\mu$ sites in direction $\mu$.
 For small momenta, $p_\mu \approx (0,0,0,0)$ we can Taylor expand $\gamma^\mu\sin(p_\mu)\approx \slashed{p}$ and recover the continuum fermionic propagator $\frac{1}{\slashed{p}-m}$.
@@ -56,7 +56,7 @@ The caveat in this strategy is that the Wilson term explicitly breaks chiral sym
 Unfortunately there is no easy way around this problem.
 The Nielsen and Ninomiya no-go theorem states that you cannot place chiral fermions on a regular lattice of even dimension without fermion doublers \cite{Nielsen198120,Nielsen1981173,Nielsen1981219,kaplan:fermions}.
 Any solution to the doubler problem will have to sacrifice chiral symmetry, dimensionality, or the regularity of the lattice.
-There are several types of fermionic actions that trade off these downfalls.
+There are several types of fermionic actions that trade off these pitfalls.
 Some actions are able to preserve a near exact chiral symmetry, generally by adding dimensionality, however these actions are extremely expensive and difficult to simulate at strong coupling.
 The only action I will address further is the staggered action because it is used in our study.
 
@@ -74,7 +74,7 @@ To accomplish this lets define new field variables $\psi(x)'$ and $\bar{\psi}(x)
 The transformation matrix is products of $\gamma_\mu$ raised to the power of the corresponding component $n_\mu$ of th site index $n_\mu=(n_1,n_2,n_3,n_4)$.
 We can now use these fields to build the staggered action
 \begin{equation}
-  S(\psi',\bar{\psi}')=a^4\sum_n \bar{\psi}(x)'\mathbb{1}\Big(\sum_{\mu=1}^4\eta_\mu(x)\frac{\psi(n+\hat{\mu})'-\psi(n-\hat{\mu})'}{2a}+m\psi(n)'\Big),
+  S(\psi',\bar{\psi}')=a^4\sum_n \bar{\psi}(x)'\mathbb{I}\Big(\sum_{\mu=1}^4\eta_\mu(x)\frac{\psi(n+\hat{\mu})'-\psi(n-\hat{\mu})'}{2a}+m\psi(n)'\Big),
 \end{equation}
 where $\eta_\mu$ are the staggered sign functions
 \begin{equation}
@@ -91,15 +91,13 @@ We finalize the action by taking one of these copies and coupling it to the gaug
   S(\chi,\bar{\chi})=a^4\sum_n \bar{\chi}(n)\Big(\sum_{\mu=1}^4\eta_\mu(x)\frac{U_\mu(n)\chi(n+\hat{\mu})-U_\mu^\dagger(n-\hat{\mu})\chi(n-\hat{\mu})}{2a}+m\chi(n)\Big).
 \end{equation}
 The fields $\chi$ and $\bar{\chi}$ are Grassmann fields with only color indices and lack Dirac structure.
-Since we have kept one of four copies identical copies of our naïve fermionic action we have essentially kept 4 of the 16 doubler modes.
+Since we have kept one of four identical copies of our naïve fermionic action we have essentially kept 4 of the 16 doubler modes.
 This action can be interpreted as having a $2^4$ dimensional hyper cube unit cell with four flavors of fermions spread across it.
 The four species of fermions that remain are called referred to as tastes.
-While taste symmetry is exact in the continuum it is broken by lattice artifacts.
+While taste symmetry is exact in the continuum, it is broken by lattice artifacts.
 Taste breaking can be especially problematic at strong coupling where the gauge fields are coarser.
-To remove lattice artifacts associated with taste breaking various smearing terms are added to improve staggered actions.
+Smearing terms can be added to the lattice action to mitigate or remove lattice artifacts associated with taste breaking.
 I will discuss the smearing improvement that we use in our simulations in the next section.
-One huge advantage that staggered fermions have is that they preserve a $U(1)_A$ chiral symmetry.
-Additionally there is a protected Goldstone mode which protects fermion masses from additive renormalization, another problem of Wilson fermions.
 
 In QCD studies, taste poses a unique problem when trying to study 2, or 2+1, or 2+1+1 flavors of fermions.
 The 4 degenerate flavors have to be transformed into 1 or 2 flavors.
@@ -107,9 +105,14 @@ This is accomplished by a technique called rooting \cite{PhysRevD.72.114512}.
 Although rooted calculations routinely reproduce correct results, there is still some controversy about the technique \cite{Creutz2007230,Creutz2007241,Kronfeld:2007ek}.
 Fortunately in our studies we examine theories with multiples of 4 flavors thereby circumventing the rooting problem entirely.
 
+The balance that staggered fermions strike makes them a good choice in many situations.
+One benefit of staggered fermions is that they preserve a $U(1)_A$ chiral symmetry.
+Wilson fermions explicitly break chiral symmetry while lattice actions that preserve chiral symmetry exactly are much more computationally expensive.
+Finally, unlike Wilson fermions, there is a protected Goldstone mode which protects fermion masses from additive renormalization.
+
 \subsection{Improved Fermions}
 
-In the simulations detailed in chapters \ref{ch:MCRG,ch:WFLOW,ch:WMCRG} we use nHYP improved staggered fermions in our action.
+In the simulations detailed in chapters \ref{ch:MCRG}-\ref{ch:WMCRG} we use nHYP improved staggered fermions in our action.
 nHYP smearing was introduced in \cite{Hasenfratz:2007rf} and reduces the problem of lattice artifacts, specifically taste breaking, in staggered actions \cite{Hasenfratz:2001tw}.
 
 nHYP smearing is built out of three consecutive smearing steps that are restricted to the hypercubes associated with the link being smeared.

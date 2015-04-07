@@ -3,7 +3,7 @@
 
 \subsection{Pure Gauge}
 The simplest quantum field theory to put on the lattice is a pure Yang-Mills gauge theory.
-In group theory this these are $SU(N_C)$ gauge theories without any pesky fermions.
+In group theory these are $SU(N_C)$ gauge theories without any pesky fermions.
 The most straight forward discretization of a pure gauge action is in terms of the plaquette
 \begin{equation}
   P_{x,\mu\nu}=\mbox{Tr}\Big[U_{x,\mu}U_{x+\hat{\mu},\nu}U^{\dagger}_{x+\hat{\nu},\mu}U^{\dagger}_{x,\nu}\Big],
@@ -77,13 +77,20 @@ Although improved gauge actions in general are beyond the scope of this thesis, 
 
 \subsection{Negative Adjoint Term}
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[height=3in]{\cnum{3}/fig/SU3.pdf}
+  \caption{The phase diagram of SU(3) gauge theory in the fundamental-adjoint coupling plane.  The solid lines are first order phase transitions.  The phase transition ends in a second order critical point.  Although the critical point lies above the $\beta_F$ axis, the presence of the critical point influences the RG flow of actions where $\beta_A=0$.  Therefore we choose an action with $\beta_A<0$ to avoid effects from the critical point. The phase diagram for confining SU(3) gauge theories with fermions is similar, only the location of the transitions changes.}
+  \label{fig:PGphase}
+\end{figure}
+
 In our studies we have added a negative adjoint term to the gauge part of the action.
-The purpose of this term is to avoid a well known spurious UV fixed point \cite{PhysRevD.24.3212,Bhanot1982337,Blum1995301} in the fundamental adjoint plane.
+The purpose of this term is to avoid a well known spurious UV fixed point \cite{PhysRevD.24.3212,Bhanot1982337,Blum1995301} in the fundamental adjoint plane show in \ref{fig:PGphase}.
 The mixed fundamental-adjoint action is
 \begin{equation}
   S_{AF}=\beta_F\sum_{x} \sum_{\mu<\nu} \mbox{Re}\Big[\mbox{Tr}\big[\mathbb{I}-\frac{1}{N_c}P_{x,\mu\nu}\big]\Big] + \beta_A\sum_{x} \sum_{\mu<\nu}\Big[\mbox{Tr}\big[\mathbb{I}-\frac{1}{N_c^2}P_{x,\mu\nu}^\dagger P_{x,\mu\nu}\big]\Big]
 \end{equation}
-In our studies we set the ratio $\frac{\beta_A}{\beta_F}=-0.25$ which avoids a crossover that extends from the UV fixed point across the $\beta_A=0$ axis \cite{Hasenfratz:2010fi}.
+In our studies we set the ratio $\frac{\beta_A}{\beta_F}=-0.25$ which avoids a crossover that extends from the UV fixed point \cite{Hasenfratz:2010fi}.
 With our action the perturbative relation to the bare coupling is
 \begin{equation}
   \frac{6}{g^2}=\beta_F+2\beta_A.

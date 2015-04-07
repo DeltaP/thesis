@@ -4,7 +4,7 @@
 One solution to the hierarchy problem is for the Higgs to be a composite composed of particles from a new strongly interacting sector \cite{Kaplan:1983sm,Georgi:1984af,Weinberg:1975gm,Susskind:1978ms, Weinberg:1979bn, Eichten:1979ah, Dimopoulos:1979es}.
 This new sector is responsible for electroweak symmetry breaking.
 There are many types of theories that use such a modus operandi.
-While these theories have the benefits of solving the heirarchy and fine tuning problems with the standard model Higgs they typically favor a heavier Higgs mass than what has been observed and pose other theoretical challenges that I will elaborate on below.
+While these theories have the benefits of solving the hierarchy and fine tuning problems with the standard model Higgs they typically favor a heavier Higgs mass than what has been observed and pose other theoretical challenges that I will elaborate on below.
 In the next three subsections I will briefly discuss technicolor, extended techniclolor, introduce the conformal window, and discuss the state of Lattice endeavors in this area.
 
 \subsection{Technicolor}
@@ -17,11 +17,11 @@ It is worth noting that so far this theory is identical to QCD with massless up 
 The Lagrangian for our theory is
 \begin{equation}
   \begin{aligned}
-    \Lagr_{TC}=-\frac{1}{4}F^a_{\mu\nu}F^{\mu\nu,a}+\sum_i \bar{\Psi}(i\slashed{D})\Psi_i.
+    \Lagr_{TC}=-\frac{1}{4}F^a_{\mu\nu}F^{\mu\nu,a}+\bar{\Psi_L}(i\slashed{D})\Psi_L+\bar{\Psi_R}(i\slashed{D})\Psi_R.
   \end{aligned}
 \end{equation}
-Recall that fermions have a right handed and left handed component $\phi=(\phi_L,\phi_R)$.
-We know from QCD that such a theory possesses a global $SU(2)_L\times SU(2)_R$ symmetry and that this symmetry is spontaneously broken to the vector subgroup $SU(2)_V$.
+Recall that fermions have a right handed and left handed component $\psi=(\psi_L,\psi_R)$.
+We know that such a theory possesses a global $SU(2)_L\times SU(2)_R$ symmetry and that this symmetry is spontaneously broken to the vector subgroup $SU(2)_V$.
 This symmetry manifests itself in the nonzero VEV of the chiral condensate
 \begin{equation}
   <\bar{\Psi}\Psi>=<\bar{\Psi}_L\Psi_R+\bar{\Psi}_R\Psi_L>\neq 0.
@@ -76,9 +76,9 @@ where the masses for the heavy bosons are
 With the substitution $F=\nu$ we reproduce $m_W$ and $m_Z$ that we found in section \ref{sec:higgs_mech} exactly!
 This is quite a shock, as I mentioned earlier so far everything we are doing is simply QCD with 2 flavors of massless quarks, why did we introduce the Higgs field in the first place?
 Simply put the effect in QCD is much too small.
-In QCD, $F=F_\pi\approx93MeV$, this is more than a factor of a thousand too small to account for the observed $W^\pm$ and $Z$ masses.
+In QCD, $F=F_\pi\approx93$ MeV, this is more than a factor of a thousand too small to account for the observed $W^\pm$ and $Z$ masses.
 
-Despite the fact that spontaneous chiral symmetry breaking in QCD is too small to account for the observed electroweak sector, there is no reason that we can't introduce a new strongly interacting theory where the equivalent $F=\nu\approx246$.
+Despite the fact that spontaneous chiral symmetry breaking in QCD is too small to account for the observed electroweak sector, there is no reason that we can't introduce a new strongly interacting theory where the equivalent $F=\nu\approx246$ GeV.
 Furthermore we can choose a different gauge group, number of fermions, and representation if we wish.
 The only constraint is that chiral symmetry is broken and the results are phenomenologically consistent with experimental observation.
 It is worth noting that more flavors of fermions will produce additional pions that will acquire masses.
@@ -112,10 +112,10 @@ Flavor changing neutral currents such as $\mu\rightarrow e\bar{e}e$ and mixing b
 Most ETC theories typically introduce FCNC that are proportional to $M^2_{ETC}$.
 
 Another issue with ETC theories is size of the top quark mass.
-The top quark is so massive, $m_t=172 GeV$, that its associated ETC scale is $M_{ETC}\approx 3 TeV$.
-This is comparable to the electroweak scale!
+The top quark is so massive, $m_t=172$ GeV, that its associated ETC scale is $M_{ETC}\approx 3$ TeV.
+This is problematic because it is so close to the electroweak scale.
 Additionally incorporating both the top and the bottom with the same ETC breaking would require an accompanying large isospin breaking.
-This has conundrum has forced many models to give the top special treatment in so called top assisted ETC.
+These issues have forced many models to give the top special treatment in so called top assisted ETC.
 
 Skirting these and other issues without producing particles light enough to have already been discovered is a daunting task.
 There are many models that have been able to trade one defect for another, but to date no complete model exists.
@@ -123,7 +123,7 @@ There is a general consensus that any viable ETC model probably will have a slow
 In a walking theory $\gamma(\alpha(\mu))$ is large between $\Lambda_{TC}$ and $M_{ETC}$ 
 It has been shown that walking behavior addresses all of the problems I have discussed to a point.
 However any model that breaks at multiple scales and has the peculiarities of walking between those scales is likely to be very baroque.
-I discuss how walking a walking theory can be generated in more detail below.
+I discuss how a walking theory can be generated in more detail below.
 
 \subsection{Conformal Window}
 \label{sec:sec:conformalwindow}
@@ -206,7 +206,7 @@ If we keep $b_1$ positive and allow $b_2$ to become negative we can force the tw
 In perturbation theory this occurs at at a critical value of fermions $N^{crit}_f<\frac{17N_c^2}{2T(R)[5N_c+C(R)]}$.
 Such a beta function would start out negative, then at some coupling it would pass through a local minimum after which it would grow.
 Eventually, at some $g^2_*$, the beta function would have a zero where $\beta(g^2_*)=0$.
-Perturbatively this zero occurs at $g^2_*=-b_1/b_2$ and is a Banks-Zaks infrared fixed point.
+Perturbatively this zero occurs at $g^2_*=-b_1/b_2$ and is called a Banks-Zaks infrared fixed point.
 This is illustrated in figure \ref{fig:conformal}, such a theory is governed by the conformal dynamics at the infrared fixed point and is scale invariant.
 If the fixed point is at very weak coupling it is possible to gain insights from perturbation theory, however many theories are known to have strongly coupled IRFP's where insights from perturbation theory are unreliable.
 Conformal theories, like the scenario described above, do not support bound states of particles.
@@ -249,7 +249,7 @@ Walking is necessary to achieve a wide separation of scales in Technicolor theor
 \subsection{Lattice Studies}
 Today there is a rich ecosystem of lattice studies of BSM studies, a survey of the current state of the field can be found in \cite{need to find a good overview}.
 It is extremely important that different ways of probing for IR conformality on different lattice discretization schemes converge to common conclusions.
-In general this is accomplished but there are still systems that cause debate because different groups draw different conclusions from their findings.  Below I summarize the sate of the field both in terms of calculation types and methods of theories studied.
+In general this is accomplished but there are still systems that cause debate because different groups draw different conclusions from their findings.  Below I summarize the state of the field both in terms of calculation types and methods of theories studied.
 
 Many studies that seek to locate the conformal window have proceeded by calculating the RG flow of the theory under consideration.
 The first example of this type of study is \cite{Appelquist:2009ty}.
@@ -266,15 +266,15 @@ In practice these fits are extremely difficult, in particular fits for volume sq
 
 Several groups have studied the finite temperature phase diagram \cite{Iwasaki:2003de,Schaich:2012fr}.
 These studies identify an IRFP with a deconfining bulk transition.
-Additionally techniques using Dirac eigenvalue spectrum \cite{Cheng:2013eu} has proven useful in calculating $\gamma_m$ over a wide range of scales.
+Additionally techniques using the Dirac eigenvalue spectrum \cite{Cheng:2013eu} has proven useful in calculating the mass anomalous dimension over a wide range of scales.
 
 The majority of calculations have been for theories with $N_c=3$ with fermions in the fundamental representation.
 This is in part because the wide availability of optimized code bases for three colors.
-Within these studies staggered fermions are commonly employed because they are cheap to simulate and preserve a U(1) remnant of chrial symmetry \ref{}.
+Within these studies staggered fermions, a formulation of lattice fermions that has four doublers and preserves a remnant of chiral symmetry, are commonly employed.
 As a consequence theories with $N_f=4,8,12,16$ are most widely studied although others have been studied as well.
 The consensus is that $N_f\le8$ are confining, $N_f=12$ is probably conformal, and $N_f=16$ is conformal.
 
-There is also a grown number of calculations with $SU(2)$.
+There is also a growing number of calculations with $SU(2)$.
 The two flavor model in the adjoint representation is widly studied and is clearly in the conformal window\cite{Catterall:2007yx,DelDebbio:2010hu,DeGrand:2011qd,DeGrand:2011vp}.
 Studies with fundamental fermions exist for $N_f=2,4,6,8,10$ with the conformal window being identified as existing between $4<N_f<8$.
 Studies of $SU(3)$ and $SU(4)$ in the 2-index symmetric representation also exist.

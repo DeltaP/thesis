@@ -4,14 +4,16 @@
 One solution to the hierarchy problem is for the Higgs to be a composite composed of particles from a new strongly interacting sector \cite{Kaplan:1983sm,Georgi:1984af,Weinberg:1975gm,Susskind:1978ms, Weinberg:1979bn, Eichten:1979ah, Dimopoulos:1979es}.
 This new sector is responsible for electroweak symmetry breaking.
 There are many types of theories that use such a modus operandi.
-While these theories have the benefits of solving the hierarchy and fine tuning problems with the standard model Higgs they typically favor a heavier Higgs mass than what has been observed and pose other theoretical challenges that I will elaborate on below.
-In the next three subsections I will briefly discuss technicolor, extended techniclolor, introduce the conformal window, and discuss the state of Lattice endeavors in this area.
+While these theories have the benefits of solving the hierarchy and fine tuning problems of the standard model Higgs, they are nuanced and a phenomenologically consistent theory has not been identified yet.
+Typically composite Higgs theories favor a heavier Higgs mass than what is observed at the LHC.
+They also pose other theoretical challenges that I will elaborate on below.
+In the next three subsections I will briefly discuss technicolor, extended technicolor, introduce the conformal window, and discuss the state of Lattice endeavors in this area.
 
 \subsection{Technicolor}
 
 Technicolor seeks to replace the Higgs sector of the electroweak theory with a new strongly interacting sector.
 In this section I will show how this is accomplished.
-Some good reviews on the subject can be found in references \cite{Hill2003235,lane,Shrock:2007km,martin,Sannino:2009za}
+Some good reviews on the subject can be found in references \cite{Hill2003235,lane,Shrock:2007km,martin,Sannino:2009za}.
 For simplicity lets consider a $SU(3)_{TC}$ gauge group that couples to a pair of massless fermions $\Psi=(\psi_1,\psi_2)$ in the fundamental representation.
 It is worth noting that so far this theory is identical to QCD with massless up and down quarks.
 The Lagrangian for our theory is
@@ -28,7 +30,7 @@ This symmetry manifests itself in the nonzero VEV of the chiral condensate
 \end{equation}
 
 To see how spontaneous chiral symmetry breaking translates to spontaneous electroweak symmetry breaking we have to use chiral perturbation theory \cite{Gasser:1983yg,Golterman:2009kw}.
-Chiraly perturbation theory is an effective field theory whose fundamental degrees of freedom are the Goldstone bosons associated with the symmetry breaking.
+Chiral perturbation theory is an effective field theory whose fundamental degrees of freedom are the Goldstone bosons associated with the symmetry breaking.
 In our case the broken $SU(2)$ symmetry has 3 degrees of freedom and therefore our effective theory will have three massless Goldstone bosons.
 Continuing our analogy to QCD, these bosons are the pions.
 
@@ -120,7 +122,7 @@ These issues have forced many models to give the top special treatment in so cal
 Skirting these and other issues without producing particles light enough to have already been discovered is a daunting task.
 There are many models that have been able to trade one defect for another, but to date no complete model exists.
 There is a general consensus that any viable ETC model probably will have a slowly running (walking) coupling.
-In a walking theory $\gamma(\alpha(\mu))$ is large between $\Lambda_{TC}$ and $M_{ETC}$ 
+In a walking theory $\gamma(\alpha(\mu))$ is large between $\Lambda_{TC}$ and $M_{ETC}$.
 It has been shown that walking behavior addresses all of the problems I have discussed to a point.
 However any model that breaks at multiple scales and has the peculiarities of walking between those scales is likely to be very baroque.
 I discuss how a walking theory can be generated in more detail below.
@@ -153,9 +155,9 @@ This is understood through the beta function,
 The beta function describes how the gauge coupling evolves as the renormalization scale $\mu$ is changed.
 This function can be expanded in perturbation theory and is universal to two loops:
 \begin{equation}
-  \beta\left(g^2\right)=-\frac{b_1}{16\pi^2}g^4-\frac{b_2}{(16\pi^2)^2}g^6
+  \beta\left(g^2\right)=-\frac{b_1}{16\pi^2}g^4-\frac{b_2}{(16\pi^2)^2}g^6+\mathcal{O}
 \end{equation}
-Any terms beyond two loops are renormalization scheme dependant and are not relevant for the following discussion.
+Any terms beyond two loops are renormalization scheme dependent and will be ignored for the following discussion.
 The values for $b_1$ and $b_2$ are:
 \begin{equation}
   \label{eqn:b1b2}
@@ -210,19 +212,19 @@ Perturbatively this zero occurs at $g^2_*=-b_1/b_2$ and is called a Banks-Zaks i
 This is illustrated in figure \ref{fig:conformal}, such a theory is governed by the conformal dynamics at the infrared fixed point and is scale invariant.
 If the fixed point is at very weak coupling it is possible to gain insights from perturbation theory, however many theories are known to have strongly coupled IRFP's where insights from perturbation theory are unreliable.
 Conformal theories, like the scenario described above, do not support bound states of particles.
-As such they are often referred to as `unparticle theories'.
+As such they are often referred to as `un-particle theories'.
 
 \begin{figure}[h]
   \centering
   \includegraphics[height=3in]{\cnum{2}/fig/trivial.png}
-  \caption{If the fermionic degrees of freedom overwhelm those of the bosons it the beta function will start positive.  This is the loss of asymptotic freedom.  The beta function for such a theory resembles that of QED.}
+  \caption{If the fermionic degrees of freedom overwhelm those of the bosons, the beta function will start positive.  This is the loss of asymptotic freedom.  The beta function for such a theory resembles that of QED.}
   \label{fig:trivial}
 \end{figure}
 
 Allowing both $b_1$ and $b_2$ to be negative results in a trivial theory.
 Such a theory, shown in figure \ref{fig:trivial} is not asymptotically free.  
 The beta function is very similar to that of QED.
-Perturbatively this occurs when $N_f<\frac{11N_c}{4T(R)}$.
+This occurs when $N_f<\frac{11N_c}{4T(R)}$.
 
 The region in theory space between where the IRFP appears and where asymptotic freedom is lost is referred to as the conformal window.
 Limiting our consideration to theories using the fundamental representation fermions and $N_c=3$ we see that perturbation theory predicts the conformal window is between $N_f \approx 9.4 \mbox{ and } N_f=16.5$.
@@ -247,7 +249,7 @@ If this occurs, the coupling $g$ will run very slowly (walk) over a wide range o
 Walking is necessary to achieve a wide separation of scales in Technicolor theories without generating flavor changing neutral currents.
 
 \subsection{Lattice Studies}
-Today there is a rich ecosystem of lattice studies of BSM studies, a survey of the current state of the field can be found in \cite{need to find a good overview}.
+Today there is a rich ecosystem of lattice studies of BSM studies, a survey of the current state of the field can be found in \cite{degrand:rev}.
 It is extremely important that different ways of probing for IR conformality on different lattice discretization schemes converge to common conclusions.
 In general this is accomplished but there are still systems that cause debate because different groups draw different conclusions from their findings.  Below I summarize the state of the field both in terms of calculation types and methods of theories studied.
 
@@ -256,7 +258,7 @@ The first example of this type of study is \cite{Appelquist:2009ty}.
 If an IRFP is found then the theory is conformal while a lack of an IRFP at strong coupling indicates that chiral symmetry is broken and the theory confines.
 One benefit of running coupling calculations is that they are not as computationally intensive as many other alternatives.
 There are multiple types of calculations that fall under this umbrella.
-Schr\"odinger functional, MCRG (section \ref{ch:MCRG,ch:WMCRG}), and now the Wilson flow step scaling (section \ref{ch:wflow}) are examples.
+Schr\"odinger functional, MCRG (section \ref{ch:MCRG}), and now the Wilson flow step scaling (section \ref{ch:wflow}) are examples.
 
 Another common method uses lattice spectroscopy calculations.
 In these methods the masses of light bound states are measured at a variety of input quark masses.
@@ -275,7 +277,7 @@ As a consequence theories with $N_f=4,8,12,16$ are most widely studied although 
 The consensus is that $N_f\le8$ are confining, $N_f=12$ is probably conformal, and $N_f=16$ is conformal.
 
 There is also a growing number of calculations with $SU(2)$.
-The two flavor model in the adjoint representation is widly studied and is clearly in the conformal window\cite{Catterall:2007yx,DelDebbio:2010hu,DeGrand:2011qd,DeGrand:2011vp}.
+The two flavor model in the adjoint representation is widely studied and is clearly in the conformal window\cite{Catterall:2007yx,DelDebbio:2010hu,DeGrand:2011qd,DeGrand:2011vp}.
 Studies with fundamental fermions exist for $N_f=2,4,6,8,10$ with the conformal window being identified as existing between $4<N_f<8$.
 Studies of $SU(3)$ and $SU(4)$ in the 2-index symmetric representation also exist.
 
@@ -285,8 +287,8 @@ Taking a holistic approach and finding consensus is vital to our understanding.
 Additionally, as more of these theories have been studied, vital improvements have been made.
 This is true of the lattice code base, which prior to BSM studies was highly optimized and sometimes only available for QCD simulations.
 This is also true for improvements in how we analyze lattice data.
-I will discuss two improvements we have developed in chapters \ref{ch:WFLOW} and \ref{ch:WMCRG}.
-Chapter \ref{ch:WFLOW} introduces an improvement to the gradient flow method for calculating the renormalized step scaling function.
+I will discuss two improvements we have developed in chapters \ref{ch:wflow} and \ref{ch:WMCRG}.
+Chapter \ref{ch:wflow} introduces an improvement to the gradient flow method for calculating the renormalized step scaling function.
 Chapter \ref{ch:WMCRG} introduces an improvement to the traditional MCRG method of calculating the bare step scaling function.
 Finally work in BSM physics on the lattice has pushed forward our knowledge of formulating lattice actions and understanding the nature of lattice artifacts.
-Many of the theories that have been studied are sufficiently un-QCD like that lattice QCD intuitions are being upended with a new tribal knowledge.
+Many of the theories that have been studied are sufficiently un-QCD like that lattice QCD intuitions are being upended by new results.

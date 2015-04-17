@@ -57,7 +57,7 @@ Unfortunately there is no easy way around this problem.
 The Nielsen and Ninomiya no-go theorem states that you cannot place chiral fermions on a regular lattice of even dimension without fermion doublers \cite{Nielsen198120,Nielsen1981173,Nielsen1981219,kaplan:fermions}.
 Any solution to the doubler problem will have to sacrifice chiral symmetry, dimensionality, or the regularity of the lattice.
 There are several types of fermionic actions that trade off these pitfalls.
-Some actions are able to preserve a near exact chiral symmetry, generally by adding dimensionality, however these actions are extremely expensive and difficult to simulate at strong coupling.
+Some actions are able to preserve a near exact chiral symmetry, however these actions can be very expensive and difficult to simulate at strong coupling.
 The only action I will address further is the staggered action because it is used in our study.
 
 \subsection{Staggered Fermions}
@@ -71,7 +71,7 @@ To accomplish this lets define new field variables $\psi(x)'$ and $\bar{\psi}(x)
     \bar{\psi}(n)&=\bar{\psi}(n)'\gamma_4^{n_4}\gamma_3^{n_3}\gamma_2^{n_2}\gamma_1^{n_1}.
   \end{aligned}
 \end{equation}
-The transformation matrix is products of $\gamma_\mu$ raised to the power of the corresponding component $n_\mu$ of th site index $n_\mu=(n_1,n_2,n_3,n_4)$.
+The transformation matrix is products of $\gamma_\mu$ raised to the power of the corresponding component $n_\mu$ of the site index $n_\mu=(n_1,n_2,n_3,n_4)$.
 We can now use these fields to build the staggered action
 \begin{equation}
   S(\psi',\bar{\psi}')=a^4\sum_n \bar{\psi}(x)'\mathbb{I}\Big(\sum_{\mu=1}^4\eta_\mu(x)\frac{\psi(n+\hat{\mu})'-\psi(n-\hat{\mu})'}{2a}+m\psi(n)'\Big),
@@ -91,7 +91,7 @@ We finalize the action by taking one of these copies and coupling it to the gaug
   S(\chi,\bar{\chi})=a^4\sum_n \bar{\chi}(n)\Big(\sum_{\mu=1}^4\eta_\mu(x)\frac{U_\mu(n)\chi(n+\hat{\mu})-U_\mu^\dagger(n-\hat{\mu})\chi(n-\hat{\mu})}{2a}+m\chi(n)\Big).
 \end{equation}
 The fields $\chi$ and $\bar{\chi}$ are Grassmann fields with only color indices and lack Dirac structure.
-Since we have kept one of four identical copies of our naïve fermionic action we have essentially kept 4 of the 16 doubler modes.
+Since we have kept one of four identical copies of our na\"{\i}ve fermionic action we have essentially kept 4 of the 16 doubler modes.
 This action can be interpreted as having a $2^4$ dimensional hyper cube unit cell with four flavors of fermions spread across it.
 The four species of fermions that remain are called referred to as tastes.
 While taste symmetry is exact in the continuum, it is broken by lattice artifacts.
